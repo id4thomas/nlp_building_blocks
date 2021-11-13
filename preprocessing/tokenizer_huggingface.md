@@ -1,4 +1,4 @@
-# Tokenizer
+# Tokenizer (Huggingface)
 
 * Tokenizing (splitting strings in sub-word token strings)
 * encoding/decoding (i.e., tokenizing and converting to integers)
