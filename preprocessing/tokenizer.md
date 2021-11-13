@@ -10,7 +10,7 @@ https://github.com/huggingface/transformers/blob/21546e59a6cd4a5c306a050109e0cea
 https://github.com/huggingface/transformers/blob/master/src/transformers/models/gpt2/tokenization_gpt2.py
 PreTrainedTokenizerBase -> PretrainedTokenizer -> GPT2Tokenizer
 
-Tokenization Flow (Not Batched)
+Tokenization Function Calls (Not Batched)
 * \__call__ (PreTrainedTokenizerBase) 
     * encode_plus (PreTrainedTokenizerBase)
         * _get_padding_truncation_strategies (PretrainedTokenizer)
@@ -30,7 +30,6 @@ Tokenization Flow (Not Batched)
                     * _pad (PreTrainedTokenizerBase)
 
 
-
 ## Special Tokens
 Organize the special tokens for each LM Models. (Based on huggingface transformers documentation)
 
@@ -46,6 +45,7 @@ Organize the special tokens for each LM Models. (Based on huggingface transforme
 | XLNet | \<s> | \</s> | \<sep> | \<cls> | \<unk> | \<pad> | \<mask> | [\<eop>,\<eod>] end of paragraph,document |
 
 Additional Notes
+* BERT: [CLS] token: weighted <b>average</b> of the words such that the representation <b>of the whole sequence</b> is captured. [2] Used for downstream tasks.
 * GPT: needs ftfy,spacy package to use og paper tokenizer 
 * RoBERTa: Use CLS,SEP as beginning & end of sequence
 * T5: Use SEP as end of sequence
@@ -74,7 +74,7 @@ if add_special_tokens=True (default:True) build_inputs_with_special_tokens is ca
 
 Tokenizer Output Examples
 
-Tokenizer \__call__ returns dictionary with keys [input_ids,attention_mask] and token_type_ids if applicable
+Tokenizer \__call__ returns dictionary with keys [input_ids,attention_mask] and token_type_ids if applicable (Bert,XLNet)
 
 | Models   | Tokenized | Notes |
 | -------- | ------ | ------ |
@@ -86,4 +86,5 @@ Tokenizer \__call__ returns dictionary with keys [input_ids,attention_mask] and 
 | XLNet | X \<sep>\<cls> | Padding is added to the left |
 
 ## References
-https://huggingface.co/transformers/
+[1] https://huggingface.co/transformers/ <br>
+[2] https://discuss.huggingface.co/t/significance-of-the-cls-token/3180/7
