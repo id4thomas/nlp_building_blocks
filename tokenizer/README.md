@@ -51,7 +51,7 @@ Additional Notes
 * T5: Use SEP as end of sequence
 * XLNet: Use CLS,SEP as beginning & end of sequence
 
-### Input Format
+### Tokenized Format
 
 build_inputs_with_special_tokens function of PreTrainedTokenizerBase performs no modifications<br>
 (This implementation does not add special tokens and this method should be overridden in a subclass.)<br>
@@ -61,7 +61,7 @@ In case of RoBERTa, build_inputs_with_special_tokens is overridden<br>
 if add_special_tokens=True (default:True) build_inputs_with_special_tokens is called<br>
 (add_special_tokens: Whether or not to encode the sequences with the special tokens relative to their model.)
 
-| Models   | Single Sequnce | Pair of Sequences| Position Embeddings |
+<!-- | Models   | Single Sequnce | Pair of Sequences| Position Embeddings |
 | -------- | ------ | ------ | ------ |
 | BART | \<s> X \</s> | \<s> A \</s>\</s> B \</s> | |
 | BERT | [CLS] X [SEP] | [CLS] A [SEP] B [SEP] | |
@@ -69,7 +69,21 @@ if add_special_tokens=True (default:True) build_inputs_with_special_tokens is ca
 | GPT-2 | X | A B (token_ids_0 + token_ids_1) | |
 | RoBERTa | \<s> X \</s> | \<s> A \</s>\</s> B \</s> | |
 | T5 | X \</s> | | |
-| XLNet | X \<sep>\<cls> | | |
+| XLNet | X \<sep>\<cls> | | | -->
+
+
+Tokenizer Output Examples
+
+Tokenizer \__call__ returns dictionary with keys [input_ids,attention_mask] and token_type_ids if applicable
+
+| Models   | Tokenized | Notes |
+| -------- | ------ | ------ |
+| BART | \<s> X \</s> | |
+| BERT | [CLS] X [SEP] | |
+| GPT-2 | X | Padding token needs to be initialized |
+| RoBERTa | \<s> X \</s> | |
+| T5 | X \</s> | |
+| XLNet | X \<sep>\<cls> | Padding is added to the left |
 
 ## References
 https://huggingface.co/transformers/
