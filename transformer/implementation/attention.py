@@ -50,14 +50,46 @@ class MultiHeadAttention(nn.Module):
         self.att_proj=nn.Linear(self.d_model,self.d_model)
         
 
-    def forward(self,x):
+    def forward(self,query,key,value):
         # Run through all heads
         qkv_res=[]
 
         for i in range(self.num_heads):
-            qkv_res.append(self.heads[f"head_{i}"](x,x,x))
+            qkv_res.append(self.heads[f"head_{i}"](query,key,value))
         
         #Concat & Project
         qkv=self.att_proj(torch.cat(qkv_res,dim=-1))    
 
         return qkv
+
+class PositionWiseFeedForward(nn.Module):
+    def __init__(self,config):
+        super(PositionWiseFeedForward,self).__init__()
+
+        self.w1=nn.Linear(config["d_model"],config["d_ff"])
+        self.w2=nn.Linear(config["d_ff"],config["d_model"])
+
+        if config["actv"]=="relu":
+            self.actv=nn.ReLU()
+        elif config["actv"]=="gelu":
+            self.actv=nn.GeLU()
+        else:
+            self.actv=nn.ReLU()
+
+        #Dropout
+        self.dropout=nn.Dropout(p=config["dropout_prob"])
+
+    def forward(self,x):
+        #X -> W1 -> Actvation -> Dropout -> W2
+        return self.w2(self.dropout(self.actv(self.w1(x))))
+        
+        
+class AddAndNorm(nn.Module):
+    def __init__(self,config):
+        super(AddAndNorm,self).__init__()
+
+        self.dropout=nn.Dropout(p=config["dropout_prob"])
+        self.layernorm=nn.LayerNorm(config["d_model"])
+
+    def forward(self,x, layer_out):
+        return self.layernorm(x+self.dropout(layer_out))
