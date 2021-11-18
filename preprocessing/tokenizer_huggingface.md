@@ -7,7 +7,7 @@
 https://github.com/huggingface/transformers/blob/21546e59a6cd4a5c306a050109e0cea9bfdb3fb7/src/transformers/tokenization_utils_base.py#L1434
 
 ### GPT2 Tokenizer Example
-https://github.com/huggingface/transformers/blob/master/src/transformers/models/gpt2/tokenization_gpt2.py
+https://github.com/huggingface/transformers/blob/master/src/transformers/models/gpt2/tokenization_gpt2.py<br>
 PreTrainedTokenizerBase -> PretrainedTokenizer -> GPT2Tokenizer
 
 Tokenization Function Calls (Not Batched)
@@ -72,8 +72,8 @@ if add_special_tokens=True (default:True) build_inputs_with_special_tokens is ca
 | XLNet | X \<sep>\<cls> | | | -->
 
 
-Tokenizer Output Examples
-
+Tokenizer Output Examples<br>
+[Example Notebook](tokenize_huggingface_examples.ipynb)<br>
 Tokenizer \__call__ returns dictionary with keys [input_ids,attention_mask] and token_type_ids if applicable (Bert,XLNet)
 
 | Models   | Tokenized | Notes |
