@@ -28,10 +28,27 @@ Histogram based visualization
 ### average word length analysis
 
 ## Sentiment Analysis
-* VADER
-* TextBlob: 
-    * sentiment polarity (+,-)
-    * subjectivity: how somesome's judgement is shaped by personal opinions
+### VADER (Valence Aware Dictionary for Sentiment Reasoning)
+Rule-based model for General Sentiment Analysis
+#### 5 Generalizable Heuristics
+1. Punctuation
+    * '!' increases magnitude of intensity without modifying semantic orientation
+2. Capitalization
+    * All-Caps representation of Sentiment-relevant word increases magnitude of intensity without modifying semantic orientation
+3. Degree Modifiers (Intensifiers, Booster Words, Degree Adverbs)
+    * Increase/Decrease Intensity
+4. Contrastive Conjunction 'but'
+    * Shift in sentiment polarity
+    * Text following the conjunction is dominant
+5. Examining Tri-gram preceding Sentiment-laden Lexical Feature
+    * Carch nearly 90% of cases where negation flips polarity
+
+Use nltk.sentiment.vader.SentimentIntensityAnalyzer to get sentiment intensity scores. <i>polarity_scores(sent)</i> function returns dictionary with keys ['neg','neu','pos','compound']. Compound value is computed by normalizing the sum of neg,neu,pos scores. <br>
+Experiment in [notebook](eda_sentiment.ipynb)
+    
+### TextBlob: 
+* sentiment polarity (+,-)
+* subjectivity: how somesome's judgement is shaped by personal opinions
 
 ## References
 [1] https://neptune.ai/blog/exploratory-data-analysis-natural-language-processing-tools<br>
@@ -40,3 +57,4 @@ Histogram based visualization
 [4] https://wikidocs.net/33661<br>
 [5] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html<br>
 [6] https://www.kaggle.com/abhilash1910/tweet-analysis-eda-cleaning-tsne-glove-tf<br>
+[7] https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664
