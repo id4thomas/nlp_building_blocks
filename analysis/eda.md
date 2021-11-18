@@ -7,6 +7,9 @@ Mainly studying methods in [1].
 * Topic Modeling
 * Wordcloud
 * [Sentiment Anslysis](#sentiment-analysis)
+    * VADER
+    * TextBlob
+    * Flair
 * Named Entity Recognition
 * Part of Speech Tagging
 * Textstat library: readability Score
@@ -43,12 +46,20 @@ Rule-based model for General Sentiment Analysis
 5. Examining Tri-gram preceding Sentiment-laden Lexical Feature
     * Carch nearly 90% of cases where negation flips polarity
 
-Use nltk.sentiment.vader.SentimentIntensityAnalyzer to get sentiment intensity scores. <i>polarity_scores(sent)</i> function returns dictionary with keys ['neg','neu','pos','compound']. Compound value is computed by normalizing the sum of neg,neu,pos scores. <br>
+Use nltk.sentiment.vader.SentimentIntensityAnalyzer to get sentiment intensity scores.<br>
+<i>polarity_scores(sent)</i> function returns dictionary with keys ['neg','neu','pos','compound']. <br>
+Compound value is computed by normalizing the sum of neg,neu,pos scores. <br>
 Experiment in [notebook](eda_sentiment.ipynb)
     
 ### TextBlob: 
-* sentiment polarity (+,-)
-* subjectivity: how somesome's judgement is shaped by personal opinions
+TextBlob returns <b>polarity</b> and <b>intensity</b> of a sentence.<br>
+* Polarity [-1,1]: -1 is negative, 1 is positive
+* Subjectivity [0,1]: how somesome's judgement is shaped by personal opinions
+    * Higher subjectivity means text contains personal opinion
+* Intensity: determines if a word modifies the next word
+
+### Flair
+Embedding based Model
 
 ## References
 [1] https://neptune.ai/blog/exploratory-data-analysis-natural-language-processing-tools<br>
@@ -57,4 +68,5 @@ Experiment in [notebook](eda_sentiment.ipynb)
 [4] https://wikidocs.net/33661<br>
 [5] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html<br>
 [6] https://www.kaggle.com/abhilash1910/tweet-analysis-eda-cleaning-tsne-glove-tf<br>
-[7] https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664
+[7] https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664<br>
+[8] https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524
