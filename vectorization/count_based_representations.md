@@ -1,15 +1,16 @@
-# Document Vectorization
+# Count-based Representations
 
-* [Simple Methods](#simple-methods)
-    * [Binary: OneHot](#onehot\-vector)
-    * [Count Vector](#count-vector)
-    * [TF-IDF](#tf\-idf)
+* [Bag of Words](#bag-of-words)
+    * [Binary](#binary-representation)
+    * [Count](#count-representation) 
+
+* [TF-IDF](#tf\-idf)
 
 
-# Simple Methods
-
-## Onehot Vector
-
+## Bag of Words
+단어 등장 순서는 고려하지 않고 등장 빈도만 고려<br>
+등장 여부만 표현하는 것을 binary, 빈도수를 표현한 것을 count라고 할 때 다음과 같다.
+### Binary Representation
 CountVectorizer의 binary=True 옵션 이용
 
 True일 경우 non-zero count가 1로 세팅됨 (존재 유무만 리포팅)
@@ -39,9 +40,8 @@ This document is new. [0 1 0 1 0 0 0 0 1]
 and:0	document:1	first:0	is:1	one:0	second:0	the:0	third:0	this:1
 ```
 
-## Count Vector
-
-문서를 token count matrix로 변환
+### Count Representation
+Document-Term Matrix에서 각 document에 해당하는 벡터
 
 기본 토큰 패턴: r"(?u)\\b\\w\\w+\\b"
 
@@ -118,8 +118,7 @@ and:0	document:1	first:0	is:1	one:0	second:0	the:0	third:0	this:1
 ```
 
 ## TF\-IDF
-
-문서를 TF-IDF 행렬로 변환
+각 단어에 대한 <b>중요도</b>를 계산하는 TF-IDF (Term Frequency-Inverse Document Frequency).
 
 CountVectorizer → TfidfTransformer 적용한것과 같다
 
