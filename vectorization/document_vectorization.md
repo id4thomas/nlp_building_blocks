@@ -125,7 +125,9 @@ CountVectorizer → TfidfTransformer 적용한것과 같다
 
 Fit learns **vocabulary** and **idf** from training set.
 
-$$TF_{test}(w)\cdot \log{\frac{N_{train}}{DF_{train}(w)}}$$
+<!-- $$TF_{test}(w)\cdot \log{\frac{N_{train}}{DF_{train}(w)}}$$ -->
+<!-- ![TFIDF Equation](./figs/tfidf_vec_equation.png) -->
+<img src="./figs/tfidf_vec_equation.png" alt="TFIDF Equation" width="300px">
 
 - 참고 파라미터 (CountVectorizer 파라미터들도 동일하게 적용)
     - **norm: *{‘l1’, ‘l2’}, default=’l2’***
