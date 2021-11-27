@@ -4,7 +4,7 @@ Studying NLP one by one
 ## Table of Contents
 * [Preprocessing](./preprocessing/README.md)
     * [Huggingface Tokenizer Analysis](./preprocessing/tokenizer_huggingface.md)
-    * [Huggingface Tokenizer Examples](./preprocessing/tokenizer_huggingface_examples.ipynb)
+        * [Examples](./preprocessing/tokenize_huggingface_examples.ipynb)
 * [Analysis](./analysis/README.md)
     * [EDA (Exploratory Data Analysis)](./analysis/eda.md)
         * Text Statistics
