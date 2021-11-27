@@ -25,3 +25,11 @@ Studying NLP one by one
 * [Transformer](./transformer/README.md)
     * Studying and implementing the Transformer Architecture
     * [Transformer Implementation Details](./transformer/implementation/README.md)
+* [Evaluation](./evaluation/README.md)
+    * Methods of evaluating NLP Models, generated results
+    * Reference-based Metrics
+        * [BLEU](./evaluation/bleu.md)
+        * [ROUGE](./evaluation/rouge.md)
+            * [Examples](./evaluation/rouge.ipynb)
+    * Transfer-learning based Metrics
+        *[BLEURT]
