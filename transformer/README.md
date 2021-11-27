@@ -17,4 +17,5 @@ Warmup learning-rate scheduler
 
 
 ## References
-[1] https://hongl.tistory.com/231
+[1] https://hongl.tistory.com/231<br>
+[2] Vaswani, Ashish et al. “Attention is All you Need.” ArXiv abs/1706.03762 (2017): n. pag.<br>

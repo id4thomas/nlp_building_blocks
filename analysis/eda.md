@@ -69,4 +69,5 @@ Embedding based Model
 [5] https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html<br>
 [6] https://www.kaggle.com/abhilash1910/tweet-analysis-eda-cleaning-tsne-glove-tf<br>
 [7] https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664<br>
-[8] https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524
+[8] https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524<br>
+[9] https://neptune.ai/blog/sentiment-analysis-python-textblob-vs-vader-vs-flair
