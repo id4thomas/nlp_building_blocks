@@ -26,7 +26,8 @@
     
     **모든 도큐멘트에 많이** 나오는 단어에 집중 되는 **문제 해결**
     
-    $$TF(W)\cdot\log{\frac{N}{DF(W)}}$$
+    <!-- $$TF(W)\cdot\log{\frac{N}{DF(W)}}$$ -->
+    <img src="https://render.githubusercontent.com/render/math?math=TF(W)\cdot\log{\frac{N}{DF(W)}}">
     
     * TF(W): **특정 문서에** 얼마나 많이 쓰엿는지
     
@@ -129,7 +130,8 @@ But, 분포 정보와 의미 사이에 **직접적 연관성 보이지는 X**
 
 PMI: 두 단어의 등장이 **독립일 때 대비**해 얼마나 자주 등장 하는지
 
-$$PMI(A;B) = \log{\frac{p(A,B)}{p(A)p(B)}}$$
+<!-- $$PMI(A;B) = \log{\frac{p(A,B)}{p(A)p(B)}}$$ -->
+<img src="https://render.githubusercontent.com/render/math?math=PMI(A,B)=\log{\frac{p(A,B)}{p(A)p(B)}}">
 
 PMI 행렬의 **행** 자체를 단어 임베딩으로 사용 가능
 
@@ -143,7 +145,8 @@ PMI 계산 예시:
 * 전체 빈도: 1000
 * 빨래: 20, 속옷: 15, 빨래 & 속옷: 10 인 경우
 
-$$\log{\frac{\frac{10}{1000}}{\frac{20}{1000}\frac{15}{1000}}}$$
+<!-- $$\log{\frac{\frac{10}{1000}}{\frac{20}{1000}\frac{15}{1000}}}$$ -->
+<img src="https://render.githubusercontent.com/render/math?math=\log{\frac{\frac{10}{1000}}{\frac{20}{1000}\frac{15}{1000}}}">
 
 ### **Word2Vec**
 
