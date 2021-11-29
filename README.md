@@ -33,3 +33,6 @@ Studying NLP one by one
             * [Examples](./evaluation/rouge.ipynb)
     * Transfer-learning based Metrics
         *[BLEURT]
+* [Study Materials](./study_materials/README.md)
+    * Organized personal study materials
+    * [한국어 임베딩 - 이기창](./study_materials/한국어임베딩_이기창/README.md)
