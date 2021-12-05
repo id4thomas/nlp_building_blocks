@@ -7,7 +7,7 @@
     * Objective Engineering
     * Prompt Engineering
 * [Prompting](#Prompting)
-    * [General Workflow of Prompting](General-Workflow-of-Prompting)
+    * [General Workflow of Prompting](#General-Workflow-of-Prompting)
         * Prompt Addition
         * Answer Prediction
         * Answer-Label Mapping
@@ -97,9 +97,9 @@ Ex. MLM에 인풋을 "CMU is located in [MASK]." 로 주고 모델이 맞추기
         * Finite answer space: Good for CLF
     * Automated Search
         * Discrete Space
-            ® Answer Paraphrasing
-            ® Prune-then-Search
-            ® Label Decomposition
+            * Answer Paraphrasing
+            * Prune-then-Search
+            * Label Decomposition
         * Continuous Space
             *  Virtual Class Token & Optimize token embedding
 
