@@ -29,10 +29,12 @@ Studying NLP one by one
     * Methods of evaluating NLP Models, generated results
     * Reference-based Metrics
         * [BLEU](./evaluation/bleu.md)
+            * [Examples](./evaluation/bleu.ipynb)
         * [ROUGE](./evaluation/rouge.md)
             * [Examples](./evaluation/rouge.ipynb)
     * Transfer-learning based Metrics
-        *[BLEURT]
+        *[BLEURT](./evaluation/bleurt.md)
 * [Study Materials](./study_materials/README.md)
     * Organized personal study materials
     * [한국어 임베딩 - 이기창](./study_materials/한국어임베딩_이기창/README.md)
+    * [CMU Advanced NLP CS 11-711 (Fall-2021)](./study_materials/2021_cmu_advanced_nlp/README.md)
