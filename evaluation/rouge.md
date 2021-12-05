@@ -23,6 +23,30 @@ Compares model generated sentence with reference sentence.
     * 결과에 불필요한 단어들이 많다면 Precision 값이 좋지 않을것
     * Best to report F-measure values, but if sentences are short Recall values are acceptable.
 
+### Multiple References
+How ROUGE handles multiple references.
+For single prediction, take <b>Maximum</b> ROUGE score <b>among all references</b>. (ROUGE-N, ROUGE-L)
+* ROUGE-N(prediction,references) = max_k(ROUGE-N(prediction,reference_k))
+
+## Averaging
+From <i>_get_avg_scores</i> function at https://github.com/pltrdy/rouge/blob/master/rouge/rouge.py<br>
+Get scores for each hypothesis-reference pair and take <b>arithmetic mean</b>
+```python
+count = 0
+for (hyp, ref) in zip(hyps, refs):
+    ...
+
+    for m in self.metrics:
+        fn = Rouge.AVAILABLE_METRICS[m]
+        sc = fn(hyp, ref, exclusive=self.exclusive)
+        scores[m] = {s: scores[m][s] + sc[s] for s in self.stats}
+    ...
+    count += 1
+avg_scores = {
+    m: {s: scores[m][s] / count for s in self.stats}
+    for m in self.metrics
+}
+```
 
 # ROUGE Implementations
 * [files2rouge](https://github.com/pltrdy/files2rouge) (Official Rouge) 
@@ -128,3 +152,5 @@ Not openly available, at least not "officially"
 [4] https://github.com/li-plus/rouge-metric<br>
 [5] https://github.com/pltrdy/rouge/issues/2<br>
 [6] https://github.com/google/seq2seq/issues/89<br>
+[7] https://www.mathworks.com/help/textanalytics/ref/rougeevaluationscore.html<br>
+[8] ROUGE: A Package for Automatic Evaluation of Summaries - Chin-Yew Lin
