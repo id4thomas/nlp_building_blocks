@@ -1,5 +1,15 @@
 # 14 - Analysis 2 - Syntactic Parsing 1
 
+## Table of Contents
+* [Syntax](#Syntax)
+* [Syntactic Parsing](#Syntactic-Parsing)
+    * [Parts-of-Speech (POS)](#Parts-of-Speech-(POS))
+    * [Parsing](#Parsing)
+        * Constituency Trees
+        * Dependency Trees
+    * [Context-Free Grammars (CFGs)](Context-Free-Grammars-(CFGs))
+        * Probabilistic Context-free Grammars (PCFGs)
+
 # Syntax
 
 문장을 이해하기 위해서는 language specific **patterns** 즉 syntax가 필요하다 (learning bias라고도 표현)

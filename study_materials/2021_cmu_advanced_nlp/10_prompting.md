@@ -2,16 +2,16 @@
 
 ## Table of Contents
 * [Four Paradigms of NLP Technical Development](#Four-Paradigms-of-NLP-Technical-Development)
-    * [Feature Engineering](#Feature-Engineering)
+    * Feature Engineering
     * Architecture Engineering
     * Objective Engineering
     * Prompt Engineering
-* Prompting
-    * General Workflow of Prompting
-        * [Prompt Addition](#)
-        * [Answer Prediction](#)
-        * [Answer-Label Mapping](#)
-    * Design Considerations for Prompting
+* [Prompting](#Prompting)
+    * [General Workflow of Prompting](General-Workflow-of-Prompting)
+        * Prompt Addition
+        * Answer Prediction
+        * Answer-Label Mapping
+    * [Design Considerations for Prompting](#Design-Considerations-for-Prompting)
         * Pre-trained Model Choice
         * Prompt Engineering
         * Answer Engineering
