@@ -25,8 +25,34 @@ Compares model generated sentence with reference sentence.
 
 ### Multiple References
 How ROUGE handles multiple references.
-For single prediction, take <b>Maximum</b> ROUGE score <b>among all references</b>. (ROUGE-N, ROUGE-L)
-* ROUGE-N(prediction,references) = max_k(ROUGE-N(prediction,reference_k))
+<!-- For single prediction, take <b>Maximum</b> ROUGE score <b>among all references</b>. (ROUGE-N, ROUGE-L)
+* ROUGE-N(prediction,references) = max_k(ROUGE-N(prediction,reference_k)) -->
+
+From the following [issue](https://github.com/pltrdy/rouge/issues/17)
+```
+I never used it myself, but I know the original ROUGE (aka. ROUGE-1.5.5) handles multiple references by either averaging scores accross references (default) or using the best score. It's controlled by the f flag, see https://github.com/pltrdy/files2rouge/blob/
+```
+
+```
+Pre-1.5 version of ROUGE used model average to compute the overall
+    ROUGE scores when there are multiple references. Starting from v1.5+,
+    ROUGE provides an option to use the best matching score among the
+    references as the final score. The model average option is specified
+    using "-f A" (for Average) and the best model option is specified
+    using "-f B" (for the Best). The "-f A" option is better when use
+    ROUGE in summarization evaluations; while "-f B" option is better when
+    use ROUGE in machine translation (MT) and definition
+    question-answering (DQA) evaluations since in a typical MT or DQA
+    evaluation scenario matching a single reference translation or
+    definition answer is sufficient. However, it is very likely that
+    multiple different but equally good summaries exist in summarization
+    evaluation.
+```
+* By default "scoring formula": compute <b>average</b>
+* <b>Average</b> is better when using ROUGE in <b>summarization</b> evaluations
+* <b>Best</b> is better when using ROUGE in Machine Translation and Definition Question-Answering
+    * Matching a single reference is sufficient
+
 
 ## Averaging
 From <i>_get_avg_scores</i> function at https://github.com/pltrdy/rouge/blob/master/rouge/rouge.py<br>
