@@ -3,7 +3,7 @@ Studying NLP one by one
 
 ```
 Directory hierarchy
-- 2312_model_explorer
+- 2312_model_explorer - gradio app for testing text sequence classification models
 - korean_resources
 - study_experiments
     - 2111_generation_evaluation - trying ROUGE, BLEU
