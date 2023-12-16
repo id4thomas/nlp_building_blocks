@@ -1,4 +1,6 @@
 torch
+torchmetrics
+scikit-learn
 transformers
 pandas
 numpy
