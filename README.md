@@ -13,4 +13,5 @@ Directory hierarchy
     - 2111_text_processing - cleaning, tokenizing with nltk
     - 2212_implementing_prefix_tuning
 - study resources
+- TIF (Today I Found)
 ```
