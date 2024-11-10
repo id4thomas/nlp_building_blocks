@@ -8,3 +8,10 @@ Folder Tree
 ├── README.md
 └── experiments # 작은 단위의 기능 테스트 실험들
 ```
+
+# Experiments
+| experiment | description |
+| --- | --- |
+| 2410_1_vlm_test | colqwen->vlm POC test |
+| 2411_1_semantic_splitter | semantic chunking test |
+| 2411_2_analyze_arxiver_data | EDA on arxiver dataset |
