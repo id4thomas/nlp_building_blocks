@@ -1,0 +1,29 @@
+Dense X Retrieval: What Retrieval Granularity Should We Use?
+HEART-felt Narratives: Tracing Empathy and Narrative Style in Personal Stories with LLMs
+Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models
+RAGViz: Diagnose and Visualize Retrieval-Augmented Generation
+PAIRDISTILL: Pairwise Relevance Distillation for Dense Retrieval
+FactAlign: Long-form Factuality Alignment of Large Language Models
+TopicGPT: A Prompt-based Topic Modeling Framework
+Statistical Uncertainty in Word Embeddings: GloVe-V
+Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs
+Fine-Tuning and Prompt Optimization: Two Great Steps that Work Better Together
+Reasoning in Token Economies: Budget-Aware Evaluation of LLM Reasoning Strategies
+MiniCheck: Efficient Fact-Checking of LLMs on Grounding Documents
+Contrastive Learning to Improve Retrieval for Real-world Fact Checking
+Learning to Refine with Fine-Grained Natural Language Feedback
+Molecular Facts: Desiderata for Decontextualization in LLM Fact Verification
+Monotonic Paraphrasing Improves Generalization of Language Model Prompting
+Data Advisor: Dynamic Data Curation for Safety Alignment of Large Language Models
+EfficientRAG: Efficient Retriever for Multi-Hop Question Answering
+Hypothesis Generation with Large Language Models
+Do Vision and Language Models Share Concepts? A Vector Space Alignment Study
+Hierarchical Deconstruction of LLM Reasoning: A Graph-Based Framework for Analyzing Knowledge Utilization
+On Evaluating Explanation Utility for Human-AI Decision Making in NLP
+mDPO: Conditional Preference Optimization for Multimodal Large Language Models
+Atomic Inference for NLI with Generated Facts as Atoms
+CoCoLoFa: A Dataset of News Comments with Common Logical Fallacies Written by LLM-Assisted Crowds
+Long2RAG: Evaluating Long-Context & Long-Form Retrieval-Augmented Generation with Key Point Recall
+STRUX: An LLM for Decision-Making with Structured Explanations
+Enhancing Post-Hoc Attributions in Long Document Comprehension via Coarse Grained Answer Decomposition
+Machine Translation Hallucination Detection for Low and High Resource Languages using Large Language Models
