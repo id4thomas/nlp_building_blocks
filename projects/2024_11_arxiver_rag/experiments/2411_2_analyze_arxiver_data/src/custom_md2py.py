@@ -86,7 +86,8 @@ class TreeOfContents:
         :param list elements: list of source objects
         :return: list of filtered TreeOfContents objects
         """
-        parsed, parent, cond = [], False, lambda b: (b.string or '').strip()
+        # parsed, parent, cond = [], False, lambda b: (b.string or '').strip()
+        parsed, parent, cond = [], False, lambda b: b.name and b.name in self.valid_tags
         for branch in filter(cond, descendants):
             if self.getHeadingLevel(branch) == self.depth:
                 parsed.append({'root':branch.string, 'source':branch})
