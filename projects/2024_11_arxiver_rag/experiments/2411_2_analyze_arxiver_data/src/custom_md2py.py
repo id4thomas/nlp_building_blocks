@@ -5,11 +5,11 @@ from markdown import markdownFromFile, markdown
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
-
 class TreeOfContents:
     """Tree abstraction for markdown source"""
 
     source_type = BeautifulSoup
+    ## Attributes
     valid_tags = ('a', 'abbr', 'address', 'area', 'article', 'aside', 'audio',
         'b', 'base', 'bdi', 'bdo', 'blockquote', 'body', 'br', 'button',
         'canvas', 'caption', 'cite', 'code', 'col', 'colgroup', 'data',
@@ -26,7 +26,9 @@ class TreeOfContents:
         'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr')
     allowed_attrs = ('string', 'name')
     header_name_pattern = r"^h([1-6])"
-    # root: str, 
+    ## md->html
+    default_md_extensions = ['markdown.extensions.fenced_code','markdown.extensions.tables']
+     
     def __init__(self, source: Tag, branches=(), descendant_tags: List[Tag]=(), depth: Optional[int]=None):
         """
         Construct TreeOfContents object using source
@@ -96,7 +98,7 @@ class TreeOfContents:
         descendants = []
         for b in self.branches:
             descendants.append(b)
-            descendants.extend(b.branches)
+            descendants.extend(b.expandDescendants())
         return descendants
         # return sum([b.descendants for b in self.branches], []) + \
             # [b.source for b in self.branches]
@@ -167,15 +169,18 @@ class TreeOfContents:
     def __getitem__(self, i):
         return self.branches[i]
 
-    @staticmethod
-    def fromMarkdown(md: str, *args, **kwargs):
+    @classmethod
+    def fromMarkdown(cls, md: str, *args, **kwargs):
         """
         Creates abstraction using path to file
 
         :param str path: path to markdown file
         :return: TreeOfContents object
         """
-        return TOC.fromHTML(markdown(md, *args, **kwargs))
+        if not kwargs.get('extensions', None):
+            kwargs['extensions'] = cls.default_md_extensions
+        md_text = markdown(md, *args, **kwargs)
+        return TOC.fromHTML(md_text)
 
     @staticmethod
     def fromHTML(html: str, *args, **kwargs):
