@@ -1,6 +1,7 @@
 import re
 from typing import List, Optional
 
+from markdownify import markdownify
 from markdown import markdownFromFile, markdown
 from bs4 import BeautifulSoup
 from bs4.element import Tag
@@ -29,7 +30,7 @@ class TreeOfContents:
     ## md->html
     default_md_extensions = ['markdown.extensions.fenced_code','markdown.extensions.tables']
      
-    def __init__(self, source: Tag, branches=(), descendant_tags: List[Tag]=(), depth: Optional[int]=None):
+    def __init__(self, source: Tag, branches=(), children_tags: List[Tag]=(), depth: Optional[int]=None):
         """
         Construct TreeOfContents object using source
 
@@ -40,10 +41,11 @@ class TreeOfContents:
         if source is None:
             raise ValueError('NoneType source passed into TreeOfContents')
         self.source = source
-        self.depth = depth or self.parseTopDepth()
+        self.depth = depth
+        # self.depth = depth or self.parseTopDepth()
         # MODIFIED - make branches with source.children & expand descendants later
         # self.descendants = descendants or list(source.descendants)
-        self.branches: List["TreeOfContents"] = branches or self.parseBranches(descendant_tags)
+        self.branches: List["TreeOfContents"] = branches or self.parseBranches(children_tags)
         self.descendants: List["TreeOfContents"] = self.expandDescendants()
 
     @classmethod
@@ -103,7 +105,7 @@ class TreeOfContents:
         # return sum([b.descendants for b in self.branches], []) + \
             # [b.source for b in self.branches]
 
-    def parseBranches(self, descendant_tags: List[Tag]) -> List["TreeOfContents"]:
+    def parseBranches(self, children_tags: List[Tag]) -> List["TreeOfContents"]:
         """
         Parse top level of markdown
 
@@ -119,22 +121,49 @@ class TreeOfContents:
         parsed_branches = []
         cur_level = 7
         # loop through descendant tags
+        # print('-'*30)
+        # print(str(self))
         cond = lambda b: b.name and b.name in self.valid_tags
-        for branch in filter(cond, descendant_tags):
+        for branch in filter(cond, children_tags):
+            # print(self.depth, branch.name, len(list(branch.children)), repr(branch))
+            ## If List -> add items separately
+            if self.name=="ul":
+                node = {'level': 7, 'source': branch, 'descendants': list(branch.children)}
+                parsed_branches.append(node)
+                continue
+            
+            # Check header levels
             level = self.getHeadingLevel(branch)
             if level and level<=cur_level:
                 cur_level = level
-                node = {'level': level, 'source': branch, 'descendants': []}
+                node = {'level': level, 'source': branch, 'descendants': list(branch.children)}
                 parsed_branches.append(node)
             else:
                 if not parsed_branches:
-                    node = {'level': 7, 'source': branch, 'descendants': []}
+                    node = {'level': 7, 'source': branch, 'descendants': list(branch.children)}
                     parsed_branches.append(node)
                 else:
                     parsed_branches[-1]['descendants'].append(branch)
         # print("PARSED_BRANCH", parsed_branches)
         ## Make TOC
-        return [TOC(depth=self.depth+1, source=x['source'], descendant_tags=x['descendants']) for x in parsed_branches]
+        new_depth = self.depth+1
+        branches = [TOC(depth=new_depth, source=x['source'], children_tags=x['descendants']) for x in parsed_branches]
+        return branches
+    
+    def getText(self) -> str:
+        return str(self)
+    
+    def getBranch(self, idx: int) -> "TreeOfContents":
+        return self.branches[idx]
+    
+    def getDescendantsHTML(self, ) -> str:
+        html_texts = []
+        for desc in self.descendants:
+            html_texts.append(repr(desc))
+        return "".join(html_texts)
+    
+    def getDescendantsMarkdown(self, ) -> str:
+        return markdownify(self.getDescendantsHTML())
 
     def __getattr__(self, attr, *default):
         """Check source for attributes"""
@@ -160,7 +189,13 @@ class TreeOfContents:
 
     def __str__(self):
         """Display contents"""
-        return self.string or ''
+        if self.string:
+            return self.string
+        elif self.source.get_text():
+            return self.source.get_text()
+        else:
+            return ''
+        # return self.string or ''
 
     def __iter__(self):
         """Iterator over children"""
@@ -202,7 +237,8 @@ class TreeOfContents:
             source=source,
             depth=0,
             # branches = branches
-            descendant_tags=source.children
+            children_tags=source.children
+            # children_tags=source.descendants
         )
 
 TOC = TreeOfContents
