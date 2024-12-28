@@ -1,0 +1,30 @@
+Finally, (106), (107) and (108) and are combined together to give
+
+\[\begin{split}&(\hat{J}_{l},\hat{N}_{\alpha\uparrow})=-(\hat{J}_{ l},\hat{N}_{\alpha\downarrow})\\ &\approx\sum_{n,\mathbf{k}}|\left\langle\alpha|g_{n\mathbf{k}} \right\rangle|^{2}\big{(}[M_{l}^{+}(\mathbf{k})]_{n,n}^{1,1}-[M_{l}^{-}( \mathbf{k})]_{n,n}^{1,1}\big{)}\\ &=\sum_{n,\mathbf{k}}|\left\langle\alpha|g_{n\mathbf{k}}\right\rangle |^{2}\frac{\Delta^{2}}{2E_{n\mathbf{k}}^{2}}\Bigg{[}f(E_{n\mathbf{k}})-\frac{ \beta}{2\cosh^{2}\!\left(\frac{\beta E_{n\mathbf{k}}}{2}\right)}\Bigg{]} \partial_{l}\varepsilon_{n\mathbf{k}}\,.\end{split} \tag{109}\]
+
+In the isolated band limit, only the term \(n=\bar{n}\) corresponding to the partially filled band gives a nonzero contribution. Note that, to obtain the correct result for the correlation function (109), it is important to retain all of the matrix elements of the current operator \([\hat{J}_{l}(\mathbf{k})]_{m,n}\), even if \(n,m\neq\bar{n}\). Indeed, retaining these matrix elements allowed us to use the completeness relation for the Bloch functions in (108). The need to take into account also the interband matrix elements of the current operator even in the isolated flat band limit is a general phenomenon, as we will see in the following. For this reason, one has to be particularly careful when evaluating correlation functions that involve the current operator.
+
+To compute the correlation function between the current operator and the pairing operator (107), one can use the approximation
+
+\[\begin{split}&[M_{l}^{+}(\mathbf{k})]_{n,m}^{1,2}=-\big{(}[M_{l}^ {+}(\mathbf{k})]_{m,\bar{n}}^{1,2}\big{)}^{*}\\ &\approx\frac{\Delta}{2}f(E_{\bar{n}\mathbf{k}})\left\langle \partial_{l}g_{\bar{n}\mathbf{k}}|g_{m\mathbf{k}}\right\rangle\,,\\ &[M_{l}^{+}(\mathbf{k})]_{m,n}^{1,2}\sim\frac{\Delta}{E_{\text{gap }}}\sim 0\quad\text{for}\quad m,n\neq\bar{n}\,,\end{split} \tag{110}\]
+
+valid again in the isolated band limit. In addition, all the diagonal matrix elements vanish \([M_{l}^{+}(\mathbf{k})]_{n,n}^{1,2}=0\), as one can see from (107). Thus, for the correlation function (107) we have
+
+\[\begin{split}&\big{(}\hat{J}_{l},\hat{D}_{\alpha}\big{)}=\sum_{m,n, \mathbf{k}}\left\langle\alpha|g_{m\mathbf{k}}\right\rangle[M_{l}^{+}(\mathbf{ k})]_{m,n}^{1,2}\left\langle g_{n\mathbf{k}}|\alpha\right\rangle\\ &\approx\frac{\Delta}{2}\sum_{\mathbf{k},m\neq\bar{n}}f(E_{\bar{ n}\mathbf{k}})\big{(}\left\langle\alpha|g_{i\mathbf{k}}\right\rangle\left\langle \partial_{l}g_{\bar{n}\mathbf{k}}|g_{m\mathbf{k}}\right\rangle\left\langle g_{m \mathbf{k}}|\alpha\right\rangle\\ &\qquad\qquad\qquad\qquad-\left\langle\alpha|g_{m\mathbf{k}} \right\rangle\left\langle g_{m\mathbf{k}}|\partial g_{\bar{n}\mathbf{k}} \right\rangle\left\langle g_{\bar{n}\mathbf{k}}|\alpha\right\rangle\big{)}\\ &=\frac{\Delta}{2}\sum_{\mathbf{k}}f(E_{\bar{n}\mathbf{k}})\big{[} \left\langle\alpha|g_{i\bar{n}\mathbf{k}}\right\rangle\left\langle\partial_{l}g _{\bar{n}\mathbf{k}}|\left(1-P(\mathbf{k})\right)|\alpha\right\rangle\\ &\qquad\qquad\qquad\qquad-\left\langle\alpha|\left(1-P(\mathbf{k}) \right)|\partial_{l}g_{\bar{n}\mathbf{k}}\right\rangle\left\langle g_{\bar{n} \mathbf{k}}|\alpha\right\rangle\big{]}\\ &=\frac{\Delta}{2}\sum_{\mathbf{k}}f(E_{\bar{n}\mathbf{k}})\big{[} \left\langle\alpha|\partial_{l}P(\mathbf{k})\big{(}1-P(\mathbf{k})\big{)}| \alpha\right\rangle\\ &\qquad\qquad\qquad\qquad-\left\langle\alpha|\big{(}1-P(\mathbf{k}) \big{)}\partial_{l}P(\mathbf{k})|\alpha\right\rangle\big{]}\\ &=\frac{\Delta}{2}\sum_{\mathbf{k}}f(E_{\bar{n}\mathbf{k}})\left\langle \alpha|[P(\mathbf{k}),\partial_{l}P(\mathbf{k})]|\alpha\right\rangle\,.\end{split} \tag{111}\]
+
+Again, the completeness relation in the form \(1-P(\mathbf{k})=\sum_{m\neq\bar{n}}|g_{m\mathbf{k}}\rangle\!\!\left\langle g_{m \mathbf{k}}\right|\) with \(P(\mathbf{k})=|g_{i\mathbf{k}}\rangle\!\!\left\langle g_{\bar{n}\mathbf{k}}|\) has been used.
+
+The last two correlation functions needed in order to compute the superfluid weight are
+
+\[\big{(}\hat{J}_{l_{1}},\hat{J}_{l_{2}}\big{)}=2\sum_{m,n}[M_{l_{1}}^{+}(\mathbf{k})]_{m,n}^{1,1}[\hat{J}_{l_{2}}(\mathbf{k})]_{n,m}\,, \tag{112}\]
+
+\[\big{(}\hat{J}_{l_{1}}\tau^{z},\hat{J}_{l_{2}}\tau^{z}\big{)}=2\sum_{m,n}[M_{l_{1}}^{-}( \mathbf{k})]_{m,n}^{1,1}[\hat{J}_{l_{2}}(\mathbf{k})]_{n,m}\,. \tag{113}\]
+
+In fact, according to (37), only their difference is required
+
+\[\begin{split}&\big{(}\hat{J}_{l_{1}},\hat{J}_{l_{2}}\big{)}-\big{(}\hat{J}_{l_ {1}}\tau^{z},\hat{J}_{l_{2}}\tau^{z}\big{)}\\ &=\sum_{n,\mathbf{k}}\frac{\Delta^{2}}{E_{n\mathbf{k}}^{2}} \Bigg{[}f(E_{n\mathbf{k}})-\frac{\beta}{2\cosh^{2}\!\left(\frac{\beta
+In the isolated band limit, the first sum gives the conventional contribution to the superfluid weight in (50), while the second one with \(m\neq n\) corresponds to the geometric contribution in (51). Indeed, in the case of the geometric contribution, one can proceed as follows
+
+\[\sum_{\begin{subarray}{c}m,\,n\\ m\neq n\end{subarray}}\frac{(\varepsilon_{m\mathbf{k}}-\varepsilon_{n\mathbf{k}} )^{2}}{E_{m\mathbf{k}}^{2}-E_{n\mathbf{k}}^{2}}\big{[}f(E_{n\mathbf{k}})-f(E_{m \mathbf{k}})\big{]}\] \[\qquad\qquad\qquad\qquad\qquad\times\left\langle\partial_{1_{1}} g_{m\mathbf{k}}\right|g_{n\mathbf{k}}\right\rangle\left\langle g_{n\mathbf{k}} \right|\partial_{l_{2}}g_{m\mathbf{k}}\big{\rangle}\] \[\approx f(E_{\bar{n}\mathbf{k}})\sum_{m\neq\bar{n}}\left\langle \partial_{l_{1}}g_{\bar{n}\mathbf{k}}|g_{m\mathbf{k}}\right\rangle\left\langle g _{m\mathbf{k}}|\partial_{l_{2}}g_{\bar{n}\mathbf{k}}\right\rangle+(l_{1} \leftrightarrow l_{2})\] \[=f(E_{\bar{n}\mathbf{k}})\left\langle\partial_{l_{1}}g_{\bar{n} \mathbf{k}}\right|\left(1-P(\mathbf{k})\right)\left|\partial_{l_{2}}g_{\bar{ n}\mathbf{k}}\right\rangle+(l_{1}\leftrightarrow l_{2})\] \[=f(E_{\bar{n}\mathbf{k}})\operatorname{Tr}[\partial_{1_{1}}P( \mathbf{k})\partial_{l_{2}}P(\mathbf{k})]\,. \tag{68}\]
+
+Thus, the Bloch function \(|g_{\bar{n}\mathbf{k}}\rangle\) of the partially filled band enters only through the quantum metric (52). Again, it is important to notice that the completeness relation has been used in the above derivation.

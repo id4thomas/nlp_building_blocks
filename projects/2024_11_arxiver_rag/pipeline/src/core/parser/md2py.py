@@ -26,7 +26,9 @@ class TreeOfContents:
         'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'time',
         'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr')
     allowed_attrs = ('string', 'name')
+    ## header
     header_name_pattern = r"^h([1-6])"
+    max_header_level = 7
     ## md->html
     default_md_extensions = ['markdown.extensions.fenced_code','markdown.extensions.tables']
      
@@ -86,7 +88,7 @@ class TreeOfContents:
         >>> TOC.fromHTML('<h3>haha</h3><h2>hoho</h2>').parseTopDepth()
         2
         """
-        for i in range(1, 7):
+        for i in range(1, self.max_header_level):
             if getattr(self.source, 'h{}'.format(i)):
                 return i
 
@@ -112,6 +114,7 @@ class TreeOfContents:
         :param list elements: list of source objects
         :return: list of filtered TreeOfContents objects
         """
+        # print("DEPTH", self.depth, self.source)
         # parsed, parent, cond = [], False, lambda b: (b.string or '').strip()
         # parsed, parent, cond = [], False, lambda b: b.name and b.name in self.valid_tags
         parent_level = self.getHeadingLevel(self.source)
@@ -119,32 +122,33 @@ class TreeOfContents:
             parent_level = 0
 
         parsed_branches = []
-        cur_level = 7
+        ## max_level - only support h1~h6 -> set 7 as initial cur_level
+        cur_level = self.max_header_level
         # loop through descendant tags
-        # print('-'*30)
-        # print(str(self))
         cond = lambda b: b.name and b.name in self.valid_tags
         for branch in filter(cond, children_tags):
             # print(self.depth, branch.name, len(list(branch.children)), repr(branch))
-            ## If List -> add items separately
-            if self.name=="ul":
-                node = {'level': 7, 'source': branch, 'descendants': list(branch.children)}
-                parsed_branches.append(node)
-                continue
-            
-            # Check header levels
+            ## Check if branch is header (h1, h2,..)
             level = self.getHeadingLevel(branch)
-            if level and level<=cur_level:
+            
+            # if is header
+            if level is not None and level<=cur_level:
+                # split out to new branch
                 cur_level = level
                 node = {'level': level, 'source': branch, 'descendants': list(branch.children)}
                 parsed_branches.append(node)
+            # if item is not under a header
+            elif cur_level==self.max_header_level:
+                node = {'level': self.max_header_level, 'source': branch, 'descendants': list(branch.children)}
+                parsed_branches.append(node)
+                continue
             else:
                 if not parsed_branches:
-                    node = {'level': 7, 'source': branch, 'descendants': list(branch.children)}
+                    node = {'level': self.max_header_level, 'source': branch, 'descendants': list(branch.children)}
                     parsed_branches.append(node)
                 else:
                     parsed_branches[-1]['descendants'].append(branch)
-        # print("PARSED_BRANCH", parsed_branches)
+
         ## Make TOC
         new_depth = self.depth+1
         branches = [TreeOfContents(depth=new_depth, source=x['source'], children_tags=x['descendants']) for x in parsed_branches]

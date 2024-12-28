@@ -13,3 +13,19 @@
             * https://github.com/fmelon/MarkdownTree
 * 3_test_section_splitter
     * Paper, Section 이라는 데이터 클래스를 만들어서 제대로 분할 진행
+* 4_test_section_splitter_module
+    * `sample.parquet` 샘플들로 처리 가능여부 테스트
+    * 8 프로세스로 처리
+```
+(llm) id4thomas@YRMB14-2 2411_2_analyze_arxiver_data % python 4_test_section_splitter_module.py
+(10000, 7) Index(['id', 'title', 'abstract', 'authors', 'published_date', 'link',
+       'markdown'],
+      dtype='object')
+2677 RECURSION ERROR maximum recursion depth exceeded
+Total 10000 failed 1
+Elapsed 149.208
+```
+
+* 5_debug_md2py_max_recursion
+    * `maximum recursion depth exceeded` 오류 샘플 디버깅
+    * https://www.notion.so/241228-splitter-maximum-recusrion-depth-fdfc4755cf684f3bb394bd743bc5fce4?pvs=4
