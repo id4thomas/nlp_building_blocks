@@ -14,4 +14,5 @@ Folder Tree
 | --- | --- |
 | 2410_1_vlm_test | colqwen->vlm POC test |
 | 2411_1_semantic_splitter | semantic chunking test |
-| 2411_2_analyze_arxiver_data | EDA on arxiver dataset |
+| 2411_2_section_splitter | developing splitter module |
+| 2412_1_section_chunking | developing chunking module |
