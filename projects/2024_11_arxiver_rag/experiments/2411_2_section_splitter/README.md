@@ -1,4 +1,7 @@
-# 2411_2_analyze_arxiver_data
+# 2411_2_section_splitter
+* 데이터를 헤더 (섹션) 단위로 분리하는 모듈을 개발한다
+
+## Experiments
 * 1_read_arxiver_data
     * arxiver parquet 데이터 읽고 길이 분석 (abstract, sections)
 * 2_test_markdown_splitter
@@ -29,3 +32,6 @@ Elapsed 149.208
 * 5_debug_md2py_max_recursion
     * `maximum recursion depth exceeded` 오류 샘플 디버깅
     * https://www.notion.so/241228-splitter-maximum-recusrion-depth-fdfc4755cf684f3bb394bd743bc5fce4?pvs=4
+
+* 6_test_section_data
+    * ArxivPaperSection 데이터 클래스 구성, 테스트 (3번 실험의 연장선)
