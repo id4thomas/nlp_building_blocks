@@ -23,3 +23,11 @@ Subsection Title: "{subsection_title}"
 Text:
 {text}'''
 ```
+
+### 2_langchain_vector_store
+* langchain으로 포매팅한 청크 임베딩 & 인덱싱
+    * https://python.langchain.com/docs/integrations/vectorstores/qdrant/
+* db: qdrant in-memory
+* 설치 패키지:
+    * langchain-qdrant, langchain-openai
+    * fastembed
