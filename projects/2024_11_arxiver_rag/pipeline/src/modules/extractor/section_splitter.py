@@ -1,10 +1,16 @@
 from abc import ABC, abstractmethod
 from typing import List
 
+from langchain_text_splitters import MarkdownHeaderTextSplitter
 from markdownify import markdownify as md
 
 from core.data.paper import ArxivPaperSection
 from core.parser.md2py import TreeOfContents
+
+headers_to_split_on = [
+    ("###", "h3"),
+]
+markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on=headers_to_split_on)
 
 class MarkdownArxivPaperSectionSplitter:
     def __init__(self):
@@ -17,6 +23,26 @@ class MarkdownArxivPaperSectionSplitter:
     @classmethod
     def is_type(cls, text: str) -> bool:
         return False
+    
+    def get_children_sections(self, section: ArxivPaperSection) -> List[ArxivPaperSection]:
+        text = section.text
+        splits = markdown_splitter.split_text(text)
+        children = []
+        for split in splits:
+            if 'h3' in split.metadata:
+                header = "h3"
+                title=split.metadata.get("h3", "")
+            else:
+                header = "p"
+                title=""
+                
+            section = ArxivPaperSection(
+                header=header,
+                title=title,
+                text=split.page_content
+            )
+            children.append(section)
+        return children
     
 class Case1Splitter(MarkdownArxivPaperSectionSplitter):
     """Case1: everything under h1 title"""
@@ -42,6 +68,7 @@ class Case1Splitter(MarkdownArxivPaperSectionSplitter):
                 title = child.getText(),
                 text = child.getDescendantsMarkdown()
             )
+            section.children = self.get_children_sections(section)
             sections.append(section)
         return sections
     
@@ -68,5 +95,6 @@ class Case2Splitter(MarkdownArxivPaperSectionSplitter):
                 title = child.getText(),
                 text = child.getDescendantsMarkdown()
             )
+            section.children = self.get_children_sections(section)
             sections.append(section)
         return sections

@@ -4,8 +4,8 @@ from typing import List, Literal
 from pydantic import BaseModel, Field
 
 class ArxivPaperSection(BaseModel):
-    header: Literal["h2", "h3", "h4", "h5", "h6"]
-    title:str = Field(..., description="Section title")
+    header: Literal["h2", "h3", "h4", "h5", "h6", "p"]
+    title:str = Field("", description="Section title")
     text: str = Field("", description = "Section contents")
     children: List["ArxivPaperSection"] = Field(list(), description="child sections")
 
