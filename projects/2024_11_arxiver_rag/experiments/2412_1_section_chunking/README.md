@@ -24,10 +24,18 @@ Text:
 {text}'''
 ```
 
-### 2_langchain_vector_store
+### 2_langchain_search
 * langchain으로 포매팅한 청크 임베딩 & 인덱싱
     * https://python.langchain.com/docs/integrations/vectorstores/qdrant/
-* db: qdrant in-memory
 * 설치 패키지:
     * langchain-qdrant, langchain-openai
     * fastembed
+### 2-1. qdrant
+* db: qdrant in-memory
+### 2-2. pgvector
+* db: pgvector
+    * https://python.langchain.com/docs/integrations/vectorstores/pgvector/
+    * https://github.com/pgvector/pgvector
+* 추가 설치
+    * pip install psycopg[binary,pool]
+    * brew install libpq
