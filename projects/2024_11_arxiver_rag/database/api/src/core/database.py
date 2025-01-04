@@ -18,6 +18,6 @@ Base = declarative_base()
 
 
 # Dependency for getting the async DB session
-async def get_info_db():
+async def get_db_session():
     async with AsyncSessionLocal() as session:
         yield session
