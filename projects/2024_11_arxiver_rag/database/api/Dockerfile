@@ -1,7 +1,10 @@
 FROM python:3.10.15-slim-bookworm
 
 ENV TZ=Asia/Seoul
-RUN apt-get update && apt-get install -y tzdata
+RUN apt-get update \
+    && apt-get install -y tzdata \
+    && apt-get install -y libpq5 libpq-dev
+
 RUN ln -snf /user/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN pip install -U poetry
