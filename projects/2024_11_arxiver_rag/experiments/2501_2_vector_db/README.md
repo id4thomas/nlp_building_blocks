@@ -19,7 +19,7 @@
     * psycopg[binary,pool], langchain_postgres
     * brew install libpq
 
-**Notes**: [langchain_pgvector.md - 1_2_langchain_pgvector](./langchain_pgvector.md)
+**Notes**: [langchain_pgvector](./langchain_pgvector.md)
 
 #### 1-3. sqlite-vec
 * db: sqlite + sqlite-vec
@@ -90,9 +90,9 @@ persistent storage folder:
     * llama-index-vector-stores-postgres
         * langchain과 버전 충돌 주의 `langchain-postgres 0.0.12 requires pgvector<0.3.0,>=0.2.5, but you have pgvector 0.3.6 which is incompatible.`
 
-## Database
-* database tests
+**Notes**: [llamaindex_pgvector](./llamaindex_pgvector.md)
 
+## Database
 ### discussions
 Comparisons & Suggestions
 * top contendors: weaviate, chromadb, pgvector, lancedb

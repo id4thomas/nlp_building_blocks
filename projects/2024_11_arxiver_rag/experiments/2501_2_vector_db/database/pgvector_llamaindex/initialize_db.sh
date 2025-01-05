@@ -14,6 +14,8 @@ docker run \
   -v ./local_storage:/var/lib/postgresql/data \
   -v ./db-initialization:/docker-entrypoint-initdb.d \
   -p ${POSTGRES_PORT:-6024}:5432 \
-  postgres:$POSTGRES_VERSION
+  pgvector/pgvector:pg${POSTGRES_VERSION}
+
+# postgres:$POSTGRES_VERSION
 
 docker container rm -f postgres-init
