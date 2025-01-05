@@ -54,6 +54,8 @@ CREATE UNIQUE INDEX ix_langchain_pg_embedding_id ON public.langchain_pg_embeddin
 #### 1-3. sqlite-vec
 * db: sqlite + sqlite-vec
     * https://alexgarcia.xyz/sqlite-vec/
+        * !! Only brute-force search for now
+        * 
     * https://python.langchain.com/docs/integrations/vectorstores/sqlitevec/
 * 추가 설치
     * sqlite-vec
@@ -67,6 +69,44 @@ CREATE UNIQUE INDEX ix_langchain_pg_embedding_id ON public.langchain_pg_embeddin
     * https://lancedb.github.io/lancedb/basic/#preview-releases
 * 추가 설치:
     * pip install tantivy lancedb
+
+**Notes**
+persistent storage folder:
+```
+.
+└── langchain_test.lance
+    ├── _transactions
+    ├── _versions
+    └── data
+```
+
+#### 1-5. weaviate
+* db: weaviate (running local container)
+    * https://python.langchain.com/docs/integrations/vectorstores/weaviate/
+    * https://weaviate.io/developers/weaviate/installation/docker-compose
+* 추가 설치:
+    * pip install langchain-weaviate
+        * `Detected incompatible Protobuf Gencode/Runtime versions when loading grpc_health/v1/health.proto: gencode 5.29.0 runtime 5.27.1. Runtime version cannot be older than the linked gencode version. See Protobuf version guarantees at` -> update protobuf 
+
+**Notes**
+* no metadata filter support
+
+persistent storage folder:
+```
+(base) ➜  local_storage git:(main) ✗ tree -L 2
+.
+├── classifications.db
+├── langchain_04480efc670c4256ab58d017cb184770
+│   └── n3Et04Myjnkd
+├── migration1.19.filter2search.skip.flag
+├── migration1.19.filter2search.state
+├── migration1.22.fs.hierarchy
+├── modules.db
+├── raft
+│   ├── raft.db
+│   └── snapshots
+└── schema.db
+```
 
 ### 2_llamaindex_search
 * llama-index based search
@@ -84,9 +124,23 @@ CREATE UNIQUE INDEX ix_langchain_pg_embedding_id ON public.langchain_pg_embeddin
 * database tests
 
 ### discussions
+Comparisons & Suggestions
 * top contendors: weaviate, chromadb, pgvector, lancedb
 * https://www.reddit.com/r/LocalLLaMA/comments/1e63m16/vector_database_pgvector_vs_milvus_vs_weaviate/
-    * 
-    * lancedb
+    * postgres fts (full-text-search)
+        * https://www.postgresql.org/docs/current/textsearch.html
+    * sqlite-vss working but abandoned, sqlite-vec early stages
+    * suggestions:
+        * pgvector + pgvectorscale
+            * https://github.com/timescale/pgvectorscale
+        * lancedb
+        * weaviate for verbis: https://github.com/alexmavr/verbis
+            * macos only
 * https://www.reddit.com/r/LangChain/comments/170jigz/my_strategy_for_picking_a_vector_database_a/
     * https://benchmark.vectorview.ai/vectordbs.html
+
+Personal Thoughts
+* **pgvector (+ extensions)** seems easier for management with existing dbs
+* sqlite based methods also worth looking
+    * not suitable yet for large-scale
+    * will eventually gain some form of ANN indexes in the near future
