@@ -61,15 +61,32 @@ CREATE UNIQUE INDEX ix_langchain_pg_embedding_id ON public.langchain_pg_embeddin
     * update & delete on vector store not supported yet via langchain
     * query->retriever not supported yet
 
+#### 1-4. lancedb
+* db: lancedb
+    * https://python.langchain.com/docs/integrations/vectorstores/lancedb/
+    * https://lancedb.github.io/lancedb/basic/#preview-releases
+* 추가 설치:
+    * pip install tantivy lancedb
 
 ### 2_llamaindex_search
 * llama-index based search
+* 설치
+    * llama-index
+    * llama-index-embeddings-openai, llama-index-embeddings-langchain, llama-index-embeddings-text-embeddings-inference
 
 #### 2-1. pgvector
 * db:
 * 추가 설치:
-    * llama-index-vector-stores-postgres, llama-index
-
+    * llama-index-vector-stores-postgres
+        * langchain과 버전 충돌 주의 `langchain-postgres 0.0.12 requires pgvector<0.3.0,>=0.2.5, but you have pgvector 0.3.6 which is incompatible.`
 
 ## Database
 * database tests
+
+### discussions
+* top contendors: weaviate, chromadb, pgvector, lancedb
+* https://www.reddit.com/r/LocalLLaMA/comments/1e63m16/vector_database_pgvector_vs_milvus_vs_weaviate/
+    * 
+    * lancedb
+* https://www.reddit.com/r/LangChain/comments/170jigz/my_strategy_for_picking_a_vector_database_a/
+    * https://benchmark.vectorview.ai/vectordbs.html
