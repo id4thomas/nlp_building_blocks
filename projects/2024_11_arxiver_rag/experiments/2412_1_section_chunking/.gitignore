@@ -1,3 +1,0 @@
-*.parquet
-pgvector_data/
-.env
