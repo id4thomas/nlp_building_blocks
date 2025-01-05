@@ -6,6 +6,7 @@ echo "ENV: ${APP_ENV}"
 
 POSTGRES_VERSION="16"
 
+docker container rm -f pgvector-langchain-db
 docker run \
     --name pgvector-langchain-db \
     -e POSTGRES_USER=${POSTGRES_USER:-langchain} \

@@ -10,7 +10,7 @@ docker run \
   --name postgres-init \
   -e POSTGRES_USER=${POSTGRES_USER:-langchain} \
   -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-langchain} \
-  -e POSTGRES_DB=${POSTGRES_DB:-muhayu} \
+  -e POSTGRES_DB=${POSTGRES_DB:-pgvector_langchain} \
   -v ./local_storage:/var/lib/postgresql/data \
   -v ./db-initialization:/docker-entrypoint-initdb.d \
   -p ${POSTGRES_PORT:-6024}:5432 \
