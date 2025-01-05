@@ -68,52 +68,111 @@ class LangChainEmbedding(Base):
         Index("ix_embedding_vector", "embedding", postgresql_using="ivfflat"),
     )
 
-# Perform Similarity Search
-def search_similar_embeddings(query_vector, collection_id, top_k=5):
-    """
-    Perform similarity search on the langchain_pg_embedding table.
-    Args:
-        query_vector (list): The query embedding vector.
-        collection_id (str): The UUID of the collection to search within.
-        top_k (int): Number of top results to return.
-    Returns:
-        list: List of matching rows with similarity scores.
-    """
-    with Session() as session:
-        # SQLAlchemy query
-        stmt = (
-            select(
-                LangChainEmbedding.id,
-                LangChainEmbedding.document,
-                LangChainEmbedding.cmetadata,
-                LangChainEmbedding.embedding.cosine_distance(query_vector).label("similarity")
+class LangChainCollection(Base):
+    __tablename__ = "langchain_pg_collection"
+
+    uuid = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, nullable=False)
+    name = Column(String, unique=True, nullable=False)
+    cmetadata = Column(JSON, nullable=True)
+
+    __table_args__ = (
+        Index("langchain_pg_collection_name_key", "name", unique=True),
+    )
+
+    def __repr__(self):
+        return f"<LangChainCollection(uuid={self.uuid}, name={self.name}, cmetadata={self.cmetadata})>"
+
+from typing import List, Optional, Dict, Sequence, Any
+from sqlalchemy.sql import asc
+from sqlalchemy import Float
+from sqlalchemy import cast
+from sqlalchemy.dialects.postgresql import JSONB
+
+class VectorSearchService:
+    def __init__(self, session_factory, embedding_store, collection_store):
+        """
+        Initialize the service.
+        Args:
+            session_factory: A function or context manager that provides a database session.
+            embedding_store: The SQLAlchemy model for the embedding table.
+            collection_store: The SQLAlchemy model for the collection table.
+        """
+        self._make_sync_session = session_factory
+        self.EmbeddingStore = embedding_store
+        self.CollectionStore = collection_store
+    
+    def _create_filter_clause(self, filters: Dict[str, str]):
+        """
+        Create a filter clause for JSONB fields.
+        Args:
+            filters: A dictionary of filters to apply.
+        Returns:
+            SQLAlchemy binary expression for filtering.
+        """
+        return cast(self.EmbeddingStore.cmetadata, JSONB).op("@>")(cast(filters, JSONB))
+
+    def distance_strategy(self, embedding: List[float]):
+        """
+        Return the distance metric to use for vector similarity.
+        Args:
+            embedding (list): Query vector for similarity search.
+        Returns:
+            SQL expression for the distance metric.
+        """
+        return self.EmbeddingStore.embedding.cosine_distance(embedding)
+
+    def query_collection(
+        self,
+        embedding: List[float],
+        k: int = 4,
+        filter: Optional[Dict[str, str]] = None,
+    ) -> Sequence[Any]:
+        """
+        Query the collection for the most similar embeddings.
+        Args:
+            embedding (list): The query embedding.
+            k (int): Number of results to retrieve.
+            filter (dict, optional): Filters to apply on metadata.
+        Returns:
+            List of results with similarity scores.
+        """
+        with self._make_sync_session() as session:
+            # Ensure the collection exists
+            collection = session.query(self.CollectionStore).first()
+            if not collection:
+                raise ValueError("Collection not found")
+
+            # Create filter conditions
+            filter_by = [self.EmbeddingStore.collection_id == collection.uuid]
+            if filter:
+                filter_clause = self._create_filter_clause(filter)
+                if filter_clause is not None:
+                    filter_by.append(filter_clause)
+
+            # Query embeddings with similarity search
+            results: List[Any] = (
+                session.query(
+                    self.EmbeddingStore,
+                    self.distance_strategy(embedding).label("distance"),
+                )
+                .filter(*filter_by)
+                .order_by(asc("distance"))
+                .limit(k)
+                .all()
             )
-            .where(LangChainEmbedding.collection_id == collection_id)
-            .order_by("similarity")
-            .limit(top_k)
-        )
 
-        results = session.execute(stmt).fetchall()
+        return results
 
-    # Parse results
-    return [
-        {
-            "id": row.id,
-            "document": row.document,
-            "cmetadata": row.cmetadata,
-            "similarity": row.similarity,
-        }
-        for row in results
-    ]
+service = VectorSearchService(sessionmaker(bind=engine), LangChainEmbedding, LangChainCollection)
 
-query_vector = [0.1]*1024
-print(len(query_vector))
-collection_id = "054bd89a-e570-4fb4-8466-e7ff6cd644ea"  # Replace with your collection UUID
-results = search_similar_embeddings(query_vector, collection_id)
+# Query for similar embeddings
+query_vector = [0.1] * 1024  # Example query vector
+results = service.query_collection(embedding=query_vector, k=5, filter={"source": "tweet"})
 
 # Print results
 for result in results:
-    print(f"ID: {result['id']}, Similarity: {result['similarity']}, Document: {result['document']}")
+    embedding, distance = result
+    print(f"ID: {embedding.id}, Distance: {distance}, Document: {embedding.document}")
 
 ->
 1024
