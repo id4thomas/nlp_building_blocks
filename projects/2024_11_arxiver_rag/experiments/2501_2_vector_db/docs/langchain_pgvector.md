@@ -2,7 +2,13 @@
 * analyze how db schema in constructed under the hood when using langchain + pgvector
 
 ## Envs
-* `pgvector/pgvector:pg16` docker image
+* db: pgvector
+    * `pgvector/pgvector:pg16` docker image
+    * https://python.langchain.com/docs/integrations/vectorstores/pgvector/
+    * https://github.com/pgvector/pgvector
+* 추가 설치
+    * psycopg[binary,pool], langchain_postgres
+    * brew install libpq
 
 ## DB Schema
 * langchain combines all 'collections' rows into 2 tables

@@ -5,78 +5,17 @@
 ### 1_langchain_search
 * langchain으로 포매팅한 청크 임베딩 & 인덱싱
     * https://python.langchain.com/docs/integrations/vectorstores/qdrant/
-* 설치 패키지:
-    * langchain-qdrant, langchain-openai
-    * fastembed
-#### 1-1. qdrant
-* db: qdrant in-memory
+* 실험 대상 DB 백엔드
+    1. [qdrant](./docs/langchain_qdrant.md)
+    2. [pgvector](./docs/langchain_pgvector.md)
+    3. [sqlite-vec](./docs/langchain_sqlitevec.md)
+    4. [lancedb](./docs/langchain_lancedb.md)
+    5. [weaviate](./docs/langchain_weaviate.md)
+    6. [milvus](./docs/langchain_milvus.md)
+    7. [chromadb](./docs/langchain_chromadb.md)
+    8. faiss
+    9. mongodb-atlas
 
-#### 1-2. pgvector
-* db: pgvector
-    * https://python.langchain.com/docs/integrations/vectorstores/pgvector/
-    * https://github.com/pgvector/pgvector
-* 추가 설치
-    * psycopg[binary,pool], langchain_postgres
-    * brew install libpq
-
-**Notes**: [langchain_pgvector](./langchain_pgvector.md)
-
-#### 1-3. sqlite-vec
-* db: sqlite + sqlite-vec
-    * https://alexgarcia.xyz/sqlite-vec/
-        * !! Only brute-force search for now
-        * 
-    * https://python.langchain.com/docs/integrations/vectorstores/sqlitevec/
-* 추가 설치
-    * sqlite-vec
-* issues
-    * update & delete on vector store not supported yet via langchain
-    * query->retriever not supported yet
-
-#### 1-4. lancedb
-* db: lancedb
-    * https://python.langchain.com/docs/integrations/vectorstores/lancedb/
-    * https://lancedb.github.io/lancedb/basic/#preview-releases
-* 추가 설치:
-    * pip install tantivy lancedb
-
-**Notes**
-persistent storage folder:
-```
-.
-└── langchain_test.lance
-    ├── _transactions
-    ├── _versions
-    └── data
-```
-
-#### 1-5. weaviate
-* db: weaviate (running local container)
-    * https://python.langchain.com/docs/integrations/vectorstores/weaviate/
-    * https://weaviate.io/developers/weaviate/installation/docker-compose
-* 추가 설치:
-    * pip install langchain-weaviate
-        * `Detected incompatible Protobuf Gencode/Runtime versions when loading grpc_health/v1/health.proto: gencode 5.29.0 runtime 5.27.1. Runtime version cannot be older than the linked gencode version. See Protobuf version guarantees at` -> update protobuf 
-
-**Notes**
-* no metadata filter support
-
-persistent storage folder:
-```
-(base) ➜  local_storage git:(main) ✗ tree -L 2
-.
-├── classifications.db
-├── langchain_04480efc670c4256ab58d017cb184770
-│   └── n3Et04Myjnkd
-├── migration1.19.filter2search.skip.flag
-├── migration1.19.filter2search.state
-├── migration1.22.fs.hierarchy
-├── modules.db
-├── raft
-│   ├── raft.db
-│   └── snapshots
-└── schema.db
-```
 
 ### 2_llamaindex_search
 * llama-index based search
