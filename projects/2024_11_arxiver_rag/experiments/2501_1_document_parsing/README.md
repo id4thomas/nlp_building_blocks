@@ -22,7 +22,15 @@ install requiremenss
     * detectron2: `pip install 'git+https://github.com/facebookresearch/detectron2.git'`
 * opencv
 
-### 3_doclayout_yolov10
+### 3_docling_test
+* IBM docling
+    * https://github.com/DS4SD/docling
+    * https://github.com/DS4SD/docling-core
+
+install requirements
+* docling (uses torch)
+
+### *_doclayout_yolov10
 * use document layout yolo code
 * https://github.com/opendatalab/DocLayout-YOLO?tab=readme-ov-file
     * https://huggingface.co/spaces/opendatalab/DocLayout-YOLO/blob/main/app.py
