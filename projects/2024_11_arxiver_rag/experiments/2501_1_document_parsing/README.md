@@ -38,3 +38,15 @@ install requirements
 ## Data Samples
 * Attention Is All You Need
     * https://arxiv.org/abs/1706.03762v7
+
+
+## Resources
+OCR candidates
+* https://github.com/OpenBMB/MiniCPM-V
+* https://mindee.github.io/doctr/
+* https://github.com/abgulati/kosmos-2_5-containerized?tab=readme-ov-file
+* https://huggingface.co/NCSOFT/VARCO-VISION-14B
+    * <ocr>
+* https://github.com/VikParuchuri/surya?tab=readme-ov-file
+* https://huggingface.co/cycloneboy/korean_PP-OCRv4_rec_infer
+* https://huggingface.co/mPLUG/DocOwl2
