@@ -47,6 +47,8 @@
 #### 유료 API 서비스
 - jinaai - embedding API에 멀티모달 지원
     - `https://api.jina.ai/v1/embeddings`
+- voyage AI - multimodal embedding 전용 모델
+    * https://blog.voyageai.com/2024/11/12/voyage-multimodal-3/
 
 ### rag 프레임워크
 - langchain, llama-index에서 멀티모달 검색 현황 확인
