@@ -24,15 +24,21 @@
     * llama-index-embeddings-openai, llama-index-embeddings-langchain, llama-index-embeddings-text-embeddings-inference
 
 #### 2-1. pgvector
-* db:
 * 추가 설치:
     * llama-index-vector-stores-postgres
         * langchain과 버전 충돌 주의 `langchain-postgres 0.0.12 requires pgvector<0.3.0,>=0.2.5, but you have pgvector 0.3.6 which is incompatible.`
 
 **Notes**: [llamaindex_pgvector](./llamaindex_pgvector.md)
 
-## Database
-### discussions
+### 5. multi-vector retrieval
+#### 5-1. llamaindex_multimodal test
+* test llama-index's multimodal implementations
+
+**Notes:** [llamaindex-multimodal](./docs/llamaindex_multimodal.md)
+
+
+## Discussions
+### Which VectorDB to use
 Comparisons & Suggestions
 * top contendors: weaviate, chromadb, pgvector, lancedb
 * https://www.reddit.com/r/LocalLLaMA/comments/1e63m16/vector_database_pgvector_vs_milvus_vs_weaviate/
@@ -53,3 +59,7 @@ Personal Thoughts
 * sqlite based methods also worth looking
     * not suitable yet for large-scale
     * will eventually gain some form of ANN indexes in the near future
+
+
+### Multi-vector retrieval?
+* text+image embedding or colpali-style retrieval
