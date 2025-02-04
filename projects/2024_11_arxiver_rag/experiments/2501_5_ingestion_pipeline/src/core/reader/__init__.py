@@ -1,5 +1,7 @@
-from .docling.pdf_reader import DoclingPDFReader
+from .pdf.docling_reader import DoclingPDFReader
+from .pdf.pdf2image_reader import PDF2ImageReader
 
 __all__ = [
-    "DoclingPDFReader"
+    "DoclingPDFReader",
+    "PDF2ImageReader"
 ]

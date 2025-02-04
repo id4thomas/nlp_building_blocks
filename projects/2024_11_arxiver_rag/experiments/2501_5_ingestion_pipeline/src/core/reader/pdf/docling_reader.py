@@ -35,9 +35,11 @@ if TYPE_CHECKING:
         DocItemLabel,
     )
 
+# TODO - implement option class
 class DoclingPDFReaderOptions(BaseModel):
     pass
 
+# TODO - utilize bbox starting point info
 def _convert_bbox_bl_tl(
         bbox: list[float], page_width: int, page_height: int
     ) -> list[float]:
