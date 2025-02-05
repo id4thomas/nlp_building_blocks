@@ -104,12 +104,13 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
                 processed_images = self.processor.process_images(
                     batch_images
                 ).to(self.model.device)
-                print(processed_images['input_ids'].shape)
+                # print(processed_images['input_ids'].shape)
                 batch_embeddings = self.model(**processed_images)
                 del processed_images
-                batch_embeddings = batch_embeddings.cpu().detach()
-            embeddings.append(batch_embeddings.cpu())
-        return torch.cat(embeddings, dim=0)
+                batch_embeddings = batch_embeddings.cpu().detach().tolist()
+            embeddings.extend(batch_embeddings)
+        # return torch.cat(embeddings, dim=0)
+        return embeddings
     
     def calculate_scores(
         self,
