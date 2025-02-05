@@ -55,7 +55,7 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
     def embed_queries(
         self,
         queries: List[str],
-        batch_size: int = 32
+        batch_size: int = 4
     ) -> "torch.Tensor":
         """
         Embed a list of query strings using batching.
@@ -84,7 +84,7 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
     def embed_images(
         self,
         images: List[Image.Image],
-        batch_size: int = 32
+        batch_size: int = 4
     ) -> "torch.Tensor":
         """
         Embed a list of images using batching.
@@ -104,6 +104,7 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
                 processed_images = self.processor.process_images(
                     batch_images
                 ).to(self.model.device)
+                print(processed_images['input_ids'].shape)
                 batch_embeddings = self.model(**processed_images)
                 del processed_images
                 batch_embeddings = batch_embeddings.cpu().detach()
@@ -128,7 +129,7 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
         queries: Optional[List[str]] = None,
         nodes: Optional[List["ImageNode"]] = None,
         mode: Literal["image", "query"] = "image",
-        batch_size: int = 32
+        batch_size: int = 4
     ):
         if mode=="image":
             images: List[Image.Image] = self._get_images_from_nodes(
