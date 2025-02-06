@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import List, Optional, Union
 
 from core.base.schema import Document
+
 class BaseVectorStore(ABC):
     """Vector storage for a single collection"""
     
@@ -33,21 +34,6 @@ class BaseVectorStore(ABC):
         Returns:
             List of ids of the inserted embeddings
         """
-        ...
-        
-    @abstractmethod
-    async def aadd(
-        self,
-        documents: Union[Document, List[Document]],
-        embeddings: Union[
-            List[float], List[List[float]],
-            List[int], List[List[int]]
-        ],
-        metadatas: Optional[list[dict]] = None,
-        ids: Optional[Union[List[str], str]] = None,
-        **kwargs,
-    ):
-        """Asynchronously add vector embeddings to vector stores"""
         ...
         
     @abstractmethod

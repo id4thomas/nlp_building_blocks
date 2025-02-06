@@ -1,4 +1,3 @@
-
 from typing import List, Literal, Optional, Union, TYPE_CHECKING
 
 from PIL import Image
@@ -56,7 +55,7 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
         self,
         queries: List[str],
         batch_size: int = 4
-    ) -> "torch.Tensor":
+    ) -> List[List[List[float]]]:
         """
         Embed a list of query strings using batching.
         
@@ -77,15 +76,15 @@ class LocalColpaliEngineEmbedder(BaseEmbedder):
                 ).to(self.model.device)
                 batch_embeddings = self.model(**processed_queries)
                 del processed_queries
-                batch_embeddings = batch_embeddings.cpu().detach()
-            embeddings.append(batch_embeddings.cpu())
-        return torch.cat(embeddings, dim=0)
+                batch_embeddings = batch_embeddings.cpu().detach().tolist()
+            embeddings.extend(batch_embeddings)
+        return embeddings
     
     def embed_images(
         self,
         images: List[Image.Image],
         batch_size: int = 4
-    ) -> "torch.Tensor":
+    ) -> List[List[List[float]]]:
         """
         Embed a list of images using batching.
         

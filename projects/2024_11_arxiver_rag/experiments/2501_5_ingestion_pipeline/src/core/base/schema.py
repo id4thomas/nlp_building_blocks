@@ -102,8 +102,7 @@ class BaseNode(BaseModel):
     )
     metadata: Dict[str, Any] = Field(
         default_factory=dict,
-        description="A flat dictionary of metadata fields",
-        alias="extra_info",
+        description="A flat dictionary of metadata fields"
     )
     
     @classmethod

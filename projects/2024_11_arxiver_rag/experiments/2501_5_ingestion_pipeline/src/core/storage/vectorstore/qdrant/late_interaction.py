@@ -15,98 +15,30 @@ from core.base.schema import (
 )
 from core.storage.vectorstore.base import BaseVectorStore
 from core.storage.vectorstore.utils import document_to_metadata_dict
+from core.storage.vectorstore.qdrant.base import BaseQdrantVectorStore
 
 if TYPE_CHECKING:
     from qdrant_client import QdrantClient, AsyncQdrantClient
     from qdrant_client.https.models import PointStruct
 
-class QdrantLateInteractionVectorStore(BaseVectorStore):
+class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
     """
     qdrant based vectorstore for late-interaction (colbert/colpali)
-    mostly follows llama-index implementation
     """
-    collection_name: str
-    _collection_initialized: bool = False
-    _client: "QdrantClient" = None
-    _aclient: "AsyncQdrantClient" = None
     
-    flat_metadata: bool = True
-    
-    def __init__(
-        self,
-        collection_name: str,
-        client: Optional["QdrantClient"] = None,
-        aclient: Optional["AsyncQdrantClient"] = None,
-        batch_size: int = 64,
-        parallel: int = 1,
-        max_retries: int = 3,
-    ):
-        # Check qdrant-client import
-        try:
-            from qdrant_client import QdrantClient, AsyncQdrantClient
-        except ImportError:
-            raise ImportError("Please install qdrant-client: 'pip install qdrant-client'")
-        
-        if client is None and aclient is None:
-            raise ValueError("Must provide either a QdrantClient instance")
-        self._client = client
-        self._aclient = aclient
-            
-        # Check if Collection Exists
-        self.collection_name = collection_name
-        if self._client is not None:
-            self._collection_initialized = self._collection_exists(collection_name)
-        else:
-            #  need to do lazy init for async clients
-            self._collection_initialized = False
-            
-        self.batch_size=batch_size
-        self.parallel=parallel
-        self.max_retries=max_retries
-        
-    def _collection_exists(self, collection_name: str) -> bool:
-        """Check if a collection exists."""
-        return self._client.collection_exists(collection_name)
-
-    async def _acollection_exists(self, collection_name: str) -> bool:
-        """Asynchronous method to check if a collection exists."""
-        return await self._aclient.collection_exists(collection_name)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         
     def create(self, **kwargs):
-        """Create collection"""
-        from qdrant_client.http.exceptions import UnexpectedResponse
-        
         if self._collection_initialized:
             raise ValueError(f"Collection {self.collection_name} already exists")
-        
-        try:
-            self._client.create_collection(
-                collection_name=self.collection_name,
-                **kwargs
-            )
-        except (RpcError, ValueError, UnexpectedResponse) as exc:
-            if "already exists" not in str(exc):
-                raise exc  # noqa: TRY201
-            raise ValueError(f"Collection {self.collection_name} already exists")
+        self._create_collection(**kwargs)
         self._collection_initialized = True
-    
-    async def acreate(
-        self
-    ):
-        """Asynchronously Create collection"""
-        from qdrant_client.http.exceptions import UnexpectedResponse
         
+    async def acreate(self, **kwargs):
         if self._collection_initialized:
             raise ValueError(f"Collection {self.collection_name} already exists")
-        
-        try:
-            self._aclient.create_collection(
-                collection_name=self.collection_name,
-            )
-        except (RpcError, ValueError, UnexpectedResponse) as exc:
-            if "already exists" not in str(exc):
-                raise exc  # noqa: TRY201
-            raise ValueError(f"Collection {self.collection_name} already exists")
+        self._acreate_collection(**kwargs)
         self._collection_initialized = True
 
     def _build_points(
@@ -127,7 +59,7 @@ class QdrantLateInteractionVectorStore(BaseVectorStore):
             points:
         """
         from qdrant_client.http.models import PointStruct
-        
+
         points = []
         for document, embedding in zip(documents, embeddings):
             if not (
@@ -139,6 +71,7 @@ class QdrantLateInteractionVectorStore(BaseVectorStore):
                 )
             ):
                 raise ValueError("given embedding is not 2d")
+            
             metadata = document_to_metadata_dict(
                 document, keys=metadata_keys, flat_metadata=self.flat_metadata
             )
@@ -195,10 +128,7 @@ class QdrantLateInteractionVectorStore(BaseVectorStore):
             max_retries=self.max_retries,
             wait=True,
         )
-    
-    async def aadd(self):
-        pass
-    
+
     def delete(self):
         pass
     
@@ -209,23 +139,5 @@ class QdrantLateInteractionVectorStore(BaseVectorStore):
         pass
     
 # TODO - Implement Hybrid version
-class QdrantHybridLateInteractionVectorStore(BaseVectorStore):
+class QdrantHybridLateInteractionVectorStore(BaseQdrantVectorStore):
     """qdrant based vectorstore for late-interaction (colbert/colpali) + sparse"""
-    
-    def __init__(self):
-        pass
-
-    def add(self):
-        pass
-    
-    async def aadd(self):
-        pass
-    
-    def delete(self):
-        pass
-    
-    def query(self):
-        pass
-
-    def drop(self):
-        pass
