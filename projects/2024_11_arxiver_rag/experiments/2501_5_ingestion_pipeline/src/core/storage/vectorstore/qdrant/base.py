@@ -87,6 +87,18 @@ class BaseQdrantVectorStore(BaseVectorStore):
                 raise exc  # noqa: TRY201
             raise ValueError(f"Collection {self.collection_name} already exists")
         
+    def create(self, **kwargs):
+        if self._collection_initialized:
+            raise ValueError(f"Collection {self.collection_name} already exists")
+        self._create_collection(**kwargs)
+        self._collection_initialized = True
+        
+    async def acreate(self, **kwargs):
+        if self._collection_initialized:
+            raise ValueError(f"Collection {self.collection_name} already exists")
+        self._acreate_collection(**kwargs)
+        self._collection_initialized = True
+        
     def _build_points(self):
         raise NotImplementedError()
     

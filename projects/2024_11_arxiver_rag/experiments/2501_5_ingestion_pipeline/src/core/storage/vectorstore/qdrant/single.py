@@ -21,9 +21,9 @@ if TYPE_CHECKING:
     from qdrant_client import QdrantClient, AsyncQdrantClient
     from qdrant_client.https.models import PointStruct
 
-class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
+class QdrantSingleVectorStore(BaseQdrantVectorStore):
     """
-    qdrant based vectorstore for late-interaction (colbert/colpali)
+    qdrant based vectorstore for single vector retrieval
     """
     
     def __init__(self, *args, **kwargs):
@@ -33,7 +33,7 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
         self,
         documents: List[BaseNode],
         embeddings: List[
-            Union[List[List[float]], List[List[int]]]
+            Union[List[float], List[int]]
         ],
         metadata_keys: Optional[List[str]] = None,
     ) -> List["PointStruct"]:
@@ -41,7 +41,7 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
         Convet documents to qdrant PointStruct instances
         Args
             documents
-            embeddings: list of 2D late-interaction embedding
+            embeddings: list of 1D embeddings
             metadata_keys: keys of document.metadata to store in point (default: everything)
         Returns:
             points:
@@ -52,13 +52,12 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
         for document, embedding in zip(documents, embeddings):
             if not (
                 isinstance(embedding, list)
-                and isinstance(embedding[0], list)
                 and (
-                    isinstance(embedding[0][0], float)
-                    or isinstance(embedding[0][0], int)
+                    isinstance(embedding[0], float)
+                    or isinstance(embedding[0], int)
                 )
             ):
-                raise ValueError("given embedding is not 2d")
+                raise ValueError("given embedding is not 1d list")
             
             metadata = document_to_metadata_dict(
                 document, keys=metadata_keys, flat_metadata=self.flat_metadata
@@ -76,7 +75,7 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
         self,
         documents: Union[Document, List[Document]],
         embeddings: List[
-            Union[List[List[float]], List[List[int]]]
+            Union[List[float], List[int]]
         ],
         metadata_keys: Optional[List[str]] = None,
         **kwargs,
@@ -116,7 +115,10 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
             max_retries=self.max_retries,
             wait=True,
         )
-
+    
+    async def aadd(self):
+        pass
+    
     def delete(self):
         pass
     
@@ -127,5 +129,23 @@ class QdrantLateInteractionVectorStore(BaseQdrantVectorStore):
         pass
     
 # TODO - Implement Hybrid version
-class QdrantHybridLateInteractionVectorStore(BaseQdrantVectorStore):
+class QdrantHybridLateInteractionVectorStore(BaseVectorStore):
     """qdrant based vectorstore for late-interaction (colbert/colpali) + sparse"""
+    
+    def __init__(self):
+        pass
+
+    def add(self):
+        pass
+    
+    async def aadd(self):
+        pass
+    
+    def delete(self):
+        pass
+    
+    def query(self):
+        pass
+
+    def drop(self):
+        pass

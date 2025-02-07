@@ -28,13 +28,15 @@ if TYPE_CHECKING:
     
 class LocalColpaliEngineEmbedder(BaseEmbedder):
     """Embedder using local Colpali Engine"""
+    _allowed_nodes: list = [
+        ImageNode
+    ]
     
     def __init__(
         self,
         model: "PreTrainedModel",
         processor: "ProcessorMixin",
         tokenizer: "PretrainedTokenizerBase",
-        # device: Optional["torch.device"]=None
     ):
         self.model = model
         self.model.eval()
