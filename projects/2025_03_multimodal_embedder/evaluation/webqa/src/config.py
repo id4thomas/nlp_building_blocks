@@ -7,5 +7,6 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     webqa_data_dir: str
+    model_dir: str
     
 settings = Settings()
