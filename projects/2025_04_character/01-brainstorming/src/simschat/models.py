@@ -6,7 +6,8 @@ from pydantic import BaseModel, Extra, Field
 def create_dynamic_enum(name: str, values: List[Any]) -> Enum:
     return Enum(name, {str(v): v for v in values})
 
-# Predefined Aspects in Appendix C
+# Character Information
+## Predefined Aspects in Appendix C
 gender = ["male", "female"]
 
 career = [
@@ -100,3 +101,40 @@ class CharacterSpecification(BaseModel):
     class Config:
         extra = Extra.forbid
         use_enum_values = True
+        
+# State Information
+## Scene State
+# class SceneState(BaseModel):
+#     location: str
+#     setting: str
+#     explanation: str
+    
+#     class Config:
+#         extra = Extra.forbid
+#         use_enum_values = True
+
+## Character State
+### plutchik's wheel of emotion to represent emotional state
+# emotional_state = [
+#     "joy", "trust", "fear", "surprise", "sadness", "disgust", "anger", "anticipation"
+# ]
+# EmotionalState = create_dynamic_enum("EmtionalState", emotional_state)
+
+# class CharacterRelationState(BaseModel):
+#     """Relationship state between 2 characters"""
+#     character: str
+#     emotion: EmotionalState
+#     knowledge: List[str]
+    
+#     class Config:
+#         extra = Extra.forbid
+#         use_enum_values = True
+
+# class CharacterState(BaseModel):
+#     emotion: EmotionalState
+#     social_relations: List[CharacterRelationState]
+    
+#     class Config:
+#         extra = Extra.forbid
+#         use_enum_values = True
+    

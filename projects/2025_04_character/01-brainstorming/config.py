@@ -14,4 +14,11 @@ class Settings(BaseSettings):
     
     openai_api_key:str
     
+class AppSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env", env_file_encoding="utf-8", extra="ignore"
+    )
+    qdrant_port: int
+    
 settings = Settings()
+app_settings = AppSettings()
