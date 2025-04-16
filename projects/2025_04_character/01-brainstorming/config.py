@@ -12,6 +12,10 @@ class Settings(BaseSettings):
     embedding_model: str
     embedding_model_dir: str
     
+    llm_base_url: str
+    llm_api_key: str
+    llm_model: str
+    
     openai_api_key:str
     
 class AppSettings(BaseSettings):

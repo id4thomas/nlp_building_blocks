@@ -1,0 +1,588 @@
+{
+    "Friendly": [
+        {
+            "action": "Announce Pregnancy",
+            "description": "Friendly interaction to announce a pregnancy."
+        },
+        {
+            "action": "Announce Promotion",
+            "description": "Friendly interaction to announce a promotion."
+        },
+        {
+            "action": "Ask to Join",
+            "description": "Friendly interaction to ask to join an existing activity."
+        },
+        {
+            "action": "Ask if Sim Slept Well",
+            "description": "Friendly interaction to ask if the Sim slept well."
+        },
+        {
+            "action": "Ask to Cloudgaze / Stargaze",
+            "description": "Friendly interaction inviting the target Sim to cloudgaze or stargaze."
+        },
+        {
+            "action": "Admire",
+            "description": "Friendly interaction to express admiration."
+        },
+        {
+            "action": "Apologize",
+            "description": "Friendly interaction to apologize."
+        },
+        {
+            "action": "Smooth Apology",
+            "description": "A variant of an apology used in later game versions."
+        },
+        {
+            "action": "Brag",
+            "description": "Friendly bragging interaction."
+        },
+        {
+            "action": "Cheer Up",
+            "description": "Friendly interaction to cheer someone up."
+        },
+        {
+            "action": "Confess to Cheating",
+            "description": "Friendly interaction where a Sim confesses to cheating."
+        },
+        {
+            "action": "Chat/Talk",
+            "description": "Friendly interaction where Sims engage in conversation."
+        },
+        {
+            "action": "Compliment",
+            "description": "Friendly interaction to give a compliment."
+        },
+        {
+            "action": "Console",
+            "description": "Friendly interaction where a Sim consoles another."
+        },
+        {
+            "action": "Dance with / Dance Together",
+            "description": "Friendly interaction involving dancing together."
+        },
+        {
+            "action": "Dare",
+            "description": "Friendly interaction that involves issuing a dare."
+        },
+        {
+            "action": "Deep Conversation",
+            "description": "Friendly interaction for having an in‐depth conversation."
+        },
+        {
+            "action": "Dirty Joke",
+            "description": "Friendly interaction involving telling a dirty joke."
+        },
+        {
+            "action": "Hug... (Friendly)",
+            "description": "A friendly variant of a hug interaction."
+        },
+        {
+            "action": "Entertain",
+            "description": "Friendly interaction to entertain the target Sim."
+        },
+        {
+            "action": "Enthuse about ...",
+            "description": "Friendly interaction where a Sim shows enthusiasm about a subject."
+        },
+        {
+            "action": "Enthuse/Boast About...",
+            "description": "Friendly interaction to express enthusiasm or boast about something."
+        },
+        {
+            "action": "Feel Tummy",
+            "description": "Friendly interaction for pregnant Sims (feeling the tummy)."
+        },
+        {
+            "action": "Gestures/Greetings",
+            "description": "Friendly interaction using gestures or greetings."
+        },
+        {
+            "action": "Get to Know",
+            "description": "Friendly interaction to get better acquainted with another Sim."
+        },
+        {
+            "action": "Give Backrub",
+            "description": "Friendly interaction to give a backrub."
+        },
+        {
+            "action": "Give Gift",
+            "description": "Friendly interaction to give a gift."
+        },
+        {
+            "action": "Gossip",
+            "description": "Friendly interaction where Sims gossip with each other."
+        },
+        {
+            "action": "Hang out",
+            "description": "Friendly interaction to hang out with another Sim."
+        },
+        {
+            "action": "Hug",
+            "description": "General friendly hug interaction."
+        },
+        {
+            "action": "Impress",
+            "description": "Friendly interaction intended to impress another Sim."
+        },
+        {
+            "action": "Influence",
+            "description": "Friendly interaction to influence the target Sim."
+        },
+        {
+            "action": "Make Funny Face",
+            "description": "Friendly interaction where a Sim makes a funny face."
+        },
+        {
+            "action": "Kiss and Make Up",
+            "description": "Friendly interaction where Sims kiss and reconcile."
+        },
+        {
+            "action": "Play",
+            "description": "Friendly interaction where Sims play together."
+        },
+        {
+            "action": "Request Feel Tummy",
+            "description": "Friendly interaction for requesting the 'feel tummy' action (for pregnant Sims)."
+        },
+        {
+            "action": "Share Interests",
+            "description": "Friendly interaction to share interests with another Sim."
+        },
+        {
+            "action": "Take Picture Together",
+            "description": "Friendly interaction to take a picture together."
+        },
+        {
+            "action": "Talk about ...",
+            "description": "Friendly interaction to talk about a specific topic."
+        },
+        {
+            "action": "Talk About Hobby",
+            "description": "Friendly interaction to discuss a hobby."
+        },
+        {
+            "action": "Tell a Story...",
+            "description": "Friendly storytelling interaction (can be funny or dramatic)."
+        },
+        {
+            "action": "Tickle",
+            "description": "Friendly interaction to tickle another Sim."
+        },
+        {
+            "action": "Tip",
+            "description": "Friendly interaction to tip a service Sim."
+        }
+    ],
+    "Ask": [
+        {
+            "action": "Do You Like What You See?",
+            "description": "Ask interaction questioning attraction (marked with a lightning bolt in some versions)."
+        },
+        {
+            "action": "What Turns You On?",
+            "description": "Ask interaction regarding what turns a Sim on (Chemistry based)."
+        },
+        {
+            "action": "What Turns You Off?",
+            "description": "Ask interaction regarding what turns a Sim off (Chemistry based)."
+        },
+        {
+            "action": "What Do You Fear?",
+            "description": "Ask interaction inquiring about a Sim's fears (Wants and Fears)."
+        },
+        {
+            "action": "What Do You Want?",
+            "description": "Ask interaction inquiring about what a Sim desires (Wants and Fears)."
+        },
+        {
+            "action": "About Interests",
+            "description": "Ask interaction about a Sim's interests."
+        },
+        {
+            "action": "What's Your Job?",
+            "description": "Ask interaction inquiring about a Sim's career or profession."
+        },
+        {
+            "action": "How Much Money Do You Have?",
+            "description": "Ask interaction to check a Sim's funds."
+        },
+        {
+            "action": "What's Your Zodiac sign?",
+            "description": "Ask interaction inquiring about a Sim's zodiac sign."
+        },
+        {
+            "action": "What Are Your Skills?",
+            "description": "Ask interaction inquiring about a Sim's skills."
+        }
+    ],
+    "Romantic": [
+        {
+            "action": "Ask if Single",
+            "description": "Romantic interaction to determine if the target Sim is single."
+        },
+        {
+            "action": "Take Romantic Photo Together",
+            "description": "Romantic interaction to take a photo together with a romantic theme."
+        },
+        {
+            "action": "Romantic Hug",
+            "description": "Romantic interaction featuring a romantic hug."
+        },
+        {
+            "action": "Amorous Hug",
+            "description": "Romantic interaction featuring an amorous hug."
+        },
+        {
+            "action": "Leap Into Arms",
+            "description": "Romantic interaction where a Sim leaps into another's arms."
+        },
+        {
+            "action": "Goose",
+            "description": "Colloquial romantic interaction known as 'Goose.'"
+        },
+        {
+            "action": "Squeeze",
+            "description": "Romantic interaction to gently squeeze the other Sim."
+        },
+        {
+            "action": "Compliment Appearance / Personality",
+            "description": "Romantic interaction to compliment a Sim’s appearance or personality."
+        },
+        {
+            "action": "Confess Attraction",
+            "description": "Romantic interaction to confess attraction."
+        },
+        {
+            "action": "Pickup Line",
+            "description": "Romantic interaction involving the delivery of a pickup line."
+        },
+        {
+            "action": "Flirt",
+            "description": "Romantic interaction to flirt with another Sim."
+        },
+        {
+            "action": "Flirtatious Joke",
+            "description": "Romantic interaction involving a flirtatious joke."
+        },
+        {
+            "action": "Hit On",
+            "description": "Romantic interaction in which a Sim hits on another."
+        },
+        {
+            "action": "Whisper In Ear",
+            "description": "Romantic interaction where a Sim whispers intimately in the target’s ear."
+        },
+        {
+            "action": "Gaze Into Eyes",
+            "description": "Romantic interaction where a Sim gazes into another's eyes."
+        },
+        {
+            "action": "Wink",
+            "description": "Romantic interaction featuring a wink."
+        },
+        {
+            "action": "Offer Rose",
+            "description": "Romantic interaction to offer a rose to another Sim."
+        },
+        {
+            "action": "Embrace",
+            "description": "Romantic interaction to embrace another Sim."
+        },
+        {
+            "action": "Hold Hands",
+            "description": "Romantic interaction where Sims hold hands."
+        },
+        {
+            "action": "Massage",
+            "description": "Romantic interaction involving a massage."
+        },
+        {
+            "action": "First Kiss",
+            "description": "Romantic interaction marking the first kiss between Sims."
+        },
+        {
+            "action": "Blow a Kiss",
+            "description": "Romantic interaction where a Sim blows a kiss."
+        },
+        {
+            "action": "Peck",
+            "description": "Romantic interaction involving a quick peck."
+        },
+        {
+            "action": "Shy Kiss",
+            "description": "Romantic interaction where a Sim gives a shy kiss."
+        },
+        {
+            "action": "Kiss",
+            "description": "Standard romantic interaction involving a kiss."
+        },
+        {
+            "action": "Tender Kiss",
+            "description": "Romantic interaction featuring a tender kiss."
+        },
+        {
+            "action": "Kiss Hand",
+            "description": "Romantic interaction to kiss someone’s hand."
+        },
+        {
+            "action": "Kiss Up Arm",
+            "description": "Romantic interaction to kiss up a Sim’s arm."
+        },
+        {
+            "action": "Rebound Kiss",
+            "description": "Romantic interaction involving a rebound kiss."
+        },
+        {
+            "action": "Romantic Kiss",
+            "description": "Dedicated romantic interaction involving a kiss."
+        },
+        {
+            "action": "Dance Kiss",
+            "description": "Romantic interaction featuring a kiss during a dance."
+        },
+        {
+            "action": "Heat of the Moment Kiss",
+            "description": "Romantic interaction for a spontaneous, passionate kiss."
+        },
+        {
+            "action": "Dip Kiss",
+            "description": "Romantic interaction involving a dip while kissing."
+        },
+        {
+            "action": "Suck Face",
+            "description": "Colloquial romantic interaction known as 'suck face.'"
+        },
+        {
+            "action": "Smooch",
+            "description": "Romantic interaction to smooch another Sim."
+        },
+        {
+            "action": "Make Out",
+            "description": "Romantic interaction where Sims engage in heavy kissing."
+        },
+        {
+            "action": "Propose Going Steady",
+            "description": "Romantic interaction to propose a steady relationship."
+        },
+        {
+            "action": "Propose Engagement",
+            "description": "Romantic interaction to propose engagement."
+        },
+        {
+            "action": "Propose Marriage",
+            "description": "Romantic interaction to propose marriage."
+        },
+        {
+            "action": "Have Private Wedding",
+            "description": "Romantic interaction to have a private wedding ceremony."
+        },
+        {
+            "action": "Cuddle",
+            "description": "Romantic interaction to cuddle with another Sim."
+        },
+        {
+            "action": "Play in bed with",
+            "description": "Romantic interaction where Sims engage in intimate play in bed."
+        },
+        {
+            "action": "WooHoo",
+            "description": "Romantic interaction for engaging in WooHoo."
+        },
+        {
+            "action": "Juiced WooHoo & Kiss",
+            "description": "Romantic interaction combining juiced WooHoo with a kiss."
+        },
+        {
+            "action": "Cinnamon WooHoo & Kiss",
+            "description": "Romantic interaction combining Cinnamon WooHoo with a kiss."
+        },
+        {
+            "action": "Try For Baby",
+            "description": "Romantic interaction to try for a baby."
+        },
+        {
+            "action": "Suggestion",
+            "description": "Romantic interaction given as a suggestion."
+        },
+        {
+            "action": "Wolf Whistle",
+            "description": "Romantic interaction involving a wolf whistle."
+        },
+        {
+            "action": "Charm",
+            "description": "Romantic interaction to charm the target Sim."
+        },
+        {
+            "action": "Caress",
+            "description": "Romantic interaction involving caressing."
+        },
+        {
+            "action": "Stroke Cheek",
+            "description": "Romantic interaction involving stroking the cheek."
+        },
+        {
+            "action": "Caress Cheek",
+            "description": "Alternate phrasing for caressing a Sim’s cheek."
+        },
+        {
+            "action": "Sweet Talk",
+            "description": "Romantic interaction involving sweet talking."
+        },
+        {
+            "action": "Serenade",
+            "description": "Romantic interaction where a Sim serenades another."
+        }
+    ],
+    "Mean": [
+        {
+            "action": "Prank",
+            "description": "Mean interaction involving playing a prank on another Sim."
+        },
+        {
+            "action": "Nag",
+            "description": "Mean interaction where a Sim nags another."
+        },
+        {
+            "action": "Lecture",
+            "description": "Mean interaction in which a Sim lectures another."
+        },
+        {
+            "action": "Jeer",
+            "description": "Mean interaction involving jeering at another Sim."
+        },
+        {
+            "action": "Push",
+            "description": "Mean interaction where a Sim pushes another."
+        },
+        {
+            "action": "Poke",
+            "description": "Mean interaction involving poking another Sim."
+        },
+        {
+            "action": "Argue",
+            "description": "Mean interaction where Sims engage in an argument."
+        },
+        {
+            "action": "Throw Drink",
+            "description": "Mean interaction involving throwing a drink at another Sim."
+        },
+        {
+            "action": "Insult",
+            "description": "Mean interaction to insult the target Sim."
+        },
+        {
+            "action": "Brag",
+            "description": "Mean interaction version of bragging."
+        },
+        {
+            "action": "Attack/Fight",
+            "description": "Mean interaction involving an attack or fight."
+        },
+        {
+            "action": "Beat Up",
+            "description": "Mean interaction in which a Sim beats up another."
+        },
+        {
+            "action": "Brush Off",
+            "description": "Mean interaction to brush another Sim off."
+        },
+        {
+            "action": "Mock Outfit",
+            "description": "Mean interaction to mock another Sim's outfit."
+        },
+        {
+            "action": "Mock (trait)",
+            "description": "Mean interaction to mock one of the target Sim’s traits."
+        },
+        {
+            "action": "Accuse of (trait)",
+            "description": "Mean interaction where a Sim accuses another of having a specific trait."
+        },
+        {
+            "action": "Petty Jab",
+            "description": "Mean interaction involving a petty jab."
+        },
+        {
+            "action": "Trash Another Sim...",
+            "description": "Mean interaction to trash talk another Sim."
+        },
+        {
+            "action": "Imply Mother is Llama (Sim)",
+            "description": "Mean interaction implying the target Sim’s mother is a llama."
+        },
+        {
+            "action": "Chupacabra (Vampire)",
+            "description": "Mean interaction using the term 'Chupacabra' directed at a vampire."
+        },
+        {
+            "action": "Poodle (Werewolf)",
+            "description": "Mean interaction using the term 'Poodle' directed at a werewolf."
+        },
+        {
+            "action": "Glowbug (Fairy)",
+            "description": "Mean interaction using the term 'Glowbug' directed at a fairy."
+        },
+        {
+            "action": "Scare",
+            "description": "Mean interaction to scare the target Sim."
+        },
+        {
+            "action": "Yell at",
+            "description": "Mean interaction where a Sim yells at another."
+        },
+        {
+            "action": "Shout Forbidden Words at (Sim)",
+            "description": "Mean interaction in which a Sim shouts forbidden words."
+        },
+        {
+            "action": "Slap",
+            "description": "Mean interaction where a Sim slaps another."
+        },
+        {
+            "action": "Declare (Sim) a Nemesis",
+            "description": "Mean interaction to declare another Sim as a nemesis."
+        },
+        {
+            "action": "Declare Enemy",
+            "description": "Mean interaction to declare the target Sim an enemy."
+        },
+        {
+            "action": "Break Up",
+            "description": "Mean interaction to break up a relationship."
+        },
+        {
+            "action": "Divorce",
+            "description": "Mean interaction to divorce the target Sim."
+        },
+        {
+            "action": "Patronize",
+            "description": "Mean interaction in which a Sim patronizes another."
+        }
+    ],
+    "Neutral": [
+        {
+            "action": "Ask to leave/Say Goodbye",
+            "description": "Neutral interaction to ask a Sim to leave the lot or say goodbye."
+        },
+        {
+            "action": "Call Over",
+            "description": "Neutral interaction to call the selected Sim over."
+        },
+        {
+            "action": "Introduce to...",
+            "description": "Neutral interaction to introduce a Sim to another they do not already know."
+        },
+        {
+            "action": "Join (in activity)",
+            "description": "Neutral interaction to join an ongoing activity."
+        },
+        {
+            "action": "Shoo",
+            "description": "Neutral interaction to ask the target Sim to leave the room."
+        },
+        {
+            "action": "Stop doing that",
+            "description": "Neutral interaction asking a Sim to stop their current action."
+        }
+    ]
+}
