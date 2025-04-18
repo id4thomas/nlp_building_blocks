@@ -169,8 +169,8 @@ async def predict_with_semaphore(sem, fname, data):
 
 async def main():
     split = "test" # "train", "dev", "test"
-    request_dir = f"emotion_data/comet/{split}/request"
-    output_dir = f"emotion_data/comet/{split}/response/{settings.llm_model}"
+    request_dir = f"data/comet/{split}/request"
+    output_dir = f"data/comet/{split}/response/{settings.llm_model}"
     os.makedirs(output_dir, exist_ok=True)
     sem = asyncio.Semaphore(32)  
     

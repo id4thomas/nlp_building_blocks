@@ -1,0 +1,60 @@
+{
+    "data": {
+        "file": {
+            "train": "/home/users/yrsong/research/2504-02-story/250418-emotion-predictor/data/comet/train_gpt-4.1-nano.csv",
+            "dev": "/home/users/yrsong/research/2504-02-story/250418-emotion-predictor/data/comet/dev_gpt-4.1-nano.csv",
+            "test": "/home/users/yrsong/research/2504-02-story/250418-emotion-predictor/data/comet/test_gpt-4.1-nano.csv"
+        },
+        "tokenization": {
+            "max_length": 4096,
+            "padding": false,
+            "truncation": true
+        }
+    },
+    "training": {
+        "run_name": "250418-01-qwen2_5-3b-try1",
+        "pretrained_model": "Qwen/Qwen2.5-3B-Instruct",
+        "peft": {
+            "method": "lora",
+            "lora_r": 16,
+            "lora_alpha": 32,
+            "lora_dropout": 0.05,
+            "target_modules": [
+                "q_proj",
+                "v_proj",
+                "k_proj",
+                "down_proj",
+                "gate_proj",
+                "o_proj",
+                "up_proj"
+            ]
+        },
+        "num_train_epochs": 3,
+        "learning_rate": 1e-5,
+        "per_device_train_batch_size": 8,
+        "per_device_eval_batch_size": 8,
+        "gradient_accumulation_steps": 4,
+        "label_smoothing_factor": 0,
+        "save_strategy": "steps",
+        "save_steps": 100,
+        "save_total_limit": 2,
+        "eval_strategy": "steps",
+        "metric_for_best_model": "eval_loss",
+        "logging_steps": 100,
+        "disable_tqdm": false,
+        "report_to": [
+            "wandb"
+        ],
+        "seed": 100,
+        "fp16": false,
+        "bf16": true,
+        "remove_unused_columns": false,
+        "torch_compile": false,
+        "optim": "paged_adamw_32bit",
+        "lr_scheduler_type": "cosine"
+    },
+    "output": {
+        "weight_dir": "/home/users/yrsong/research/2504-02-story/250418-emotion-predictor/weights",
+        "log_dir": "/home/users/yrsong/research/2504-02-story/250418-emotion-predictor/logs"
+    }
+}
