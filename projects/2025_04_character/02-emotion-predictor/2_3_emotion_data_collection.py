@@ -1,7 +1,18 @@
-'''Data Collection - gpt-4.1-nano-2025-04-14
+'''Data Collection -
+* Total about 1.764M input tokens (14,862 entries)
+[gpt-4.1-mini-2025-04-14] ($3.63)
+# Train (12,061)
+| 377/377 [13:36<00:00,  2.17s/it]
+
+# Dev (1,317)
+| 42/42 [01:59<00:00,  2.85s/it]
+
+# Test (1,484)
+| 47/47 [02:11<00:00,  2.80s/it]
+
+[gpt-4.1-nano-2025-04-14] ($1.12)
 # Train
-100%|███| 377/377 [05:22<00:00,  1.17it/s]
-Processed 377 files.
+| 377/377 [05:22<00:00,  1.17it/s]
 - 1.4M tokens ($0.91)
 
 # Dev
@@ -77,26 +88,25 @@ Write at least 3 sentences with detailed descriptions of the situation. (about 3
 For example, if the source is “PersonX abandons ___ altogether,” you might expand it to:
 “Veronica decides to stop relying on social media altogether, feeling that she has complete control over her personal life. ...”
 
-## Map the Emotion: Map the target emotion onto the 8 primary emotions from Plutchik’s Wheel
-* Joy
-* Trust
-* Fear
-* Surprise
-* Sadness
-* Disgust
-* Anger
-* Anticipation
+## Map the Emotion:
+Map the target emotion onto the 8 primary emotions from Plutchik’s Wheel
+* Interpret the entry's 'target' reaction in terms of Plutchik’s 8 primary emotions.
+
+[8 Primary Emotions]
+* "joy": Joy is a bright, uplifting emotion that reflects happiness, satisfaction, and a sense of well-being. It often arises when our desires are fulfilled or we experience positive moments, and it helps energize both our minds and bodies. Joy can enhance social connections and overall resilience by radiating positivity
+* "trust": Trust is the reassuring feeling of confidence and security in another person or situation. It builds from consistent, reliable interactions and underpins strong, supportive relationships. This emotion fosters cooperation and reduces anxiety by creating a sense of safety
+* "fear": Fear is an instinctive response to perceived threats that activates our fight-or-flight mechanism. It heightens awareness and prepares our body to respond quickly to danger, making it essential for survival. Despite its discomfort, fear is a crucial signal that prompts protective action and risk assessment
+* "surprise": Surprise occurs when we encounter the unexpected, momentarily halting our regular thought process. This emotion can be positive, neutral, or even negative, depending on the context, and often sparks curiosity about what comes next. Its brief nature helps redirect our focus and encourages adaptive responses to new situations
+* "sadness": Sadness is a deep, reflective emotion that often emerges from loss, disappointment, or unmet expectations. It can lead to introspection and a desire for support as we navigate feelings of grief or dejection. Although challenging, sadness can also foster empathy and pave the way for emotional healing and growth
+* "disgust": Disgust is an aversive emotion that signals rejection toward something perceived as harmful, unclean, or morally offensive. It serves as a protective mechanism, prompting us to avoid substances or situations that might be dangerous. This emotion plays a vital role in maintaining both physical health and ethical boundaries
+* "anger": Anger arises when we perceive injustice, frustration, or a threat to our well-being, often urging us to act in response. It can manifest as physical tension and heightened energy, signaling that something in our environment needs to change. When managed effectively, anger can motivate constructive action and help assert personal boundaries
+* "anticipation": Anticipation is the forward-looking emotion characterized by a mix of excitement and apprehension about future events. It motivates preparation and planning while balancing hope with cautious vigilance. This emotion bridges the gap between our present state and the potential for positive outcomes in the future
 
 For each emotion, assign one of the following intensities:
 * "na" (not applicable)
 * "low"
 * "medium"
 * "high"
-
-Interpret the target emotion (e.g., “authoritative”) in terms of Plutchik’s emotions. For example, you might decide:
-* trust: high
-* joy: low
-* anticipation: medium
 
 ## Write a Reason:
 Provide a one-sentence rationale ("reason") explaining why the subject (if xReact) or the other person (if oReact) feels the given emotion(s).
@@ -163,9 +173,12 @@ async def predict(data):
     prediction_result = completion_result.choices[0].message.parsed
     return prediction_result
 
-async def predict_with_semaphore(sem, fname, data):
+async def predict_with_semaphore(sem, fname, data, output_dir):
     async with sem:
-        return fname, await predict(data)
+        result = await predict(data)
+        with open(os.path.join(output_dir, fname), "w") as f:
+            json.dump(result.model_dump(), f, indent=2)
+        return fname, result
 
 async def main():
     split = "test" # "train", "dev", "test"
@@ -175,7 +188,11 @@ async def main():
     sem = asyncio.Semaphore(32)  
     
     ## 1. Prepare Input Batches
+    
     fnames = [x for x in os.listdir(request_dir) if ".json" in x]#[:2]
+    fnames = [x for x in fnames if not os.path.exists(os.path.join(output_dir, x))]
+    print(f"Processing {len(fnames)} files...")
+    
     tasks = []
     for fname in fnames:
         with open(os.path.join(request_dir, fname), "r") as f:
@@ -183,13 +200,13 @@ async def main():
         
         tasks.append(
             asyncio.ensure_future(
-                predict_with_semaphore(sem, fname, data)
+                predict_with_semaphore(sem, fname, data, output_dir)
             )
         )
     results = await tqdm_asyncio.gather(*tasks)
-    for fname, result in results:
-        with open(os.path.join(output_dir, fname), "w") as f:
-            json.dump(result.model_dump(), f, indent=2)
+    # for fname, result in results:
+    #     with open(os.path.join(output_dir, fname), "w") as f:
+    #         json.dump(result.model_dump(), f, indent=2)
     print(f"Processed {len(results)} files.")
 
 if __name__ ==  '__main__':
