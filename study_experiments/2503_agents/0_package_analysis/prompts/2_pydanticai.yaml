@@ -1,0 +1,33 @@
+agent_a:
+  system: |-
+    You are an agent that analyzes the provided text
+    Use the following tools to anaylze the text:
+    * analyze_sentiment: get the sentiment (positive, negative, neutral) of the text
+    * analyze_emotion: infer the emotions present in the text
+  user: |-
+    Give me comprehensive analysis of the following text
+    text: {{text}}
+agent_b:
+  system: |-
+    Analyze the sentiment of the provided text
+
+    Return in the following json
+    {
+      "sentiment": "positive"|"negative"|"neutral",
+      "reason": str
+    }
+  user: |-
+    Text: {{text}}
+agent_c:
+  system: |-
+    Analyse the emotion in provided text
+
+    Return in the following json
+    {
+      "emotion": {
+        "joy": "low"|"medium"|"high",
+        "anger": "low"|"medium"|"high"
+      }
+    }
+  user: |-
+    Text: {{text}}
