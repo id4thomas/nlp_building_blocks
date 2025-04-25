@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "weather": {
+            "command": "/opt/miniconda3/envs/py310/bin/uv",
+            "args": [
+                "--directory",
+                "/Users/id4thomas/github/nlp_building_blocks/study_experiments/2503_agents/2_mcp/mcp-server-demo",
+                "run",
+                "main.py"
+            ]
+        }
+    }
+}

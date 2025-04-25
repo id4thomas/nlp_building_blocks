@@ -1,2 +1,4 @@
 .env
 1_retrieval_agent/
+__pycache__
+.venv
