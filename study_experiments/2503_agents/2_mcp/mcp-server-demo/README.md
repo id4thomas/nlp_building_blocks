@@ -25,9 +25,14 @@ v20.19.1
 v20.19.1
 ```
 
-## Setup
+Install mcp-remote for sse method
+```
+npm install -g mcp-remote
+```
 
+## Setup
 2. Clade Desktop
+* WARNING: claude desktop doesn't support sse as of 2025.04
 ex.
 '/Users/yrsong/Library/Application Support/Claude/claude_desktop_config.json'
 
