@@ -1,0 +1,84 @@
+system: |-
+  Given the description of a character, extract the following informations.
+  [Information Schema]
+  * name: full name of the character
+  * gender: gender (male/female)
+  * age: numerical age value of the character
+  * dialogue_tone: detailed description of the character's idiomatic tone of voice when chatting with others
+  * career: character’s job. Refer to the predefined career list below
+  * personality_traits: refer to the below PersonalityTrait description.
+  * hobby: personal hobbies which are defined in 'Skills'. refer to the below Skill description
+  * living_coditions: how is this character’s life currently (ex. housing, work-life balance pattern, daily routine, etc..)
+  * social_relationships: character's social relationships with other characters (ex. family, friends, ...). Refer to below SocialRelationship description
+
+  [Career]
+  Allowed job values are as follows
+  ```
+  [
+      "Actor", "Astronaut", "Athlete", "Business", "Civil Designer", "Conservationist",
+      "Criminal", "Critic", "Culinary", "Detective", "Doctor", "Education", "Engineer",
+      "Entertainer", "Freelancer", "Gardener", "Law", "Military", "Painter", "Politician",
+      "Scientist", "Social Media", "Secret Agent", "Style Influencer", "Tech Guru", "Writer"
+  ]
+  ```
+
+  [PersonalityTrait]
+  a character's Personality Trait comprises of the following information
+  * trait
+  * description: 
+
+  Allowed 'Trait' values are as follows
+  ```
+  [
+      "Ambitious", "Cheerful", "Childish", "Clumsy", "Creative", "Erratic", "Genius",
+      "Gloomy", "Goofball", "Hot-Headed", "Romantic", "Self-Assured", "Bro", "Evil",
+      "Family-Oriented", "Good", "Hates Children", "Jealous", "Loner", "Loyal", "Mean",
+      "Noncommittal", "Outgoing", "Snob", "Active", "Glutton", "Kleptomaniac", "Lazy",
+      "Materialistic", "Neat", "Perfectionist", "Slob", "Vegetarian", "Art Lover",
+      "Bookworm", "Foodie", "Geek", "Loves the Outdoors", "Music Lover"
+  ]
+  ```
+
+  [Skill]
+  Allowed 'Skill' values are as follows
+  ```
+  [
+      "Acting", "Archaeology", "Baking", "Bowling", "Charisma", "Comedy", "Cooking",
+      "Cross-Stitch", "DJ Mixing", "Dancing", "Fabrication", "Fishing", "Fitness",
+      "Flower Arranging", "Gardening", "Gourmet Cooking", "Guitar", "Handiness",
+      "Herbalism", "Juice Fizzing", "Logic", "Media Production", "Mischief", "Mixology",
+      "Painting", "Parenting", "Pet Training", "Photography", "Piano", "Pipe Organ",
+      "Programming", "Rock Climbing", "Rocket Science", "Selvadoradian Culture", "Singing",
+      "Vampiric Lore", "Veterinarian", "Video Gaming", "Violin",
+      "Wellness", "Writing"
+  ]
+  ```
+
+  [SocialRelationship]
+  a character's social relationship comprises of the following information
+  * target: the target of the relationship
+  * status: positive/neutral/negative
+  * description: detailed description of the relationship
+
+
+  Extract int the following JSON format.
+  {
+      "name": str,
+      "gender": str,
+      "age": int,
+      "dialogue_tone": str,
+      "career": str,
+      "personality_traits": [
+          {"trait": str, "description": str},
+          ...
+      ],
+      "hobbies": List[str],
+      "living_coditions": List[str],
+      "social_relationships": [
+          {"target": str, "status": str, "description": str},
+          ...
+      ]
+  }
+user: |-
+  Description:
+  {{ description }}

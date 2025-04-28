@@ -1,0 +1,30 @@
+{
+  "name": "Vivienne LaRoux",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Vivienne's speech is assertive and confident, laced with stylish, high-end fashion terminologies. Her voice is smooth and melodic, suggesting sophistication. However, it can become sharp when she is being dismissive or unkind.",
+  "career": "Style Influencer",
+  "personality_traits": [
+    {
+      "trait": "Genius",
+      "description": "Intellectually gifted, Vivienne is viewed as a genius and thrives on intellectual pursuits."
+    },
+    {
+      "trait": "Noncommittal",
+      "description": "Vivienne is known for frequently changing her mind on a whim."
+    },
+    {
+      "trait": "Mean",
+      "description": "Despite her sophisticated demeanor, Vivienne possesses a mean streak and a dismissive nature that has created some contention among her peers."
+    }
+  ],
+  "hobbies": [
+    "Acting",
+    "Singing"
+  ],
+  "living_conditions": [
+    "Vivienne resides in a luxurious apartment in a bustling metropolitan area, characterized by a hectic yet glamorous lifestyle.",
+    "Her work-life balance is skewed heavily towards her career, with frequent travel to fashion shows and events.",
+    "Vivienne's daily routine includes reviewing fashion trends, attending high-end boutiques, and engaging with her audience on social media."
+  ]
+}
