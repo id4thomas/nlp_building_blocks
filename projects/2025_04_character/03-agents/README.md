@@ -1,4 +1,5 @@
 # Character Agents Prj
+![demo](figs/demo.png)
 
 # Scripts
 

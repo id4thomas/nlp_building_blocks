@@ -78,13 +78,18 @@ class CharcterActionPredictor:
         self,
         scene_context: str,
         character: Character,
-        related_uids: List[str] = [],
+        # related_uids: List[str] = [],
     ):
         user_message = self.user_template.render(
             character_spec=character.spec.model_dump_json(),
             character_emotion=character.state.emotion.model_dump_json(),
             character_relations = [
-                x.model_dump_json() for x in character.state.social_relations if x.character_uid in related_uids
+                {
+                    'character_name': self._get_character(x.character_uid).spec.name,
+                    "relation": x.model_dump_json()
+                }
+                for x in character.state.social_relations
+                # x.model_dump_json() for x in character.state.social_relations if x.character_uid in related_uids
             ],
             scene_context=scene_context
         )
@@ -106,7 +111,7 @@ class CharcterActionPredictor:
         self,
         scene_context: str,
         uid: str,
-        related_uids: List[str] = [],
+        # related_uids: List[str] = [],
     ):
         character = self._get_character(uid)
         
@@ -114,7 +119,7 @@ class CharcterActionPredictor:
         result = await self.predict_action(
             scene_context=scene_context,
             character=character,
-            related_uids=related_uids
+            # related_uids=related_uids
         )
         
         # Update Character State
@@ -124,5 +129,6 @@ class CharcterActionPredictor:
         )
         return {
             "action": result.action.description,
+            "action_type": result.action.action_type.value,
             "targets": result.action.targets
         }

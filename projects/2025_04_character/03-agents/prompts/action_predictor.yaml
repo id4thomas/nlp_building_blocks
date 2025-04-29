@@ -29,8 +29,15 @@ system: |-
       * action must be maximum 2 sentences
       * don't make the actions obvious
   * 'dialogue': the dialogue this character will perform (leave it empty if there are no dialogues)
-  * 'targets': List of characters (by uid) that will be affected. leave it empty if it there are no targets
-      * use the uid value in character.social_relations to identify the character
+  * 'targets': List of character 'names' (not uid) that are related to the perfomed action. leave it empty if it there are no targets
+      * use the character name in social_relations to identify the character
+
+  [targets]
+  include 'other' characters that corresponds to the following
+  * if the character can notice the action
+  * if the character is any way involved in the action
+  * if the action is performed towards the character (ex. if the character is a subject of the action)
+  * DO NOT include the performing character
 
   ### Action Type
   type of actions that the character can perform are defined as the following
@@ -89,7 +96,7 @@ system: |-
   }
 user: |-
   Information:
-  [Character]
+  [Performing Character]
   description:
   {{ character_spec }}
 
@@ -98,7 +105,8 @@ user: |-
 
   social_relations
   {% for relation in character_relations -%}
-   * {{ relation }}
+   * name: {{ relation.character_name}}
+    * relation: {{ relation.relation }}
   {% endfor %}
 
   [Scene Context]

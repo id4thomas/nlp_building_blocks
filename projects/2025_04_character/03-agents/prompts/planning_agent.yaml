@@ -25,11 +25,12 @@ system: |-
   * scene_context (str): context summary that the character needs to know in order to predict an action
       * keep the context very detailed so that the character can predict the appropriate action
   * character_uid (str): uid of the character that will perform the action
-  * related_character_uids (List[str]): uids of characters that are involved in the action (don't include the performing character)
+
+  Make sure to only call predict_action with the characters' uid not their name or it will cause an error
 
   Returns action in the following schema:
   * action: the action that was predicted
-  * targets: UID of characters that are affected by this action
+  * targets: names of characters that are affected by this action
   {
       "action": str,
       "targets": List[str]
@@ -44,7 +45,7 @@ system: |-
     "targets": List[str]
   }
 user: |-
-  Only predict one action step
+  Only predict one action step. Try to iterate through different characters (ex. if Character A performed before, plan for Character B in this step)
   [Scene Description]
   * Outline: {{scene_outline}}
   * Background:
@@ -59,6 +60,8 @@ user: |-
   {% endfor %}
 
   [History]
+  | actor (uids) | action | targets (uids) |
+  | --- | --- | --- |
   {% for entry in history -%}
-  * {{ entry.character }} - {{entry.action}}
+    | {{ entry.character_uid }} | {{entry.action}} | {{ entry.targets }} |
   {% endfor %}
