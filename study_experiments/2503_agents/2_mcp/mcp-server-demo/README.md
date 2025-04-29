@@ -14,15 +14,15 @@ nvm install 20
 brew install node@22
 echo 'export PATH="/opt/homebrew/opt/node@22/bin:$PATH"' >> ~/.zshrc
 export LDFLAGS="-L/opt/homebrew/opt/node@22/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/node@22/include
+export CPPFLAGS="-I/opt/homebrew/opt/node@22/include"
 ```
 
 Check installation
 ```
-(base) muhayu@croa01:~/downloads$ node -v
-v20.19.1
-(base) muhayu@croa01:~/downloads$ nvm current
-v20.19.1
+node -v
+-> v20.19.1
+nvm current
+-> v20.19.1
 ```
 
 Install mcp-remote for sse method
