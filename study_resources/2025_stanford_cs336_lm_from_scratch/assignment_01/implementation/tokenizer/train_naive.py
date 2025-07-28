@@ -47,6 +47,8 @@ PAT=r"""'(?:[sdmt]|ll|ve|re)| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+"
 WHITESPACE_TOKEN_BYTES="Ġ".encode('utf-8')
 NEWLINE_TOKEN_BYTES="Ċ".encode('utf-8')
 
+full_token_re = re.compile(rf"^(?:{PAT})$")
+
 
 class TokenNode:
     def __init__(self, val):
@@ -55,10 +57,12 @@ class TokenNode:
         self.next = None
         # For determining pre-tokenization boundary
         self.is_next_connected = True
+        self.span = None
         
-def add_node(byte_val, prev):
+def add_node(byte_val, prev, span=None):
     """Helper to create and link a new TokenNode."""
     node = TokenNode(byte_val)
+    node.span=span
     if prev:
         prev.next = node
         node.prev = prev
@@ -113,37 +117,20 @@ def find_chunk_boundaries(
     # Make sure all boundaries are unique, but might be fewer than desired_num_chunks
     return sorted(set(chunk_boundaries))
 
-def pretokenize(chunk) -> Tuple[TokenNode, TokenNode]:
+def pretokenize(chunk, start_pos: int = 0) -> Tuple[TokenNode, TokenNode]:
     head=None
     prev=None
 
     # Outer: Pre-tokenized Tokens
     for pre_tok in re.finditer(PAT, chunk):
         text = pre_tok.group()
-        bytes_to_process = []
-
-        # if text[0] in (' ', '\n'):
-        #     # Determine the prefix byte token (space or newline)
-        #     prefix_bytes = WHITESPACE_TOKEN_BYTES if text[0] == ' ' else NEWLINE_TOKEN_BYTES
-        #     rest = text[1:].encode('utf-8') if len(text) > 1 else b""
-
-        #     # Merge prefix with first byte of rest, or use prefix alone
-        #     if rest:
-        #         first = bytes([rest[0]])
-        #         node = add_node(prefix_bytes + first, prev)
-        #         prev = node
-        #         bytes_to_process = rest[1:]
-        #     else:
-        #         node = add_node(prefix_bytes, prev)
-        #         prev = node
-        #         bytes_to_process = b""
-        # else:
-        #     bytes_to_process = text.encode('utf-8')
+        span = pre_tok.span()
+        span = (start_pos+span[0], start_pos+span[1])
         bytes_to_process = text.encode('utf-8')
 
         # Add remaining bytes as separate nodes
         for byte in bytes_to_process:
-            prev = add_node(bytes([byte]), prev)
+            prev = add_node(bytes([byte]), prev, span=span)
             if head is None:
                 head = prev
 
@@ -155,7 +142,6 @@ def train_bpe(
     input_path: str,
     vocab_size: int,
     special_tokens: List[str],
-    mini_chunk_size: int = 4096,
     num_processes: int = 8,
 ) -> Tuple[Dict[int, bytes], List[Tuple[bytes, bytes]]]:
     '''
@@ -182,6 +168,9 @@ def train_bpe(
     cur_vocab_size = 0
     
     ## 1-1. Special tokens
+    split_pat = re.compile(
+        "(" + "|".join(re.escape(tok) for tok in special_tokens) + ")"
+    )
     encoded_special_tokens = [x.encode('utf-8') for x in special_tokens]
     for tok in encoded_special_tokens:
         vocab[cur_vocab_size]=tok
@@ -192,19 +181,8 @@ def train_bpe(
     # byte can represent 256 values (unicode string is sequence of bytes)
     # start with single-byte -> merge
     for i in range(256):
-        # vocab[cur_vocab_size]=chr(i).encode('utf-8')
         vocab[cur_vocab_size]=bytes([i])
         cur_vocab_size+=1
-    # vocab: Dict[int, bytes] = {
-    #     i: chr(i).encode('utf-8') for i in range(256)
-    # }
-    # cur_vocab_size += 256
-    
-    ## 1-2. Whitespace & Newline
-    # vocab[cur_vocab_size]="Ġ".encode('utf-8')
-    # cur_vocab_size+=1
-    # vocab[cur_vocab_size]="Ċ".encode('utf-8')
-    # cur_vocab_size+=1
     
     # 2. Pre-Tokenization
     head=None
@@ -214,36 +192,68 @@ def train_bpe(
         ## Find boundaries
         boundaries = find_chunk_boundaries(
             f,
-            desired_num_chunks=mini_chunk_size,
-            # num_processes=num_processes,
+            desired_num_chunks=num_processes,
             split_special_token=split_special_token
         )
         
         ## Pretokenize
         for b_i in range(1, len(boundaries)):
             start = boundaries[b_i-1]
-            # every chunk except first contains split_special_token at start
-            if b_i!=1:
-                start+=len(split_special_token)
-                
             end = boundaries[b_i]
-            # Last Chunk contains split_special_token at the end
-            if b_i==len(boundaries)-1:
-                end-=len(split_special_token)
                 
             f.seek(start)
             chunk = f.read(end - start).decode("utf-8", errors="ignore")
             
-            new_head, new_last = pretokenize(chunk)
+            parts = split_pat.split(chunk)
+
+            for part in parts:
+                if part in special_tokens:
+                    # hit a boundary — strip it out *and* force a break
+                    if last:
+                        last.is_next_connected = False
+                    continue
+
+                # otherwise it's plain text: pretokenize it
+                new_head, new_last = pretokenize(part, start_pos=start)
+
+                if new_head is None:
+                    continue
+
+                if head is None:
+                    head = new_head
+                elif last is not None:
+                    # connect across chunks *only* within a segment
+                    last.next = new_head
+                    new_head.prev = last
+                    last.is_next_connected = False
+
+                last = new_last
             
-            if head is None:
-                head = new_head
             
-            if not last is None:
-                last.next=new_head
-                last.is_next_connected=False
+            # Remove Special Tokens
+            # for x in special_tokens:
+            #     chunk = chunk.replace(x, '')
+            # # chunk = chunk.strip()
             
-            last = new_last
+            # new_head, new_last = pretokenize(chunk, start_pos=start)
+            
+            # if head is None:
+            #     head = new_head
+            
+            # if not last is None:
+            #     last.next=new_head
+            #     if new_head:
+            #         new_head.prev=last
+                
+            #     # combined = (last.val + new_head.val).decode("utf-8", errors="ignore")
+            #     # if full_token_re.fullmatch(combined):
+            #     #     print("SPLIT BY CHUNK", combined)
+            #     #     last.is_next_connected = True
+            #     # else:
+            #     #     last.is_next_connected = False
+            #     last.is_next_connected=False
+            
+            # last = new_last
         
         
     # 3. Count, Record Positions
@@ -267,10 +277,22 @@ def train_bpe(
     # print("CUR: {}, NUM MERGES {}".format(cur_vocab_size, num_merges))
     merges: List[Tuple[bytes, bytes]] = []
     
-    for merge_i in range(num_merges):
-        max_count_pair = max(pair_counts, key=lambda pair: (pair_counts[pair], pair[0], pair[1]))
+    remaining_merges = num_merges
+    while remaining_merges:
+    # for merge_i in range(num_merges):
+        # Break Ties - preferring the lexicographically greater pair.
+        max_count_pair = max(
+            pair_counts,
+            key=lambda pair: (
+                pair_counts[pair],
+                pair[0],#.decode('utf-8', errors='ignore'),
+                pair[1]#.decode('utf-8', errors='ignore')
+            )
+        )
+            
         # Add to merges
         merges.append(max_count_pair)
+        remaining_merges-=1
         
         # Add new vocab
         merged_val = b''.join(max_count_pair)
@@ -278,8 +300,22 @@ def train_bpe(
         cur_vocab_size+=1
         
         # print("MERGE {} {}".format(merge_i, merged_val))
+        max_count_pair_positions = list(pair_positions[max_count_pair])
+        max_count_pair_positions.sort(key=lambda x: x.span)
         
-        for node_a in list(pair_positions[max_count_pair]):
+        for node_a in max_count_pair_positions:
+            # Re-validate if still merge-able
+            if (
+                node_a.next is None
+                or node_a.val!=max_count_pair[0]
+                or not node_a.is_next_connected 
+                or node_a.next.val!=max_count_pair[1]
+            ):
+                continue
+            if not node_a in pair_positions[max_count_pair]:
+                # print("HI")
+                continue
+            
             node_b = node_a.next
             
             # 1. Merge Node
@@ -287,6 +323,10 @@ def train_bpe(
             new_node.prev=node_a.prev
             new_node.next=node_b.next
             new_node.is_next_connected=node_b.is_next_connected
+            ## new span
+            if node_a.span and node_b.span:
+                new_span = (node_a.span[0], node_b.span[1])
+                new_node.span=new_span
             
             # 2. Update Left
             if node_a.prev:
@@ -300,28 +340,31 @@ def train_bpe(
                     new_pair = (node_a.prev.val, merged_val)
                     pair_counts[new_pair] = pair_counts.get(new_pair, 0) + 1
                     pair_positions[new_pair].add(node_a.prev)
+
                 node_a.prev.next=new_node
             
             # 3. Update Right
-            if node_b.next and node_b.is_next_connected:
+            if node_b.next:
                 if node_b.is_next_connected:
                     # Remove previous
                     prev_pair = (node_b.val, node_b.next.val)
                     pair_counts[prev_pair]-=1
                     pair_positions[prev_pair].discard(node_b)
-                    
+
                     # Add new merged version
                     new_pair = (merged_val, node_b.next.val)
                     pair_counts[new_pair] = pair_counts.get(new_pair, 0) + 1
                     pair_positions[new_pair].add(new_node)
+
                 node_b.next.prev=new_node
             
-            del node_a
-            del node_b
+            node_a.val=None
+            node_b.val=None
+            # del node_a
+            # del node_b
         
         del pair_counts[max_count_pair]
         del pair_positions[max_count_pair]
-
     return vocab, merges
 
 if __name__=='__main__':
