@@ -1,0 +1,34 @@
+{
+  "name": "Cassidy Sterling",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "speedy, analytical way in a voice that could only be described as a sweetly sarcastic, melodic whisper.",
+  "career": "Tech Guru",
+  "personality_traits": [
+    {
+      "trait": "Creative",
+      "description": "Cassidy thrives on crafting unique and innovative solutions in her software development career."
+    },
+    {
+      "trait": "Loner",
+      "description": "She prefers solitude over large gatherings, finding peace in her own company and the glow of the computer screen."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "Strives for flawless execution in every task, not settling for anything less than the best."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Has a naughty habit of sneaking small trinkets from friends' homes."
+    }
+  ],
+  "hobbies": [
+    "Programming",
+    "Gourmet Cooking"
+  ],
+  "living_conditions": [
+    "Cassidy works at a top tech firm, often staying late to complete her projects.",
+    "She enjoys a work-life balance that leans heavily into her passion for technology.",
+    "Prefers spending evenings indulging in gourmet food rather than socializing."
+  ]
+}

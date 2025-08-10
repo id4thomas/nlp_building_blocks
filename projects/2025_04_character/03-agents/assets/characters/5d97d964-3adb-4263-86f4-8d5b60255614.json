@@ -1,0 +1,33 @@
+{
+  "name": "Rex Strummer",
+  "gender": "male",
+  "age": 27,
+  "dialogue_tone": "Rex's voice is deep and gravelly, often laced with sarcasm. He favors short, clipped sentences and mumbles when annoyed. His laughter, though rare, is contagious and often catches others off guard.",
+  "career": "Criminal",
+  "personality_traits": [
+    {
+      "trait": "Loner",
+      "description": "Rex prefers solitude and enjoys his own company."
+    },
+    {
+      "trait": "Goofball",
+      "description": "Finds humor in unlikely places and has a contagious laugh."
+    },
+    {
+      "trait": "Hot-Headed",
+      "description": "He has a quick temper, especially when things don't go as planned."
+    },
+    {
+      "trait": "Self-Assured",
+      "description": "Fiercely independent, treasures his freedom above all."
+    }
+  ],
+  "hobbies": [
+    "Mischief"
+  ],
+  "living_conditions": [
+    "Lives in a secluded apartment, maintaining a low profile.",
+    "Work-life heavily tilted towards his thrill-inducing job.",
+    "Daily routines involve scouting locations and meticulous planning."
+  ]
+}

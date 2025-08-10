@@ -1,0 +1,30 @@
+{
+  "name": "Evelyn 'Eve' Cipher",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "calm and measured, often carrying a touch of dry humor, with a low, soothing voice and the ability to mimic accents.",
+  "career": "Secret Agent",
+  "personality_traits": [
+    {
+      "trait": "Self-Assured",
+      "description": "Evelyn is distinctly self-assured, possessing a keen ability to blend into the background."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Possesses a compulsion to swipe items from places she infiltrates."
+    },
+    {
+      "trait": "Loyal",
+      "description": "Fiercely loyal to her loved ones."
+    }
+  ],
+  "hobbies": [
+    "Acting",
+    "Mischief"
+  ],
+  "living_conditions": [
+    "Living a highly covert lifestyle with a focus on maintaining secrecy.",
+    "Frequently travels for assignments, leading to an unpredictable daily routine.",
+    "Leverages her mimicry skills to blend into various social situations."
+  ]
+}

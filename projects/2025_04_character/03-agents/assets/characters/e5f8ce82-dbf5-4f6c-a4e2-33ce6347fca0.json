@@ -1,0 +1,29 @@
+{
+  "name": "Sergeant Scarlett",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Deep and commanding, often mistaken for a man's voice over the phone. Speaks in short, concise sentences with a no-nonsense nature.",
+  "career": "Military",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Beyond her tough exterior, she possesses a cheerful persona that brings warmth to those she's close to."
+    },
+    {
+      "trait": "Hot-Headed",
+      "description": "Quick to get angry, particularly when feeling wronged or experiencing failure."
+    },
+    {
+      "trait": "Loyal",
+      "description": "Fiercely protective of loved ones and unwavering in her devotion. Finds it impossible to cheat on someone close."
+    }
+  ],
+  "hobbies": [
+    "Fitness"
+  ],
+  "living_conditions": [
+    "Sergeant Scarlett lives a disciplined life as a Military Officer.",
+    "Regularly rises at dawn for daily exercises.",
+    "Work-life balance is structured, involving overseas deployment and routine recognition for excellent service."
+  ]
+}

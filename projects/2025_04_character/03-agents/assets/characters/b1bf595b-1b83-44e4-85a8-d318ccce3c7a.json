@@ -1,0 +1,30 @@
+{
+  "name": "Vivienne 'Viv' Sartoria",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Her distinctive, husky voice exudes authority and is notable for its swift, animated nature. Her speech is frequently laced with sarcasm and enlivened by a hearty laugh or a razor-sharp retort, adept at delivering critical remarks humorously.",
+  "career": "Style Influencer",
+  "personality_traits": [
+    {
+      "trait": "Creative",
+      "description": "Viv possesses a creative genius, seeing beyond conventional trends and foreseeing new styles."
+    },
+    {
+      "trait": "Erratic",
+      "description": "Her unpredictable and fiery temper often results in explosive reactions when things go awry."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Viv has a habit of taking minor items, which she considers 'borrowing for inspiration'."
+    }
+  ],
+  "hobbies": [
+    "Acting",
+    "Charisma",
+    "Media Production"
+  ],
+  "living_conditions": [
+    "Viv thrives in fast-paced, unpredictable environments, enjoying the challenges and spontaneity her career provides.",
+    "She lives a flamboyant lifestyle, constantly seeking inspiration from various fashion events and boutiques."
+  ]
+}

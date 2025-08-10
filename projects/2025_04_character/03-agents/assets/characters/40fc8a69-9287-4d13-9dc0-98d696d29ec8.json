@@ -1,0 +1,35 @@
+{
+  "name": "Eliot 'Spark' McAllister",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "A unique, deep and resonant voice with an edge of impatience, suggesting a quick-paced mind often jumping from topic to topic; becomes notably more animated when discussing engineering projects or baking.",
+  "career": "Engineer",
+  "personality_traits": [
+    {
+      "trait": "Creative",
+      "description": "Known for designing innovative solutions for complex problems, ability to think outside the box sets him apart."
+    },
+    {
+      "trait": "Hot-Headed",
+      "description": "Deeply passionate about work and prone to losing temper under stress."
+    },
+    {
+      "trait": "Loves the Outdoors",
+      "description": "Nature serves as a source of inspiration."
+    },
+    {
+      "trait": "Foodie",
+      "description": "Indulges in food to cope with stress when projects don\u2019t go as planned."
+    }
+  ],
+  "hobbies": [
+    "Gardening",
+    "Baking",
+    "Logic"
+  ],
+  "living_conditions": [
+    "Lives in a city apartment close to work, maintaining a hectic work-oriented lifestyle but balances with nature outings during weekends.",
+    "Enjoys baking and experimenting with new recipes as a relaxation method.",
+    "Regularly seeks opportunities to enhance engineering skills through workshops and courses."
+  ]
+}

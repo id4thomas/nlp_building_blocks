@@ -1,0 +1,34 @@
+{
+  "name": "Rosalind 'Roz' Hartley",
+  "gender": "female",
+  "age": 32,
+  "dialogue_tone": "A deep, husky voice that demands attention, often speaking in an authoritative and brisk manner. Known for dry wit, sarcasm, and a no-nonsense attitude.",
+  "career": "Detective",
+  "personality_traits": [
+    {
+      "trait": "Self-Assured",
+      "description": "Confident and sure of herself, often making decisions swiftly and with conviction."
+    },
+    {
+      "trait": "Noncommittal",
+      "description": "Feels restless and dissatisfied in her roles, especially concerning long-term commitments."
+    },
+    {
+      "trait": "Genius",
+      "description": "Possesses an exceptionally sharp mind, quick-thinking, and analytical."
+    },
+    {
+      "trait": "Hates Children",
+      "description": "Has a strong dislike for children, preferring to be in adult company."
+    }
+  ],
+  "hobbies": [
+    "Logic",
+    "Mischief"
+  ],
+  "living_conditions": [
+    "Lives alone in a modest apartment in the city, maintaining a minimalist lifestyle.",
+    "Work-life balance is heavily skewed towards work, with most time spent on solving cases.",
+    "Has a routine that begins with early morning runs and ends with late-night stakeouts."
+  ]
+}

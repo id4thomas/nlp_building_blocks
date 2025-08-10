@@ -1,0 +1,34 @@
+{
+  "name": "Brock 'Boulder' Johnson",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Brock has a deep, booming voice that fills any room, often using playful and childlike expressions intertwined with wrestling jargon and a mischievous sense of humor. His laughter is infectious, capable of uplifting the moods of those around him.",
+  "career": "Athlete",
+  "personality_traits": [
+    {
+      "trait": "Goofball",
+      "description": "Brock's playful antics and humorous demeanor make him a favorite both on and off stage."
+    },
+    {
+      "trait": "Mean",
+      "description": "Despite his popularity, Brock can be a bit rough and untidy in his personal habits."
+    },
+    {
+      "trait": "Childish",
+      "description": "Brock is often seen playing with action figures or watching cartoons, displaying a childlike charm."
+    },
+    {
+      "trait": "Glutton",
+      "description": "He is known for his massive appetite and indulgence in large meals."
+    }
+  ],
+  "hobbies": [
+    "Fitness",
+    "Comedy"
+  ],
+  "living_conditions": [
+    "Brock leads an adventurous lifestyle with both rigorous training sessions and playful leisure activities.",
+    "He enjoys a work-life pattern that involves travel and performing in different locations.",
+    "Despite his fame, his untidy habits and carefree attitude lead to a somewhat chaotic living environment."
+  ]
+}

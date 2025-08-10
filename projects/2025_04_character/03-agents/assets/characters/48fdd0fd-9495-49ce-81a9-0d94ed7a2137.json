@@ -1,0 +1,31 @@
+{
+  "name": "Elijah 'Eli' Sterling",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "A deep, resonant voice often filled with dry humor, interspersed with technical jargon and gaming lingo. His conversations are akin to a mix between a tech conference and a gaming tournament.",
+  "career": "Tech Guru",
+  "personality_traits": [
+    {
+      "trait": "Genius",
+      "description": "Known for his innovativeness and problem-solving skills that push the boundaries of the tech industry."
+    },
+    {
+      "trait": "Materialistic",
+      "description": "Enjoys collecting the latest tech gadgets and values tangible displays of success."
+    },
+    {
+      "trait": "Bro",
+      "description": "Generous and friendly, often engaging in lighthearted banter and hanging out with friends."
+    }
+  ],
+  "hobbies": [
+    "Video Gaming",
+    "Programming",
+    "Media Production"
+  ],
+  "living_conditions": [
+    "Works late nights driven by passion for technology and gaming.",
+    "Balances personal projects with a professional career at a leading gaming company.",
+    "Loves collecting the latest tech gadgets."
+  ]
+}

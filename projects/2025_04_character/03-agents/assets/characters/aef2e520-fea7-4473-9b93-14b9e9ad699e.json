@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Ignatius P. Crumble",
+  "gender": "male",
+  "age": 35,
+  "dialogue_tone": "Dr. Crumble's voice is characterized by a high-pitched, restless tone with a distinctive lisp. He tends to dive deep into complex scientific lingo and becomes noticeably louder when excited about new discoveries or inventions.",
+  "career": "Scientist",
+  "personality_traits": [
+    {
+      "trait": "Creative",
+      "description": "Known for his innovative advancements in Rocket Science, Dr. Crumble is a creative thinker with several patents to his name."
+    },
+    {
+      "trait": "Hot-Headed",
+      "description": "His passion for work makes him slightly impatient, especially when experiments don't go as planned, amplifying his fiery temperament."
+    },
+    {
+      "trait": "Loyal",
+      "description": "A genuine loyalty to his colleagues and loved ones is a hallmark of his character."
+    },
+    {
+      "trait": "Glutton",
+      "description": "Has a habit of overeating during stressful times, amplifying his big eater trait."
+    }
+  ],
+  "hobbies": [
+    "Rocket Science",
+    "Writing",
+    "Logic"
+  ],
+  "living_conditions": [
+    "Works at a secret government lab, focused on creating advanced rocket systems.",
+    "Maintains a work-life largely centered around his scientific pursuits and inventions.",
+    "Lives with an eccentric charm, wearing tin foil hats to shield himself from 'alien mind control waves'.",
+    "Balancing a hectic work schedule with periods of stress-eating."
+  ]
+}

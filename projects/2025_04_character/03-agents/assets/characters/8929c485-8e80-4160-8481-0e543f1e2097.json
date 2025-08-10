@@ -1,0 +1,29 @@
+{
+  "name": "Aurelia Wordsworth",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Soft and melodic with a hint of sarcasm, mystery, and eloquent, poetic expressions.",
+  "career": "Writer",
+  "personality_traits": [
+    {
+      "trait": "Romantic",
+      "description": "Often gets lost in her own world of words and fantasies."
+    },
+    {
+      "trait": "Snob",
+      "description": "Has a refined taste, especially in literature and art, appreciating only the finest works."
+    },
+    {
+      "trait": "Genius",
+      "description": "Known for her sharp wit and intellectual prowess."
+    }
+  ],
+  "hobbies": [
+    "Writing",
+    "Painting"
+  ],
+  "living_conditions": [
+    "Lives a balanced life fully immersed in the arts and literature.",
+    "Enjoys a well-organized daily routine centered around creative pursuits and art appreciation."
+  ]
+}

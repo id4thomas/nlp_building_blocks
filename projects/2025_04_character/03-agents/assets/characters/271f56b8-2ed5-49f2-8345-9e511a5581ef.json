@@ -1,0 +1,37 @@
+{
+  "name": "Roderick 'Rusty' Grimes",
+  "gender": "male",
+  "age": 27,
+  "dialogue_tone": "gruff baritone infused with sarcasm and biting wit, often speaking in a dramatic, theatrical fashion.",
+  "career": "Actor",
+  "personality_traits": [
+    {
+      "trait": "Hot-Headed",
+      "description": "Quick to anger and can be impatient or irritable."
+    },
+    {
+      "trait": "Mean",
+      "description": "Tends to be harsh or unkind in interactions."
+    },
+    {
+      "trait": "Clumsy",
+      "description": "Prone to stumbling or breaking things, often leading to unintended chaos."
+    },
+    {
+      "trait": "Ambitious",
+      "description": "Driven by a strong desire to succeed in the acting industry."
+    },
+    {
+      "trait": "Mean",
+      "description": "Often harsh or unkind in interactions, though sometimes unintentionally."
+    }
+  ],
+  "hobbies": [
+    "Acting"
+  ],
+  "living_conditions": [
+    "Currently struggling with balancing finances and the uncertainty of acting roles.",
+    "Has experience in various jobs, including bartending and construction, to make ends meet.",
+    "Regularly attends auditions and local theater productions to hone skills."
+  ]
+}

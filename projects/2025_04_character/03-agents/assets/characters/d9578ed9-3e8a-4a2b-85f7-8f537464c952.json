@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Oliver 'Ollie' Hartley",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Dr. Oliver 'Ollie' Hartley speaks in a calm and soothing manner, often using medical jargon and speaking slowly, as if perpetually tired. His voice is comforting, but can become notably sharp when angry.",
+  "career": "Doctor",
+  "personality_traits": [
+    {
+      "trait": "Hot-Headed",
+      "description": "Quick to anger, especially when mistakes are made in work or personal life."
+    },
+    {
+      "trait": "Clumsy",
+      "description": "Frequently makes small mistakes, particularly noticeable in day-to-day tasks."
+    },
+    {
+      "trait": "Lazy",
+      "description": "Despite being athletic, he often shows reluctance in engaging in chores or exercise."
+    },
+    {
+      "trait": "Genius",
+      "description": "Has a brilliant knack for medical procedures."
+    }
+  ],
+  "hobbies": [
+    "Fitness",
+    "Logic"
+  ],
+  "living_conditions": [
+    "Lives a busy life working long hours as a doctor.",
+    "Prefers relaxation at home due to his laziness, often avoiding chores.",
+    "Maintains a work-life balance by indulging in occasional fitness routines."
+  ]
+}

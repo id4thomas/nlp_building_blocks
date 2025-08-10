@@ -1,0 +1,28 @@
+{
+  "name": "Aurelia Hartley",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Soft and melodic, brimming with enthusiasm and passion, making others feel comfortable. Especially excited and quick when discussing art or books.",
+  "career": "Freelancer",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Known for being happy and uplifting, often bringing joy to others around."
+    },
+    {
+      "trait": "Outgoing",
+      "description": "Enjoys socializing and making connections, always ready to engage with those around her."
+    },
+    {
+      "trait": "Loyal",
+      "description": "Fiercely devoted to friends and partners, often putting their needs first."
+    }
+  ],
+  "hobbies": [
+    "Painting",
+    "Writing"
+  ],
+  "living_conditions": [
+    "Lives in a cozy apartment where she balances work and leisure effortlessly. Her daily routine involves painting for hours and exploring literary worlds."
+  ]
+}

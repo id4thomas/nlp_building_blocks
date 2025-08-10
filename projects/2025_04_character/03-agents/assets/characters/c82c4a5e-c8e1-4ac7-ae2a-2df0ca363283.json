@@ -1,0 +1,29 @@
+{
+  "name": "Ezra Thorne",
+  "gender": "male",
+  "age": 27,
+  "dialogue_tone": "Ezra has a deep, baritone voice often tinted with a hint of sadness. He speaks carefully, with a love for language, and makes precise choices of phrases. His tone is often sarcastic and witty, adding a playful twist to conversations.",
+  "career": "Freelancer",
+  "personality_traits": [
+    {
+      "trait": "Gloomy",
+      "description": "Ezra tends to have a naturally melancholic demeanor, often reflecting a deeper emotional world."
+    },
+    {
+      "trait": "Ambitious",
+      "description": "He is driven to constantly improve and refine his skills, especially in his writing career."
+    },
+    {
+      "trait": "Goofball",
+      "description": "Despite his gloomy nature, Ezra loves to have fun and uses humor to navigate his emotions."
+    }
+  ],
+  "hobbies": [
+    "Writing",
+    "Comedy"
+  ],
+  "living_conditions": [
+    "Lives a flexible lifestyle as a freelancer, balancing creative work with personal projects.",
+    "Maintains a routine of exploring new ideas and engaging in humorous exchanges."
+  ]
+}

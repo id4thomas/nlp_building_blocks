@@ -1,0 +1,29 @@
+{
+  "name": "Aria Hartley",
+  "gender": "female",
+  "age": 27,
+  "dialogue_tone": "A distinct tone that blends sarcasm, wit, and humor. Words are often tinged with irony, making chats engaging and entertaining. Known for sharp comebacks and quick-witted responses, effective in social media posts.",
+  "career": "Social Media",
+  "personality_traits": [
+    {
+      "trait": "Clumsy",
+      "description": "Often leads to amusing accidents which Aria shares on her platforms, making herself relatable to her audience."
+    },
+    {
+      "trait": "Mean",
+      "description": "Famed for ruthless roasts and sharpness in comebacks."
+    },
+    {
+      "trait": "Romantic",
+      "description": "Despite a mean streak, she is a hopeless romantic, sharing love stories with her followers."
+    }
+  ],
+  "hobbies": [
+    "Acting",
+    "Comedy",
+    "Singing"
+  ],
+  "living_conditions": [
+    "Aria balances her social media career by consistently creating unique and engaging content. Her daily routine involves filming amusing incidents, romantic escapades, and managing her influencer engagements."
+  ]
+}

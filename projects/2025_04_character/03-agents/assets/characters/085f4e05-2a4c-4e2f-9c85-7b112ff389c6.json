@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rosalind 'Rose' Hawthorne",
+  "gender": "female",
+  "age": 32,
+  "dialogue_tone": "soothing, melodic voice that expresses warmth and compassion, speaking gently and often using medical terms. Exhibits a flirty tone and nature-related metaphors when attracted to someone.",
+  "career": "Doctor",
+  "personality_traits": [
+    {
+      "trait": "Romantic",
+      "description": "Exhibits a flirty tone and uses nature-related metaphors when attracted to someone."
+    },
+    {
+      "trait": "Loves the Outdoors",
+      "description": "Spends free time outdoors exploring and connecting with nature."
+    },
+    {
+      "trait": "Glutton",
+      "description": "Fondness for food, sometimes unbothered if it comes from unconventional places."
+    }
+  ],
+  "hobbies": [
+    "Gardening",
+    "Cooking"
+  ],
+  "living_conditions": [
+    "Lives in a cozy apartment near a park, allowing for frequent nature walks.",
+    "Maintains a balanced work-life pattern, ensuring time for relaxation amidst a busy medical schedule.",
+    "Enjoys exploring gourmet cuisine during weekends."
+  ]
+}

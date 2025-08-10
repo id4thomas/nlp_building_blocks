@@ -1,0 +1,29 @@
+{
+  "name": "Evelyn Noir",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Evelyn's dialogue tone is characterized by a low, sultry voice, often carrying a hint of mischief. She chooses her words carefully, communicating effectively with brevity.",
+  "career": "Secret Agent",
+  "personality_traits": [
+    {
+      "trait": "Vegetarian",
+      "description": "Evelyn's choice of being a vegetarian reveals her compassionate side."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Evelyn occasionally finds enjoyment in other's troubles, adding unpredictability to her nature."
+    },
+    {
+      "trait": "Genius",
+      "description": "Evelyn is highly intelligent and resourceful, excelling in her professional life as a secret agent."
+    }
+  ],
+  "hobbies": [
+    "Charisma",
+    "Logic",
+    "Mischief"
+  ],
+  "living_conditions": [
+    "Evelyn leads an exciting life as a secret agent, successfully infiltrating enemy bases and practicing the art of interrogation. She adapts well to various situations, balancing her professional demands with personal commitments."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Aurelia Starbright",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "soft, melodic voice with a hint of laughter, often using space-related puns and metaphors, making people feel at ease.",
+  "career": "Astronaut",
+  "personality_traits": [
+    {
+      "trait": "Outgoing",
+      "description": "Always the life of the party and enjoys socializing with others."
+    },
+    {
+      "trait": "Good",
+      "description": "Kindness is second nature and often volunteers for charity."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "Strives for excellence and pays great attention to detail."
+    },
+    {
+      "trait": "Cheerful",
+      "description": "Known for her cheerful disposition and ability to inspire others with her passion for space exploration."
+    }
+  ],
+  "hobbies": [
+    "Handiness",
+    "Fitness"
+  ],
+  "living_conditions": [
+    "Lives a balanced life, effectively managing work and personal commitments.",
+    "Enjoys being at the forefront of space exploration, with access to cutting-edge technology and research facilities.",
+    "Participates in a routine that includes regular exercise and skill enhancement for her space missions."
+  ]
+}

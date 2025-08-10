@@ -1,0 +1,27 @@
+{
+  "name": "Evelyn 'Evie' Mendoza",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Soft-spoken and gentle, speaking slowly and deliberately. Her soothing presence is punctuated with excitement when discussing new culinary discoveries.",
+  "career": "Freelancer",
+  "personality_traits": [
+    {
+      "trait": "Loner",
+      "description": "Prefers solitude and independent activities, maintaining a minimal social circle."
+    },
+    {
+      "trait": "Clumsy",
+      "description": "Prone to dropping things or accidental trips over small obstacles, yet finds humor in these mishaps."
+    }
+  ],
+  "hobbies": [
+    "Cooking",
+    "Mixology",
+    "Gardening"
+  ],
+  "living_conditions": [
+    "Works as a successful freelance food blogger.",
+    "Occasionally collaborates with food brands and eateries, creating sponsored content.",
+    "Maintains a home filled with premium kitchenware and gourmet ingredients, often experimenting with new recipes."
+  ]
+}

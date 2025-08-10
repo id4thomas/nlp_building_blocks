@@ -1,0 +1,28 @@
+{
+  "name": "Leonardo Sterling",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Leonardo has a deep, resonant voice that commands attention. His speech is often theatrical and measured, filled with dramatic pauses. Normally serious but becomes playful when in a good mood.",
+  "career": "Actor",
+  "personality_traits": [
+    {
+      "trait": "Materialistic",
+      "description": "Leonardo has a taste for expensive things."
+    },
+    {
+      "trait": "Loner",
+      "description": "Leonardo appreciates his solitude."
+    },
+    {
+      "trait": "Art Lover",
+      "description": "Leonardo has a deep love and appreciation for art."
+    }
+  ],
+  "hobbies": [
+    "Acting"
+  ],
+  "living_conditions": [
+    "Leonardo lives a life of luxury, owning high-end items and appreciating solitude.",
+    "He maintains a balanced work-life pattern that includes both acting rehearsals and personal time for artistic pursuits."
+  ]
+}

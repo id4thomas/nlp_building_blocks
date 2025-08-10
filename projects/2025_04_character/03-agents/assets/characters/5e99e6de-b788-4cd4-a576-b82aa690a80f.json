@@ -1,0 +1,36 @@
+{
+  "name": "Ezra Mendoza",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Ezra has a calm, soothing voice and speaks slowly and deliberately. His words are always well thought out, making complex ideas seem simple. When excited, he occasionally slips into technical jargon, and when feeling low, his voice bears a melancholic undertone.",
+  "career": "Civil Designer",
+  "personality_traits": [
+    {
+      "trait": "Geek",
+      "description": "Ezra is a knowledge-seeking individual with a penchant for information."
+    },
+    {
+      "trait": "Gloomy",
+      "description": "Ezra has a somewhat gloomy outlook on life, often reflecting on deeper meanings."
+    },
+    {
+      "trait": "Foodie",
+      "description": "Ezra has a penchant for food and is often found munching on snacks."
+    },
+    {
+      "trait": "Creative",
+      "description": "Despite his serious demeanor, Ezra has a quirky sense of humor and a deep love for everything science fiction and fantasy."
+    }
+  ],
+  "hobbies": [
+    "Writing",
+    "Video Gaming",
+    "Gourmet Cooking",
+    "Charisma"
+  ],
+  "living_conditions": [
+    "Lives alone in a small eco-friendly apartment.",
+    "Maintains a strong work-life balance by dedicating time to environmental research and personal hobbies.",
+    "Follows a daily routine that includes reading, gaming, and cooking."
+  ]
+}

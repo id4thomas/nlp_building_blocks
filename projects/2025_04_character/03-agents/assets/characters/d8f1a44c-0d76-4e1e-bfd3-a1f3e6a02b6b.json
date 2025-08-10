@@ -1,0 +1,31 @@
+{
+  "name": "Finnegan 'Finn' Hawthorne",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "A playful blend of enthusiasm and sarcasm, brimming with childlike awe when discussing nature or conservation efforts. However, sharp and biting when angered or frustrated. Known for an infectious laugh that brightens anyone's day.",
+  "career": "Conservationist",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Often displays a touch of childlike mischief and an enthusiasm for life."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "Always strives to excel in his endeavors, particularly in conservation work."
+    },
+    {
+      "trait": "Hot-Headed",
+      "description": "Can become sharp and biting when angered or frustrated."
+    }
+  ],
+  "hobbies": [
+    "Gardening",
+    "Fishing",
+    "Wellness"
+  ],
+  "living_conditions": [
+    "Lives in a modest eco-friendly home surrounded by nature",
+    "Maintains a work-life balance that includes regular research expeditions",
+    "Daily routine involves practicing mindfulness to connect with nature"
+  ]
+}

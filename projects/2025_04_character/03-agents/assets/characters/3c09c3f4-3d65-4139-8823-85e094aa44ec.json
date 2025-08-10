@@ -1,0 +1,29 @@
+{
+  "name": "Benedict 'Benny' Russo",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "warm, baritone voice filled with laughter and energy; conversations frequenting with sports metaphors and art references, often persuasive and humorous.",
+  "career": "Politician",
+  "personality_traits": [
+    {
+      "trait": "Art Lover",
+      "description": "Has a profound appreciation for art and frequently references it in conversations."
+    },
+    {
+      "trait": "Goofball",
+      "description": "Known for being playful and humorous, often bringing laughter and joy to interactions."
+    },
+    {
+      "trait": "Loyal",
+      "description": "Demonstrates strong camaraderie with friends and remains dependable in all relationships."
+    }
+  ],
+  "hobbies": [
+    "Acting",
+    "Charisma",
+    "Painting"
+  ],
+  "living_conditions": [
+    "Lives comfortably, balancing a rigorous political career with a fondness for social gatherings and art engagement."
+  ]
+}

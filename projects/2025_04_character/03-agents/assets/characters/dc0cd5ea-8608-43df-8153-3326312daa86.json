@@ -1,0 +1,28 @@
+{
+  "name": "Orion Pax",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Calming and soothing voice but often fills with excitement when discussing space, science fiction, or video games. Can't resist sprinkling space-related puns into conversations.",
+  "career": "Astronaut",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Orion is always upbeat, finding positivity in any situation."
+    },
+    {
+      "trait": "Bro",
+      "description": "Always prepared to bond over sports or share a friendly bro hug."
+    },
+    {
+      "trait": "Geek",
+      "description": "A true geek at heart, constantly ready to chat about the newest sci-fi book or video game."
+    }
+  ],
+  "hobbies": [
+    "Video Gaming",
+    "Rocket Science"
+  ],
+  "living_conditions": [
+    "Lives in a comfortable apartment with a gaming setup, balanced work-life as an astronaut with regular time for gaming and socializing."
+  ]
+}

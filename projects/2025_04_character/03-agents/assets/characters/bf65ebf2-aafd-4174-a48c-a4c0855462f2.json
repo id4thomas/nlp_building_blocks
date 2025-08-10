@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Morwen Stroud",
+  "gender": "female",
+  "age": 35,
+  "dialogue_tone": "Dr. Morwen Stroud's voice is prominent, powerful, and a deep alto that commands the room. She often integrates sarcasm into her speech, especially when not in the best of moods. Her laughter, although rare, is loud and contagious, contrasting with her generally serious disposition.",
+  "career": "Doctor",
+  "personality_traits": [
+    {
+      "trait": "Genius",
+      "description": "Her unparalleled intelligence is well recognized in the medical community."
+    },
+    {
+      "trait": "Erratic",
+      "description": "Her mood can change without warning, contributing to her unpredictability."
+    },
+    {
+      "trait": "Mean",
+      "description": "Possesses a mean streak that makes her somewhat feared among colleagues."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Exhibits kleptomaniac tendencies, adding to her peculiar behavior."
+    }
+  ],
+  "hobbies": [
+    "Logic",
+    "Vampiric Lore"
+  ],
+  "living_conditions": [
+    "Lives alone in a comfortable townhouse close to St. Sim's Hospital.",
+    "Has a demanding work-life balance due to the high-pressure nature of her job.",
+    "Engages in a routine of constant learning and skill enhancement, involving late night reading and research."
+  ]
+}

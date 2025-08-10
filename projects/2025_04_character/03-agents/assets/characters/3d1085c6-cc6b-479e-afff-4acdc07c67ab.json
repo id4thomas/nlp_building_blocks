@@ -1,0 +1,38 @@
+{
+  "name": "Leonard 'Leo' Beckett",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "A booming, commanding voice with the ability to fluently switch between technical jargon and enthusiastic chatter about personal passions. Accompanied by a hearty, contagious laugh, especially when discussing or enjoying favorite foods.",
+  "career": "Engineer",
+  "personality_traits": [
+    {
+      "trait": "Genius",
+      "description": "Often consumed in own world of math and mechanics, displaying a sharp, analytical mind."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "Has little patience for mediocrity, always striving for excellence in every endeavor."
+    },
+    {
+      "trait": "Noncommittal",
+      "description": "Fear of commitment results in frequent job and relationship changes, always seeking something new."
+    },
+    {
+      "trait": "Foodie",
+      "description": "Great love for food, frequently indulging without concern for its origin."
+    },
+    {
+      "trait": "Snob",
+      "description": "Can appear snobbish due to high standards and little patience for mediocrity."
+    }
+  ],
+  "hobbies": [
+    "Cooking",
+    "Fitness"
+  ],
+  "living_conditions": [
+    "Working at a famous tech firm",
+    "Frequent job changes due to noncommittal nature",
+    "Constant search for change in life and work"
+  ]
+}

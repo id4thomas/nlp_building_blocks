@@ -1,0 +1,42 @@
+{
+  "name": "Aria Montgomery",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Calm and soothing, conveying thoughts in a measured and thoughtful manner, often articulated with precise language and occasional legal jargon.",
+  "career": "Law",
+  "personality_traits": [
+    {
+      "trait": "Ambitious",
+      "description": "An industrious lawyer with dedication and a strong sense of justice."
+    },
+    {
+      "trait": "Creative",
+      "description": "An art aficionado who enjoys painting and visiting galleries."
+    },
+    {
+      "trait": "Family-Oriented",
+      "description": "Values quality time with family, placing significant importance on familial relationships."
+    },
+    {
+      "trait": "Active",
+      "description": "Has an athletic streak, regularly participating in marathons and sporting events."
+    },
+    {
+      "trait": "Loves the Outdoors",
+      "description": "Passionate about camping, hiking, and environmental conservation."
+    }
+  ],
+  "hobbies": [
+    "Painting",
+    "Gardening",
+    "Rocket Science",
+    "Fitness",
+    "Writing"
+  ],
+  "living_conditions": [
+    "Works at a reputed law firm as an environmental lawyer.",
+    "Maintains a good work-life balance, integrating art and nature into daily life.",
+    "Actively participates in camping and hiking activities.",
+    "Spends free time in art galleries and painting."
+  ]
+}

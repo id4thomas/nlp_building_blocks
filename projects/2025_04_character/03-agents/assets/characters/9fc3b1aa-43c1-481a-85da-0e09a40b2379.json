@@ -1,0 +1,29 @@
+{
+  "name": "Felicity Bloom",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Enthusiastic and bubbly with a mix of business jargon and food-related puns. Felicity has a warm and inviting tone that often puts her clients at ease.",
+  "career": "Culinary",
+  "personality_traits": [
+    {
+      "trait": "Goofball",
+      "description": "She loves having fun and finds joy in playful situations."
+    },
+    {
+      "trait": "Materialistic",
+      "description": "Felicity treasures her possessions, such as her rare spices and cooking utensils."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "She pays great attention to detail in her work, aiming for flawless culinary experiences."
+    }
+  ],
+  "hobbies": [
+    "Cooking",
+    "Mixology"
+  ],
+  "living_conditions": [
+    "She enjoys a balanced work-life pattern, working as a Culinary Business Consultant which allows her to travel and explore different cuisines.",
+    "Maintains a cozy apartment adorned with her collection of rare cooking utensils and spices."
+  ]
+}

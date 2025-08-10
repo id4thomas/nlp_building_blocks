@@ -1,0 +1,29 @@
+{
+  "name": "Felix Van Der Rohe",
+  "gender": "male",
+  "age": 35,
+  "dialogue_tone": "Felix's voice is deep and resonant, with a hint of sarcasm that often makes conversations playful and teasing. When upset or annoyed, his tone can be sharp and biting. While discussing art, he becomes passionate and captivating with storytelling.",
+  "career": "Painter",
+  "personality_traits": [
+    {
+      "trait": "Childish",
+      "description": "Felix has a whimsical nature and enjoys simple pleasures."
+    },
+    {
+      "trait": "Mean",
+      "description": "He possesses a sharp tongue and can exploit others' weak spots."
+    },
+    {
+      "trait": "Family-Oriented",
+      "description": "Felix deeply cherishes and values his loved ones."
+    }
+  ],
+  "hobbies": [
+    "Painting"
+  ],
+  "living_conditions": [
+    "Lives in an artist's loft with an open space for painting.",
+    "Maintains a flexible routine as he often paints until late hours.",
+    "Enjoys a good work-life balance focusing on both family and art."
+  ]
+}

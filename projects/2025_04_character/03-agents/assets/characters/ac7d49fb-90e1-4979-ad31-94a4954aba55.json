@@ -1,0 +1,30 @@
+{
+  "name": "Eliot Greenfield",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Eliot has a calm and authoritative voice with a habit of using technical terms. However, he is adept at simplifying complex ideas so everyone can understand. He often expresses enthusiasm, especially when talking about his projects or acquisitions.",
+  "career": "Civil Designer",
+  "personality_traits": [
+    {
+      "trait": "Ambitious",
+      "description": "Passionate about making environmental solutions to improve the world."
+    },
+    {
+      "trait": "Outgoing",
+      "description": "Loves being the life of the party and enjoys the company of friends."
+    },
+    {
+      "trait": "Goofball",
+      "description": "Enjoys showing off his latest finds and is always on the lookout for the next big thing."
+    }
+  ],
+  "hobbies": [
+    "Gardening",
+    "Logic",
+    "Charisma"
+  ],
+  "living_conditions": [
+    "Lives in a modern city, working in a bustling office with a passionate team.",
+    "Maintains a perfect balance between work and social life, cherishing time spent on his innovative projects."
+  ]
+}

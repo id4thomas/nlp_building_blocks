@@ -1,0 +1,29 @@
+{
+  "name": "Raven Blackwood",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Raven speaks with a deep, husky voice, often using a sarcastic tone. Her remarks are biting and delivered with a devilish smirk, utilizing her voice to manipulate and control situations.",
+  "career": "Military",
+  "personality_traits": [
+    {
+      "trait": "Noncommittal",
+      "description": "Raven finds it difficult to commit to any one thing for long, constantly seeking excitement and new experiences."
+    },
+    {
+      "trait": "Art Lover",
+      "description": "She has a deep appreciation for art and often finds solace in it, seeking beauty in the darker aspects of life."
+    },
+    {
+      "trait": "Evil",
+      "description": "She has a tendency towards selfishness and manipulation, often employing her charm for personal gain."
+    }
+  ],
+  "hobbies": [
+    "Charisma",
+    "Acting"
+  ],
+  "living_conditions": [
+    "Raven lives in a modest apartment near the military base, maintaining a work-focused lifestyle with little time for personal connections.",
+    "Her daily routine often includes rigorous training and brief excursions to art galleries or exhibitions."
+  ]
+}

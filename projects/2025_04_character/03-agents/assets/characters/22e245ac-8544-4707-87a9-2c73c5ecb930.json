@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Elara Sterling",
+  "gender": "female",
+  "age": 32,
+  "dialogue_tone": "Dr. Elara Sterling possesses a soft-spoken and soothing voice that's calming for patients. However, her tone can unpredictably become melancholic or erratic, especially when stressed or alone. She's known to talk to herself or inanimate objects when deep in thought.",
+  "career": "Doctor",
+  "personality_traits": [
+    {
+      "trait": "Loner",
+      "description": "Despite her professional success, Elara tends to prefer solitude and enjoys the company of her own thoughts over social gatherings."
+    },
+    {
+      "trait": "Gloomy",
+      "description": "Her moods can shift unpredictably, and she often shares melancholic thoughts and conspiracy theories with others."
+    },
+    {
+      "trait": "Erratic",
+      "description": "She talks to herself or to inanimate objects, especially when absorbed in her thoughts."
+    },
+    {
+      "trait": "Creative",
+      "description": "Shares intriguing conspiracy theories and maintains an air of mystery."
+    }
+  ],
+  "hobbies": [
+    "Writing",
+    "Wellness",
+    "Logic"
+  ],
+  "living_conditions": [
+    "Lives alone, allowing her space to indulge in thoughtful introspection.",
+    "Balances work-life with a deeply rooted passion for emergency medicine.",
+    "Long work hours with unpredictable shifts due to her specialization in emergency medicine.",
+    "Her home is a sanctuary filled with books and comforting objects."
+  ]
+}

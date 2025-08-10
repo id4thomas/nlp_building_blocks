@@ -1,0 +1,29 @@
+{
+  "name": "Raphael 'Raffy' DeMarco",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Smooth, persuasive voice infused with a hint of a New York accent, often witty and sarcastic, especially when critiquing. Makes even harsh criticism sound charming.",
+  "career": "Critic",
+  "personality_traits": [
+    {
+      "trait": "Self-Assured",
+      "description": "A confident man with a charming personality that always attracts attention."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Frequently swiping small items from places as part of a 'harmless hobby'."
+    },
+    {
+      "trait": "Bro",
+      "description": "Relishes the company of close friends and enjoys sports-related activities."
+    }
+  ],
+  "hobbies": [
+    "Charisma",
+    "Cooking",
+    "Writing"
+  ],
+  "living_conditions": [
+    "Lives in a bustling urban apartment, balancing time between work reviewing new restaurants and art exhibits, and social interactions with friends during sports activities."
+  ]
+}

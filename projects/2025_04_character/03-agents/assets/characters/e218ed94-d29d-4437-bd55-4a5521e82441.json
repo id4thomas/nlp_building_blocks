@@ -1,0 +1,30 @@
+{
+  "name": "Mortimer Goth",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "deep, resonant voice often touched with a hint of sarcasm, speaking slowly and deliberately. Pauses to chuckle at his own jokes or emphasize a point, with distinctive laughter sending chills down listeners' spines.",
+  "career": "Tech Guru",
+  "personality_traits": [
+    {
+      "trait": "Mean",
+      "description": "Enjoys deriving joy from others' mishaps and thrives in negative environments."
+    },
+    {
+      "trait": "Evil",
+      "description": "Feels positive energy around negative emotions and people, gaining satisfaction from declaring enemies."
+    },
+    {
+      "trait": "Foodie",
+      "description": "Loves quality food, but gets uneasy when consuming regular, poor, or spoiled quality food and drinks."
+    }
+  ],
+  "hobbies": [
+    "Programming",
+    "Video Gaming"
+  ],
+  "living_conditions": [
+    "High-stress job with burning the midnight oil to perfect code",
+    "Not very popular among colleagues due to mean and evil traits",
+    "Enjoys a lifestyle where he can declare new enemies and feel euphoria"
+  ]
+}

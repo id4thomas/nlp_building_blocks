@@ -1,0 +1,32 @@
+{
+  "name": "Evelyn 'Eve' Marlowe",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "distinctive, husky voice that often carries a tinge of sarcasm. She expresses her views with a dry, witty tone making her thoughts both entertaining and insightful.",
+  "career": "Critic",
+  "personality_traits": [
+    {
+      "trait": "Erratic",
+      "description": "Her moods often shift erratically, changing frequently and without warning."
+    },
+    {
+      "trait": "Loner",
+      "description": "She always finds her own company more satisfying than being with others."
+    },
+    {
+      "trait": "Glutton",
+      "description": "Her indulgence in junk food stamps her as a glutton."
+    },
+    {
+      "trait": "Genius",
+      "description": "Beneath her quirks, lies a razor-sharp intelligence, with an extraordinary eye for detail."
+    }
+  ],
+  "hobbies": [
+    "Acting"
+  ],
+  "living_conditions": [
+    "Prefers solitude and loves spending hours alone in her home office.",
+    "Completely immersed in films and art pieces, delivering detailed and thorough critiques."
+  ]
+}

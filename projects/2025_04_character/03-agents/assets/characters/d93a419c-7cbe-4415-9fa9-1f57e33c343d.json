@@ -1,0 +1,33 @@
+{
+  "name": "Benny 'Belly Buster' Bonanno",
+  "gender": "male",
+  "age": 35,
+  "dialogue_tone": "Boisterous and gravelly with a knack for mimicking accents and a hearty laughter.",
+  "career": "Criminal",
+  "personality_traits": [
+    {
+      "trait": "Glutton",
+      "description": "A love for food, always on the lookout for the next meal."
+    },
+    {
+      "trait": "Clumsy",
+      "description": "Often trips over his own feet or accidentally breaks things."
+    },
+    {
+      "trait": "Ambitious",
+      "description": "Holds big ambitions, constantly dreaming about the next big score."
+    },
+    {
+      "trait": "Loyal",
+      "description": "Has a soft heart for kids and animals, sharing meals with strays."
+    }
+  ],
+  "hobbies": [
+    "Mischief",
+    "Cooking"
+  ],
+  "living_conditions": [
+    "Living a risky life involved in petty thefts and scams.",
+    "Aspires for a big heist to fund retirement and open a restaurant."
+  ]
+}

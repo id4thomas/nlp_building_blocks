@@ -1,0 +1,31 @@
+{
+  "name": "Rosalind 'Rocky' Hartley",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "A unique mix of husky and melodic tones, alternating between playful teasing and keen sarcasm. Her laugh is hearty and infectious.",
+  "career": "Entertainer",
+  "personality_traits": [
+    {
+      "trait": "Goofball",
+      "description": "She loves making people laugh with her quick wit and humorous antics."
+    },
+    {
+      "trait": "Foodie",
+      "description": "She has a profound love of food and frequently discusses her favorite recipes."
+    },
+    {
+      "trait": "Mean",
+      "description": "Unafraid to put someone in their place using sharp wit."
+    }
+  ],
+  "hobbies": [
+    "Comedy",
+    "Cooking",
+    "Rock Climbing"
+  ],
+  "living_conditions": [
+    "Lives an adventurous and exciting life as a popular stand-up comedian.",
+    "Frequent appearances on late-night talk shows.",
+    "Balanced life between food adventures and thrill-seeking activities like rock climbing."
+  ]
+}

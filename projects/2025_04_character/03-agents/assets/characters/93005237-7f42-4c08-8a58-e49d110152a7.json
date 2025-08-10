@@ -1,0 +1,30 @@
+{
+  "name": "Sergeant Lila 'Goofball' McQuade",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Lila has a lively and playful demeanor, often infusing laughter into conversations, even during stressful circumstances. Her voice is both authoritative and warm, skillfully blending leadership qualities with a touch of affection.",
+  "career": "Military",
+  "personality_traits": [
+    {
+      "trait": "Goofball",
+      "description": "Known for her lively personality, Lila often finds humor in situations and is a source of amusement for those around her."
+    },
+    {
+      "trait": "Family-Oriented",
+      "description": "Lila deeply values her family and goes to great lengths to maintain close relationships with them."
+    },
+    {
+      "trait": "Erratic",
+      "description": "Her unpredictable behavior is highlighted by her penchant for talking to herself or engaging with inanimate objects."
+    }
+  ],
+  "hobbies": [
+    "Fitness",
+    "Pet Training"
+  ],
+  "living_conditions": [
+    "Currently serving in the military",
+    "Has a strict routine that balances physical training and leadership responsibilities",
+    "Aspiring to be a veterinarian upon retirement"
+  ]
+}

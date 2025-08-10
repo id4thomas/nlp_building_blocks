@@ -1,0 +1,34 @@
+{
+  "name": "Finnegan 'Finn' O'Reilly",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Finn has a deep baritone voice with a charming Irish lilt. He often speaks in a playful and jovial manner, lightening the mood with childlike enthusiasm and humor. However, sometimes his voice reflects a somber, introspective side when he is engulfed by his gloomy thoughts.",
+  "career": "Athlete",
+  "personality_traits": [
+    {
+      "trait": "Childish",
+      "description": "Finn often displays a playful nature, engaging joyously with kids and their toys."
+    },
+    {
+      "trait": "Clumsy",
+      "description": "Despite his athletic prowess, Finn has moments of clumsiness."
+    },
+    {
+      "trait": "Gloomy",
+      "description": "Finn has a side that sometimes leads him into moments of somber introspection."
+    },
+    {
+      "trait": "Loves the Outdoors",
+      "description": "Finn has a passion for nature and loves adventurous outdoor experiences."
+    }
+  ],
+  "hobbies": [
+    "Fitness",
+    "Rock Climbing",
+    "Gardening",
+    "Selvadoradian Culture"
+  ],
+  "living_conditions": [
+    "Finn lives in Dublin, balancing a demanding athletic career with his love for nature and adventurous outdoor activities. His days are a mix of rigorous training sessions, matches, and periods of introspection."
+  ]
+}

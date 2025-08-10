@@ -1,0 +1,30 @@
+{
+  "name": "Gordon Spicoli",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Gordon has a deep and resonant voice that carries urgency and intensity. He speaks quickly with expressive hand gestures, often leaving a lasting echo of excitement or anger.",
+  "career": "Culinary",
+  "personality_traits": [
+    {
+      "trait": "Hot-Headed",
+      "description": "Gordon becomes easily heated when things don't go his way, expressing anger quickly and loudly."
+    },
+    {
+      "trait": "Active",
+      "description": "He becomes restless if he doesn't exercise daily, needing physical activity to feel balanced."
+    },
+    {
+      "trait": "Jealous",
+      "description": "Gordon experiences jealousy when he can't spend time with loved ones, feeling tense yet confident."
+    }
+  ],
+  "hobbies": [
+    "Cooking",
+    "Fitness"
+  ],
+  "living_conditions": [
+    "Lives in a bustling city apartment close to 'Le Flambeau'.",
+    "Has a dynamic and demanding work-life balance as head chef.",
+    "Daily routine involves early mornings and late nights, with brief interludes of relaxation."
+  ]
+}

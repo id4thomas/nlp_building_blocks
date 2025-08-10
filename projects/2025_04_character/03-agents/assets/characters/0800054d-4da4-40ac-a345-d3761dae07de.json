@@ -1,0 +1,36 @@
+{
+  "name": "Brock Wellington",
+  "gender": "male",
+  "age": 28,
+  "dialogue_tone": "Brock has a deep and resonant voice that commands attention and respect, often utilizing sports metaphors to convey wisdom and insight. His speech is characterized by confidence and assertion with an underlying passion, especially when discussing personal interests.",
+  "career": "Athlete",
+  "personality_traits": [
+    {
+      "trait": "Snob",
+      "description": "Brock appreciates high-end living and has a refined taste, often indulging in luxuries."
+    },
+    {
+      "trait": "Perfectionist",
+      "description": "He strives for excellence and is driven to perfect his craft, seen in his professional success."
+    },
+    {
+      "trait": "Foodie",
+      "description": "Brock has an insatiable love for food, enjoying both the creation and consumption of high-quality cuisine."
+    },
+    {
+      "trait": "Loves the Outdoors",
+      "description": "His affinity for nature is evident in his appreciation of outdoor activities and experiences."
+    }
+  ],
+  "hobbies": [
+    "Bowling",
+    "Fitness",
+    "Gourmet Cooking",
+    "Gardening"
+  ],
+  "living_conditions": [
+    "Living in a high-end apartment with a focus on luxury and comfort.",
+    "Maintains a rigorous training and competition schedule.",
+    "Balanced lifestyle with time for both professional and personal pursuits."
+  ]
+}

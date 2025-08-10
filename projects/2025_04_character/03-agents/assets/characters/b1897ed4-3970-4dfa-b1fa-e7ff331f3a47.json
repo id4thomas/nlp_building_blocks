@@ -1,0 +1,30 @@
+{
+  "name": "Evelyn 'Eve' Sparks",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "Her tone is lively and engaging, often speaking quickly with a playful lilt. It's filled with enthusiasm and curiosity, changing unpredictably, mirroring her erratic nature.",
+  "career": "Engineer",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Brimming with energy and exudes a positive aura."
+    },
+    {
+      "trait": "Erratic",
+      "description": "Tends to change her tone unpredictably and talks to herself when deep in thought."
+    },
+    {
+      "trait": "Neat",
+      "description": "Incredibly organized, which aids in her engineering work."
+    }
+  ],
+  "hobbies": [
+    "Logic",
+    "Handiness"
+  ],
+  "living_conditions": [
+    "Lives a structured life in a small, cozy apartment with a dedicated workspace for her projects.",
+    "Maintains an excellent work-life balance with a focus on her goals of creating mechanical devices.",
+    "Engages in a daily routine involving morning exercises and evening brainstorming sessions."
+  ]
+}

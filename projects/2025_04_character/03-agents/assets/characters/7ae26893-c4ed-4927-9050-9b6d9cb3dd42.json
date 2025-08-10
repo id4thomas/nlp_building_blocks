@@ -1,0 +1,39 @@
+{
+  "name": "Luna Bloom",
+  "gender": "female",
+  "age": 28,
+  "dialogue_tone": "An enthusiastic and warm tone blending trendy internet slang and pop culture references, making any topic engaging, with an infectious laughter.",
+  "career": "Social Media",
+  "personality_traits": [
+    {
+      "trait": "Cheerful",
+      "description": "Always radiates positivity and enthusiasm."
+    },
+    {
+      "trait": "Outgoing",
+      "description": "Enjoys being around people and making new connections."
+    },
+    {
+      "trait": "Geek",
+      "description": "Has a strong passion for sci-fi, video games, and pop culture."
+    },
+    {
+      "trait": "Kleptomaniac",
+      "description": "Sneakily takes small items from places visited, adding a mysterious edge."
+    },
+    {
+      "trait": "Good",
+      "description": "Inherently kind, often engaged in charity work and volunteer activities."
+    }
+  ],
+  "hobbies": [
+    "Video Gaming",
+    "Flower Arranging",
+    "Writing"
+  ],
+  "living_conditions": [
+    "Lives in a comfortable apartment filled with sci-fi memorabilia and gaming equipment.",
+    "Balances a busy work schedule with leisure time for reading and gaming.",
+    "Enjoys attending social events and staying connected with the online community."
+  ]
+}
