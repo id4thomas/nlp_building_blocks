@@ -1,7 +1,7 @@
 # CS336: Language Modeling from Scratch (Spring 2025)
 ## Lectures
 | lecture | folder | link |
-| --- | --- | --- | --- |
+| --- | ---  | --- |
 | lecture 01 - Overview, tokenization| [lecture_01](./lecture_01/) | |
 | lecture 03 - Architecture | [lecture_03](./lecture_03/) | |
 
