@@ -1,0 +1,64 @@
+{
+    "id": "EXNE2105170001",
+    "metadata": {
+        "title": "국립국어원 웹말뭉치 추출 EBXX1908-01",
+        "creator": "국립국어원",
+        "distributor": "국립국어원",
+        "year": "2020",
+        "category": "웹말뭉치>구축",
+        "annotation_level": "개체명 분석",
+        "sampling": "부분 추출 - 임의 추출"
+    },
+    "document": [
+        {
+            "id": "EBRW1908000115.3",
+            "metadata": {
+                "title": "고양이 스노우(SNOW) 카메라 인식 스티커 / 고양이 사진찍기 / 아기 코숏 치즈 냥이 키우기 / 새끼고양이 키우기 / 오猫한 기록",
+                "author": "맑고흐림",
+                "publisher": "네이버 블로그",
+                "date": "20190709",
+                "crawl_date": "20190802 02:07:57",
+                "url": "http://blog.naver.com/PostView.nhn?blogId=cloud_ent_&logNo=221581261106"
+            },
+            "sentence": [
+                {
+                    "id": "EBRW1908000115.3.1.1",
+                    "form": "며칠전 고다(고양이라서 다행이야) 카페에 들어갔다가 재밌는 사진을 발견했다.",
+                    "word": [
+                        {
+                            "id": 1,
+                            "form": "며칠전",
+                            "begin": 0,
+                            "end": 3
+                        },
+                        {
+                            "id": 2,
+                            "form": "고다(고양이라서",
+                            "begin": 4,
+                            "end": 12
+                        },
+                        ...
+                    ],
+                    "NE": [
+                        {
+                            "id": 1,
+                            "form": "고다",
+                            "label": "TMI_SERVICE",
+                            "begin": 4,
+                            "end": 6
+                        },
+                        {
+                            "id": 2,
+                            "form": "고양이라서 다행이야",
+                            "label": "TMI_SERVICE",
+                            "begin": 7,
+                            "end": 17
+                        }
+                    ]
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
