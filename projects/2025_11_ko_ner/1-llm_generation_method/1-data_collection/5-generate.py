@@ -79,7 +79,7 @@ async def process_texts(texts: List[str], yaml_template_path: str, save_base_pat
     tpl = load_prompt_template(yaml_template_path)
     instruction = tpl['prompt']['developer']
 
-    semaphore = asyncio.Semaphore(16)  # limit concurrency to 32
+    semaphore = asyncio.Semaphore(32)  # limit concurrency to 32
 
     async def safe_call(instruction, prompt, save_base_path, doc_id):
         """Wrapper that retries up to 5 times and skips on persistent failure."""
@@ -134,9 +134,15 @@ async def process_texts(texts: List[str], yaml_template_path: str, save_base_pat
 
 
 async def main():
+    fname = "NEWSPAPER_2022_2"
     dataset_name = "NIKL_NEWSPAPER_2023_CSV"
-    fname = "NEWSPAPER_2022_1"
-    sample_name = "sample1"
+    # fname = "NEWSPAPER_2022_1"
+    # sample_name = "sample1"
+    # sample_name = "sample2"
+    # fname = "NEWSPAPER_2022_2"
+    # sample_name = "sample3"
+    fname = "NEWSPAPER_2022_3"
+    sample_name = "sample4"
 
     df = pd.read_parquet(f"data/{dataset_name}-{fname}-{sample_name}.parquet")
     # df = df.iloc[:5]
