@@ -1,0 +1,20 @@
+{
+    "main": {
+        "items": {
+            "dim": 1,
+            "dtype": "child"
+        }
+    },
+    "items": {
+        "child": {
+            "item_bbox": {
+                "dim": 0,
+                "dtype": "bbox"
+            },
+            "item_description": {
+                "dim": 0,
+                "dtype": "str"
+            }
+        }
+    }
+}

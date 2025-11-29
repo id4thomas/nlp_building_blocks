@@ -1,0 +1,29 @@
+order: [
+  system, user1
+]
+role: [
+  system, user
+]
+system:
+  text: |-
+      주어진 문서에서 "테이블" (표) 영역들을 모두 추출하도록 합니다
+
+      다음 JSON 형식으로 반환하세요
+      {{
+        "items": [
+          {{
+              "item_bbox": {{
+                  "x1": int,
+                  "y1": int,
+                  "x2": int,
+                  "y2": int,
+              }},
+              "item_description": "표를 html로 작성한 텍스트",
+          }},
+          ...
+        ]
+      }}
+user1:
+  text: |-
+      Page
+  image_url: "{page_image_url}"
