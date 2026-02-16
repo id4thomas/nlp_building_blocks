@@ -1,40 +1,28 @@
 # Study Experiments
 
-## 2111 - Various Text Experiments
-### Table of Contents
-* [Preprocessing](./preprocessing/README.md)
-    * [Huggingface Tokenizer Analysis](./preprocessing/tokenizer_huggingface.md)
-        * [Examples](./preprocessing/tokenize_huggingface_examples.ipynb)
-* [Analysis](./analysis/README.md)
-    * [EDA (Exploratory Data Analysis)](./analysis/eda.md)
-        * Text Statistics
-            * n-gram Exploration
-            * [Topic Modeling](./analysis/topic_modeling.md)
-            <!-- * Wordcloud -->
-            * [Examples](./analysis/eda_text_statistics.ipynb)
-        * Sentiment Analysis
-            * VADER
-            * TextBlob
-            * Flair
-            * [Examples](./analysis/eda_sentiment.ipynb)
-* [Vectorization](./vectorization/README.md)
-    * [Count Based Representations](./vectorization/count_based_representations.md)
-        * Bag-of-Words (Binary,Count Values)
-        * TF-IDF
-        * [Examples](./vectorization/count_based_representations.ipynb) 
-* [Transformer](./transformer/README.md)
-    * Studying and implementing the Transformer Architecture
-    * [Transformer Implementation Details](./transformer/implementation/README.md)
-* [Evaluation](./evaluation/README.md)
-    * Methods of evaluating NLP Models, generated results
-    * Reference-based Metrics
-        * [BLEU](./evaluation/bleu.md)
-            * [Examples](./evaluation/bleu.ipynb)
-        * [ROUGE](./evaluation/rouge.md)
-            * [Examples](./evaluation/rouge.ipynb)
-    * Transfer-learning based Metrics
-        *[BLEURT](./evaluation/bleurt.md)
-* [Study Materials](./study_materials/README.md)
-    * Organized personal study materials
-    * [한국어 임베딩 - 이기창](./study_materials/한국어임베딩_이기창/README.md)
-    * [CMU Advanced NLP CS 11-711 (Fall-2021)](./study_materials/2021_cmu_advanced_nlp/README.md)
+Tree:
+```
+├── 2021
+│   ├── 2111_generation_evaluation
+│   ├── 2111_implementing_transformer
+│   ├── 2111_representations
+│   ├── 2111_text_analysis
+│   ├── 2111_text_preprocessing
+│   └── README.md
+├── 2022
+│   └── 2212_implementing_prefix_tuning
+├── 2023
+│   ├── 2312_captum_llm
+│   └── 2312_test_peft_adapters
+├── 2024
+│   ├── 2403_peft_0_10_0_version_test
+│   ├── 2405_llama_tokenizer_test
+│   ├── 2409_outlines
+│   ├── 2411_emnlp_crawling
+│   └── 2411_xgrammer_test
+├── 2025
+│   ├── 2502_train_embedder
+│   ├── 2503_agents
+│   └── 2511_vlm_doc_extract
+├── 2026
+```
