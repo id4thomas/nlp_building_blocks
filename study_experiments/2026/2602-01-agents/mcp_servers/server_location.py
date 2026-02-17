@@ -5,6 +5,8 @@ import re
 
 from fastmcp import FastMCP
 from fastmcp.exceptions import ToolError
+from fastmcp.server.dependencies import get_http_headers
+
 from pydantic import BaseModel, Field
 
 
@@ -84,6 +86,7 @@ def is_name_english(city_name: str) -> bool:
         return True
 
 def get_user_location(user_id: str) -> City:
+    """Dummy Function"""
     candidates = [
         CITY_DB["Seoul"],
         CITY_DB["Busan"],
@@ -141,7 +144,11 @@ def get_nearby_cities(
     tags={"user"},
     meta={"version": "1.0", "author": "id4thomas"}
 )
-def tool_get_user_location(user_id: str) -> City:
+def tool_get_user_location() -> City:
+    ## WARNING: Proper Authentication implementation is required
+    headers = get_http_headers()  # 없으면 {}
+    user_id = headers.get("x-user-id")
+
     # 1. Validate User
     is_valid_user = validate_user(user_id)
     if not is_valid_user:

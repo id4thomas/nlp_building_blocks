@@ -14,11 +14,13 @@ uvicorn server_weather:app --host 0.0.0.0 --port 8002
 
 ## Servers
 ### server_location
-`get_user_location(user_id: str)`
-- Returns current location for a user
+`get_user_location()`
+- 사용자의 현재 정보를 도시명 + 좌표로 전달
+- header에 유저 정보를 넣어서 인식
+  - 주의! - 보안상 좋지 않음, 데모 사용 케이스에 대해서 처리
 
 ```
-Input: {"user_id": "demo-user"}
+Input: {}
 Output: {"name": "Seoul", "coordinate": {"lat": 37.5665, "lon": 126.978}}
 ```
 
