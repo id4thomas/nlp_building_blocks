@@ -167,17 +167,18 @@ Response내 정보 계층
 
 
 ## Single Agent 실행 예시
-쿼리: "내 현재 위치 주변 도시들을 알려주고 그 도시들의 날씨들도 알려줘. 도시 명칭은 반환값 그대로 사용해"
+쿼리: "내 현재 위치와 주변 도시들을 알려주고 그 도시들의 날씨들도 알려줘."
 
 생성 답변 (print(results))
 ```
-현재 위치인 부산 주변 도시로는 김해, 창원, 울산이 있습니다. 각 도시의 날씨는 다음과 같습니다:
+id4thomas님, 현재 위치는 부산입니다. 주변 도시와 그 날씨 정보는 다음과 같습니다:
 
-- **김해**: 구름 조금, 기온 8°C, 습도 60%, 바람 19km/h  
-- **창원**: 날씨 정보를 확인 중입니다.  
-- **울산**: 날씨 정보를 확인 중입니다.  
+- **부산**: 기온 7°C, 상태 구름 조금, 습도 59%, 풍속 16km/h  
+- **김해**: 기온 7°C, 상태 맑음, 습도 60%, 풍속 10km/h  
+- **창원**: 기온 6°C, 상태 구름 조금, 습도 56%, 풍속 15km/h  
+- **울산**: 기온 5°C, 상태 흐림, 습도 59%, 풍속 16km/h  
 
-추가로 창원과 울산의 날씨도 확인해드릴까요?
+추가로 도시별 예보가 필요하시면 말씀해주세요!
 ```
 
 ### result에 담긴 messages 내용 (실행 순서)
@@ -229,17 +230,17 @@ CONT 3 - function_call
 ------------------------------
 MSG 5 tool - 4 contents
 CONT 0 - function_result
-	None	{"time":"20260217-22:00","status":{"temp_cel":6,"condition":"구름 조금","humidity_pct":59,"wind_kph":19}}
+	None	{"time":"20260217-23:00","status":{"temp_cel":7,"condition":"구름 조금","humidity_pct":59,"wind_kph":16}}
 CONT 1 - function_result
-	None	{"time":"20260217-22:00","status":{"temp_cel":8,"condition":"맑음","humidity_pct":56,"wind_kph":12}}
+	None	{"time":"20260217-23:00","status":{"temp_cel":7,"condition":"맑음","humidity_pct":60,"wind_kph":10}}
 CONT 2 - function_result
-	None	{"time":"20260217-22:00","status":{"temp_cel":7,"condition":"구름 조금","humidity_pct":58,"wind_kph":11}}
+	None	{"time":"20260217-23:00","status":{"temp_cel":6,"condition":"구름 조금","humidity_pct":56,"wind_kph":15}}
 CONT 3 - function_result
-	None	{"time":"20260217-22:00","status":{"temp_cel":7,"condition":"흐림","humidity_pct":61,"wind_kph":17}}
+	None	{"time":"20260217-23:00","status":{"temp_cel":5,"condition":"흐림","humidity_pct":59,"wind_kph":16}}
 ------------------------------
 MSG 6 assistant - 1 contents
 CONT 0 - text
-	'id4thomas님, 현재 위치인 부산과 주변 도시의 날씨 정보를 알려드릴게요.\n\n- **부산**: 6°C, 구름 조금, 습도 59%, 풍속 19km/h  \n- **김해**: 8°C, 맑음, 습도 56%, 풍속 12km/h  \n- **창원**: 7°C, 구름 조금, 습도 58%, 풍속 11km/h  \n- **울산**: 7°C, 흐림, 습도 61%, 풍속 17km/h  \n\n날씨 참고해 주세요!'
+	'id4thomas님, 현재 위치는 부산입니다. 주변 도시와 그 날씨 정보는 다음과 같습니다:\n\n- **부산**: 기온 7°C, 상태 구름 조금, 습도 59%, 풍속 16km/h  \n- **김해**: 기온 7°C, 상태 맑음, 습도 60%, 풍속 10km/h  \n- **창원**: 기온 6°C, 상태 구름 조금, 습도 56%, 풍속 15km/h  \n- **울산**: 기온 5°C, 상태 흐림, 습도 59%, 풍속 16km/h  \n\n추가로 도시별 예보가 필요하시면 말씀해주세요!'
 ------------------------------
 ```
 
