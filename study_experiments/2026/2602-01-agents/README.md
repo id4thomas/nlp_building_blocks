@@ -2,7 +2,7 @@
 agent 프레임워크, fastmcp 실험
 
 MCP/ A2A / AG-UI 프로토콜에 대한 이해도 높이는 것이 목적
-- 파악 Medium 블로그 게시글: [Agent 프로토콜 파악 (2025-02)]([https://medium.com/@id2thomas/agent-프로토콜-파악-2026-02-f6a763fd5ea3](https://medium.com/@id2thomas/agent-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-%ED%8C%8C%EC%95%85-2026-02-f6a763fd5ea3))
+- 파악 Medium 블로그 게시글: [Agent 프로토콜 파악 (2025-02)](https://medium.com/@id2thomas/agent-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-%ED%8C%8C%EC%95%85-2026-02-f6a763fd5ea3)
 
 ## 구현 내용
 - 위치 정보 (server_location) / 날씨 정보 (server_weather) tool을 제공하는 FastMCP 서버
