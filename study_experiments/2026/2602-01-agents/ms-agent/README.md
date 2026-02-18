@@ -1,4 +1,5 @@
 # Microsoft Agent Framework
+[Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-python)
 
 ## 프레임워크 파악
 MS AutoGen, semantic-kernel의 후속 프레임워크
@@ -156,7 +157,7 @@ result = await agent.run(
 )
 ```
 
-### 에이전트 Response
+### Agent Response
 agent.run 실행시 AgentResponse 객체를 반환
 - [소스](https://github.com/microsoft/agent-framework/blob/54a67d96cd297c7d49ff7de9c8641534034a5468/python/packages/core/agent_framework/_types.py#L2112)
 

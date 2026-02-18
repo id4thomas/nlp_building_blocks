@@ -94,7 +94,7 @@ class AgentBuilder:
             user_name=user_name
         )
         agent = client.as_agent(
-            name="HelpfulAssistant",
+            name=name,
             instructions=agent_instruction,
             tools=tools,
             conversation_id=None
