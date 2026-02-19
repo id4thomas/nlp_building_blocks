@@ -18,10 +18,10 @@ MCP/ A2A / AG-UI 프로토콜에 대한 이해도 높이는 것이 목적
 | --- | --- | --- | --- |
 | [MS Agent](./ms-agent/) | 멀티에이전트 대화 | 오케스트레이터 컨텍스트 | [링크](https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-python) |
 | [Langchain/LangGraph](./langchain/) | 상태 그래프 | 명시적 State + 체크포인트 | [링크](https://www.langchain.com/agents) |
-| AG2 | 멀티에이전트 대화 | 대화 히스토리 | [링크](https://www.ag2.ai) |
-| Google ADK | | | [링크](https://google.github.io/adk-docs/) |
-| OpenAI Agents | | | [링크](https://openai.github.io/openai-agents-python/) |
 | [PydanticAI](./pydanticai/) | | | [링크](https://ai.pydantic.dev) |
+| [Google ADK](./google-adk/) | | | [링크](https://google.github.io/adk-docs/) |
+| [OpenAI Agents](./openai-agents/) | | | [링크](https://openai.github.io/openai-agents-python/) |
+| AG2 | 멀티에이전트 대화 | 대화 히스토리 | [링크](https://www.ag2.ai) |
 
 각 프레임워크 별로 아래 내용을 파악한다
 - LLM Client 선언
