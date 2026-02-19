@@ -21,7 +21,7 @@ MCP/ A2A / AG-UI 프로토콜에 대한 이해도 높이는 것이 목적
 | AG2 | 멀티에이전트 대화 | 대화 히스토리 | [링크](https://www.ag2.ai) |
 | Google ADK | | | [링크](https://google.github.io/adk-docs/) |
 | OpenAI Agents | | | [링크](https://openai.github.io/openai-agents-python/) |
-| PydanticAI | | | [링크](https://ai.pydantic.dev) |
+| [PydanticAI](./pydanticai/) | | | [링크](https://ai.pydantic.dev) |
 
 각 프레임워크 별로 아래 내용을 파악한다
 - LLM Client 선언
