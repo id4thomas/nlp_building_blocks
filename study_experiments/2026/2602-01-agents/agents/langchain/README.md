@@ -102,7 +102,7 @@ graph = create_agent(
 
 위 그래프의 흐름은 아래 그림과 같다
 - tool_calls가 있다면 tools 노드로, 없다면 (빈 리스트) 종료
-![graph](../assets/langchain_graph.png)
+![graph](../../assets/langchain_graph.png)
 
 ### Agent Response
 graph.invoke 실행 결과는 {"messages": [...]} 형태의 메시지 히스토리이다.
