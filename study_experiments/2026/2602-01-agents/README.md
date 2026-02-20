@@ -35,3 +35,11 @@ MCP/ A2A / AG-UI 프로토콜에 대한 이해도 높이는 것이 목적
 - 실행 결과
 
 ## Tracing / Observability
+아래 솔루션들로 LLM/Agent Observability를 실험한다
+- DB 세팅이 간단한 프레임워크위주로 테스트 (opik/langfuse등은 clickhouse 세팅도 필요)
+
+후보군
+| 실험 폴더 | 공식 링크 | 제공 기능 |
+| --- | --- | --- |
+| [mlflow tracing](./tracing/mlflow-tracing/) | | [링크](https://mlflow.org/docs/latest/genai/tracing/) |
+| [arize phoenix](./tracing/arize-phoenix/) | | [링크](https://arize.com/docs/phoenix) | 
