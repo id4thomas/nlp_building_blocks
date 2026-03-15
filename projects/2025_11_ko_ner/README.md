@@ -1,4 +1,6 @@
 # [2025.11] ko-ner
+PROJECTED MOVED TO NEW REPOSITORY [id4thomas/ko-ner](https://github.com/id4thomas/ko-ner)
+
 한국어 NER 모델 학습
 
 Workspace:
