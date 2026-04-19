@@ -21,18 +21,32 @@ fi
 STAMP="$(date +%Y%m%d-%H%M%S)"
 CONFIG_STEM="$(basename "${CONFIG}" .yaml)"
 LOG_FILE="${RESULTS_DIR}/${CONFIG_STEM}_${STAMP}.log"
+CONTAINER_NAME="vllm-bench-${CONFIG_STEM}-${STAMP}"
+IN_CONTAINER_RESULTS="/tmp/bench-results"
 
-docker run --rm -i \
+cleanup() {
+    docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+
+set -o pipefail
+docker run -i \
+    --name "${CONTAINER_NAME}" \
     --network host \
     --ipc host \
-    --entrypoint python3 \
-    -v "${SCRIPT_DIR}":/workspace \
+    --entrypoint bash \
+    -v "${SCRIPT_DIR}":/workspace:ro \
     -v "${HOST_TOKENIZER_DIR}":"${TOKENIZER_MOUNT}":ro \
     -w /workspace \
     -e "VLLM_BENCH_TOKENIZER_DIR=${TOKENIZER_MOUNT}" \
-    -e "VLLM_BENCH_RESULTS_DIR=/workspace/results" \
+    -e "VLLM_BENCH_RESULTS_DIR=${IN_CONTAINER_RESULTS}" \
     -e HF_HUB_OFFLINE=1 \
     "${IMAGE}" \
-    bench_serve.py "${CONFIG}" 2>&1 | tee "${LOG_FILE}"
+    -c "mkdir -p ${IN_CONTAINER_RESULTS} && exec python3 bench_serve.py ${CONFIG}" 2>&1 | tee "${LOG_FILE}"
+rc=${PIPESTATUS[0]}
+
+docker cp "${CONTAINER_NAME}:${IN_CONTAINER_RESULTS}/." "${RESULTS_DIR}/" 2>/dev/null || \
+    echo "[bench] warning: failed to copy results from container" >&2
 
 echo "[bench] console log: ${LOG_FILE}"
+exit "${rc}"

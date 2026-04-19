@@ -1,0 +1,42 @@
+INFO 04-19 12:09:40 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 04-19 12:09:40 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+WARNING 04-19 12:09:40 [interface.py:231] Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+W0419 12:09:41.513000 1 torch/utils/cpp_extension.py:118] No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Namespace(trust_remote_code=False, seed=0, num_prompts=50, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, enable_multimodal_chat=False, disable_shuffle=False, custom_output_len=256, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, asr_max_audio_len_sec=inf, asr_min_audio_len_sec=0.0, random_input_len=1024, random_output_len=128, random_range_ratio=0.0, random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, label=None, backend='openai-chat', base_url='http://localhost:901', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=1, model='Qwen3.5-35B-A3B', input_len=4096, output_len=1024, tokenizer='/mnt/tokenizer', tokenizer_mode='auto', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, disable_tqdm=False, num_warmups=0, profile=False, save_result=False, save_detailed=False, append_result=False, metadata=None, result_dir=None, result_filename=None, ignore_eos=False, percentile_metrics=None, metric_percentiles='99', goodput=None, request_id_prefix='bench-6c3129b4-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, served_model_name=None, lora_modules=None, lora_assignment='random', ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=0, extra_body=None, skip_tokenizer_init=False, insecure=False, plot_timeline=False, timeline_itl_thresholds=[25.0, 50.0], plot_dataset_stats=False)
+INFO 04-19 12:09:42 [datasets.py:700] Sampling input_len from [4096, 4096] and output_len from [1024, 1024]
+WARNING: vllm bench serve no longer sets temperature==0 (greedy) in requests by default. The default will be determined on the server side and can be model/API specific. For the old behavior, include --temperature=0.
+Starting initial single prompt test run...
+Skipping endpoint ready check.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 1
+  0%|          | 0/50 [00:00<?, ?it/s]  2%|▏         | 1/50 [00:35<29:06, 35.65s/it]  4%|▍         | 2/50 [01:10<28:15, 35.32s/it]  6%|▌         | 3/50 [01:45<27:34, 35.21s/it]  8%|▊         | 4/50 [02:20<26:56, 35.14s/it] 10%|█         | 5/50 [02:55<26:19, 35.10s/it] 12%|█▏        | 6/50 [03:30<25:43, 35.08s/it] 14%|█▍        | 7/50 [04:05<25:07, 35.06s/it] 16%|█▌        | 8/50 [04:40<24:31, 35.04s/it] 18%|█▊        | 9/50 [05:15<23:56, 35.03s/it] 20%|██        | 10/50 [05:50<23:21, 35.03s/it] 22%|██▏       | 11/50 [06:26<22:46, 35.03s/it] 24%|██▍       | 12/50 [07:01<22:10, 35.02s/it] 26%|██▌       | 13/50 [07:35<21:35, 35.01s/it] 28%|██▊       | 14/50 [08:10<20:59, 34.99s/it] 30%|███       | 15/50 [08:45<20:24, 34.99s/it] 32%|███▏      | 16/50 [09:20<19:50, 35.00s/it] 34%|███▍      | 17/50 [09:55<19:15, 35.00s/it] 36%|███▌      | 18/50 [10:31<18:40, 35.02s/it] 38%|███▊      | 19/50 [11:06<18:05, 35.02s/it] 40%|████      | 20/50 [11:41<17:30, 35.01s/it] 42%|████▏     | 21/50 [12:16<16:55, 35.03s/it] 44%|████▍     | 22/50 [12:51<16:20, 35.03s/it] 46%|████▌     | 23/50 [13:26<15:45, 35.02s/it] 48%|████▊     | 24/50 [14:01<15:10, 35.03s/it] 50%|█████     | 25/50 [14:36<14:35, 35.02s/it] 52%|█████▏    | 26/50 [15:11<14:00, 35.01s/it] 54%|█████▍    | 27/50 [15:46<13:25, 35.02s/it] 56%|█████▌    | 28/50 [16:21<12:50, 35.03s/it] 58%|█████▊    | 29/50 [16:56<12:15, 35.03s/it] 60%|██████    | 30/50 [17:31<11:40, 35.02s/it] 62%|██████▏   | 31/50 [18:06<11:05, 35.03s/it] 64%|██████▍   | 32/50 [18:41<10:30, 35.05s/it] 66%|██████▌   | 33/50 [19:16<09:55, 35.06s/it] 68%|██████▊   | 34/50 [19:51<09:20, 35.05s/it] 70%|███████   | 35/50 [20:26<08:45, 35.05s/it] 72%|███████▏  | 36/50 [21:01<08:10, 35.06s/it] 74%|███████▍  | 37/50 [21:36<07:35, 35.07s/it] 76%|███████▌  | 38/50 [22:11<07:00, 35.07s/it] 78%|███████▊  | 39/50 [22:46<06:25, 35.07s/it] 80%|████████  | 40/50 [23:21<05:50, 35.06s/it] 82%|████████▏ | 41/50 [23:57<05:15, 35.05s/it] 84%|████████▍ | 42/50 [24:32<04:40, 35.04s/it] 86%|████████▌ | 43/50 [25:07<04:05, 35.02s/it] 88%|████████▊ | 44/50 [25:42<03:30, 35.03s/it] 90%|█████████ | 45/50 [26:17<02:55, 35.02s/it] 92%|█████████▏| 46/50 [26:52<02:20, 35.02s/it] 94%|█████████▍| 47/50 [27:27<01:45, 35.03s/it] 96%|█████████▌| 48/50 [28:02<01:10, 35.02s/it] 98%|█████████▊| 49/50 [28:37<00:35, 35.05s/it]100%|██████████| 50/50 [29:12<00:00, 35.04s/it]100%|██████████| 50/50 [29:12<00:00, 35.04s/it]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     50        
+Failed requests:                         0         
+Maximum request concurrency:             1         
+Benchmark duration (s):                  1752.24   
+Total input tokens:                      204800    
+Total generated tokens:                  51200     
+Request throughput (req/s):              0.03      
+Output token throughput (tok/s):         29.22     
+Peak output token throughput (tok/s):    31.00     
+Peak concurrent requests:                2.00      
+Total token throughput (tok/s):          146.10    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          379.51    
+Median TTFT (ms):                        378.91    
+P99 TTFT (ms):                           406.87    
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          33.89     
+Median TPOT (ms):                        33.87     
+P99 TPOT (ms):                           34.23     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           33.85     
+Median ITL (ms):                         33.33     
+P99 ITL (ms):                            38.80     
+==================================================
+{'date': '20260419-123856', 'endpoint_type': 'openai-chat', 'backend': 'openai-chat', 'label': None, 'model_id': 'Qwen3.5-35B-A3B', 'tokenizer_id': '/mnt/tokenizer', 'num_prompts': 50, 'request_rate': 'inf', 'burstiness': 1.0, 'max_concurrency': 1, 'duration': 1752.2439526650123, 'completed': 50, 'failed': 0, 'total_input_tokens': 204800, 'total_output_tokens': 51200, 'request_throughput': 0.028534839526171172, 'request_goodput': None, 'output_throughput': 29.21967567479928, 'total_token_throughput': 146.09837837399638, 'max_output_tokens_per_s': 31.0, 'max_concurrent_requests': 2, 'rtfx': 0.0, 'mean_ttft_ms': np.float64(379.5129206869751), 'median_ttft_ms': np.float64(378.90949100255966), 'std_ttft_ms': np.float64(14.665218115934543), 'p99_ttft_ms': np.float64(406.867908379063), 'mean_tpot_ms': np.float64(33.88581109662901), 'median_tpot_ms': np.float64(33.86992720679043), 'std_tpot_ms': np.float64(0.09087750291511802), 'p99_tpot_ms': np.float64(34.232750894672044), 'mean_itl_ms': np.float64(33.85270098684941), 'median_itl_ms': np.float64(33.32713607233018), 'std_itl_ms': np.float64(2.0224446310984483), 'p99_itl_ms': np.float64(38.801803551614285)}
+[bench] wrote results to /tmp/bench-results/qwen3_5_35b_a3b_bf16-c1.json

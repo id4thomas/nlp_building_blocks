@@ -2,15 +2,15 @@ backend: openai-chat
 base-url: http://localhost:901
 endpoint: /v1/chat/completions
 
-model: Qwen3.6-35B-A3B
-tokenizer: /home/yrlab/models/llm/weights_local/Qwen3.6-35B-A3B-FP8
+model: Qwen3.5-35B-A3B
+tokenizer: /home/yrlab/models/llm/weights/Qwen3.5-35B-A3B
 
 dataset-name: random
 num-prompts: 50
 input-len: 4096
 output-len: 1024
 
-max-concurrency: 8
+max-concurrency: 1
 request-rate: inf
 
 env:

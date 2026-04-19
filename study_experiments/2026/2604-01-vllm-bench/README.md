@@ -47,6 +47,14 @@ env:
 ```
 
 ## Results
+
+DGX Spark (GB10)
+
 | Model | Dtype | Concurrency | RPS | Time per 1K Req | Output TPS | Total TPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| Qwen3.5-35B-A3B | BF16 | 4 | - | - | - | - |
+| Qwen3.5-35B-A3B | BF16 | 1 | 0.029 | 35044s (584.07 Min) | 29 | 146 |
+| Qwen3.5-35B-A3B | BF16 | 4 | 0.069 | 14589s (243.15 Min) | 70 | 350 |
+| Qwen3.5-35B-A3B | BF16 | 8 | 0.086 | 11566s (192.77 Min) | 88 | 442 |
+| Qwen3.6-35B-A3B | FP8 | 1 | 0.046 | 21651s (360.85 Min) | 47 | 236 |
+| Qwen3.6-35B-A3B | FP8 | 4 | 0.100 | 9975s (166.25 Min) | 102 | 513 |
+| Qwen3.6-35B-A3B | FP8 | 8 | 0.111 | 8976s (149.6 Min) | 114 | 570 |

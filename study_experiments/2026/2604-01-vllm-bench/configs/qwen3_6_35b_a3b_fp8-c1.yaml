@@ -10,7 +10,7 @@ num-prompts: 50
 input-len: 4096
 output-len: 1024
 
-max-concurrency: 8
+max-concurrency: 1
 request-rate: inf
 
 env:

@@ -1,5 +1,6 @@
 import argparse
 import json
+import math
 import os
 import sys
 from datetime import datetime
@@ -8,6 +9,21 @@ from pathlib import Path
 import yaml
 
 from vllm.benchmarks.serve import add_cli_args, main
+
+
+def _sanitize(obj):
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            if not isinstance(k, (str, int, float, bool)) and k is not None:
+                k = str(k)
+            out[k] = _sanitize(v)
+        return out
+    if isinstance(obj, (list, tuple)):
+        return [_sanitize(v) for v in obj]
+    if isinstance(obj, float) and (math.isinf(obj) or math.isnan(obj)):
+        return str(obj)
+    return obj
 
 
 def load_config(path: Path) -> dict:
@@ -60,5 +76,5 @@ if __name__ == "__main__":
         "result": result,
     }
     with out_path.open("w") as f:
-        json.dump(payload, f, indent=2, default=str)
+        json.dump(_sanitize(payload), f, indent=2, default=str, allow_nan=False)
     print(f"[bench] wrote results to {out_path}")

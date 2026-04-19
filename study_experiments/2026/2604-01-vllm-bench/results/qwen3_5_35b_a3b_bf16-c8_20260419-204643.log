@@ -1,0 +1,42 @@
+INFO 04-19 11:46:49 [importing.py:44] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+INFO 04-19 11:46:49 [importing.py:68] Triton not installed or not compatible; certain GPU-related functions will not be available.
+WARNING 04-19 11:46:49 [interface.py:231] Failed to import from vllm._C: ImportError('libcuda.so.1: cannot open shared object file: No such file or directory')
+W0419 11:46:50.906000 1 torch/utils/cpp_extension.py:118] No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Namespace(trust_remote_code=False, seed=0, num_prompts=50, dataset_name='random', no_stream=False, dataset_path=None, no_oversample=False, skip_chat_template=False, enable_multimodal_chat=False, disable_shuffle=False, custom_output_len=256, spec_bench_output_len=256, spec_bench_category=None, sonnet_input_len=550, sonnet_output_len=150, sonnet_prefix_len=200, sharegpt_output_len=None, blazedit_min_distance=0.0, blazedit_max_distance=1.0, asr_max_audio_len_sec=inf, asr_min_audio_len_sec=0.0, random_input_len=1024, random_output_len=128, random_range_ratio=0.0, random_prefix_len=0, random_batch_size=1, no_reranker=False, random_mm_base_items_per_request=1, random_mm_num_mm_items_range_ratio=0.0, random_mm_limit_mm_per_prompt={'image': 255, 'video': 1}, random_mm_bucket_config={(256, 256, 1): 0.5, (720, 1280, 1): 0.5, (720, 1280, 16): 0.0}, hf_subset=None, hf_split=None, hf_name=None, hf_output_len=None, prefix_repetition_prefix_len=256, prefix_repetition_suffix_len=256, prefix_repetition_num_prefixes=10, prefix_repetition_output_len=128, label=None, backend='openai-chat', base_url='http://localhost:901', host='127.0.0.1', port=8000, endpoint='/v1/chat/completions', header=None, max_concurrency=8, model='Qwen3.5-35B-A3B', input_len=4096, output_len=1024, tokenizer='/mnt/tokenizer', tokenizer_mode='auto', use_beam_search=False, logprobs=None, request_rate=inf, burstiness=1.0, disable_tqdm=False, num_warmups=0, profile=False, save_result=False, save_detailed=False, append_result=False, metadata=None, result_dir=None, result_filename=None, ignore_eos=False, percentile_metrics=None, metric_percentiles='99', goodput=None, request_id_prefix='bench-42182602-', top_p=None, top_k=None, min_p=None, temperature=None, frequency_penalty=None, presence_penalty=None, repetition_penalty=None, served_model_name=None, lora_modules=None, lora_assignment='random', ramp_up_strategy=None, ramp_up_start_rps=None, ramp_up_end_rps=None, ready_check_timeout_sec=0, extra_body=None, skip_tokenizer_init=False, insecure=False, plot_timeline=False, timeline_itl_thresholds=[25.0, 50.0], plot_dataset_stats=False)
+INFO 04-19 11:46:53 [datasets.py:700] Sampling input_len from [4096, 4096] and output_len from [1024, 1024]
+WARNING: vllm bench serve no longer sets temperature==0 (greedy) in requests by default. The default will be determined on the server side and can be model/API specific. For the old behavior, include --temperature=0.
+Starting initial single prompt test run...
+Skipping endpoint ready check.
+Starting main benchmark run...
+Traffic request rate: inf
+Burstiness factor: 1.0 (Poisson process)
+Maximum request concurrency: 8
+  0%|          | 0/50 [00:00<?, ?it/s]  2%|▏         | 1/50 [01:29<1:13:00, 89.40s/it] 18%|█▊        | 9/50 [02:57<11:49, 17.31s/it]   34%|███▍      | 17/50 [04:28<07:39, 13.93s/it] 50%|█████     | 25/50 [05:58<05:18, 12.75s/it] 66%|██████▌   | 33/50 [07:27<03:25, 12.12s/it] 82%|████████▏ | 41/50 [08:56<01:45, 11.76s/it] 98%|█████████▊| 49/50 [09:38<00:09,  9.54s/it]100%|██████████| 50/50 [09:38<00:00, 11.57s/it]
+tip: install termplotlib and gnuplot to plot the metrics
+============ Serving Benchmark Result ============
+Successful requests:                     50        
+Failed requests:                         0         
+Maximum request concurrency:             8         
+Benchmark duration (s):                  578.33    
+Total input tokens:                      204800    
+Total generated tokens:                  51200     
+Request throughput (req/s):              0.09      
+Output token throughput (tok/s):         88.53     
+Peak output token throughput (tok/s):    128.00    
+Peak concurrent requests:                16.00     
+Total token throughput (tok/s):          442.66    
+---------------Time to First Token----------------
+Mean TTFT (ms):                          5894.37   
+Median TTFT (ms):                        5930.31   
+P99 TTFT (ms):                           7736.33   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          79.81     
+Median TPOT (ms):                        81.20     
+P99 TPOT (ms):                           83.56     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           79.73     
+Median ITL (ms):                         81.54     
+P99 ITL (ms):                            92.74     
+==================================================
+{'date': '20260419-115632', 'endpoint_type': 'openai-chat', 'backend': 'openai-chat', 'label': None, 'model_id': 'Qwen3.5-35B-A3B', 'tokenizer_id': '/mnt/tokenizer', 'num_prompts': 50, 'request_rate': 'inf', 'burstiness': 1.0, 'max_concurrency': 8, 'duration': 578.3250254101586, 'completed': 50, 'failed': 0, 'total_input_tokens': 204800, 'total_output_tokens': 51200, 'request_throughput': 0.08645657338542301, 'request_goodput': None, 'output_throughput': 88.53153114667316, 'total_token_throughput': 442.6576557333658, 'max_output_tokens_per_s': 128.0, 'max_concurrent_requests': 16, 'rtfx': 0.0, 'mean_ttft_ms': np.float64(5894.367533870973), 'median_ttft_ms': np.float64(5930.312690907158), 'std_ttft_ms': np.float64(1093.0208945538677), 'p99_ttft_ms': np.float64(7736.333341218997), 'mean_tpot_ms': np.float64(79.80778943699032), 'median_tpot_ms': np.float64(81.2047500830628), 'std_tpot_ms': np.float64(8.408755942843502), 'p99_tpot_ms': np.float64(83.56221865541926), 'mean_itl_ms': np.float64(79.72984002261), 'median_itl_ms': np.float64(81.53697045054287), 'std_itl_ms': np.float64(14.188693663068575), 'p99_itl_ms': np.float64(92.7443587500602)}
+[bench] wrote results to /tmp/bench-results/qwen3_5_35b_a3b_bf16-c8.json
